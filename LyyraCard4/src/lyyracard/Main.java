@@ -6,7 +6,7 @@ public class Main {
 		
 		University universityOfHelsinki = new University("University of Helsinki");
 		
-		Student peter = new Student("Peter!");
+		Student peter = new Student("Peter");
 		Student paul = new Student("Paul");
 		Student mary = new Student("Mary");
 		
