@@ -2,7 +2,7 @@ package lyyracard;
 
 public class Main {
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
 		
 		University universityOfHelsinki = new University("University of Helsinki");
 		
