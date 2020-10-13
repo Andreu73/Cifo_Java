@@ -56,6 +56,7 @@ public class Main {
 		restaurant1.addDishToRestaurant(chicken);
 		restaurant1.addDishToRestaurant(icecream);
 		restaurant1.addDishToRestaurant(cheesecake);
+		restaurant1.addDishToRestaurant(applepie);
 		
 		OptionsMenu.selectTheCashRegister();
 
