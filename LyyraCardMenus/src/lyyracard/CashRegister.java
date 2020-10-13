@@ -19,10 +19,10 @@ public class CashRegister {
 		return cashregsiterId;
 	}
     
-//    public void addDish(Dish dish) {
-//    	
-//    	dishessold.add(dish);
-//    }
+    public void addDish(Dish dish) {
+    	
+    	dishessold.add(dish);
+    }
 
 	public void payMenuCash(CashRegister cashregister, double totalprice, double cashGiven) {
 		MyDate dateofoperation ;

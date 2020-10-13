@@ -82,7 +82,8 @@ public class OptionsMenu {
 		
 	}
 	
-	public static double dishesScreen(CashRegister cashregister) {
+//	public static double dishesScreen(CashRegister cashregister) {
+	public static ArrayList<Dish> dishesScreen(CashRegister cashregister) {
 		
 		Scanner reader = new Scanner(System.in);
 		String finished = "";
@@ -96,7 +97,6 @@ public class OptionsMenu {
 			
 			Dish selecteddish = Restaurant.selectMenuFormTheList(dish);
 			dishesSelected.add(selecteddish);
-//			cashregister.addDish(selecteddish);
 			
 			System.out.println("Anything else? (y/n)");
 			finished = reader.next();
@@ -108,20 +108,31 @@ public class OptionsMenu {
 			totalPrice = totalPrice + dish.getPrice();
 			System.out.println(dish);
 		}
+//		cashregister.addDish(selecteddish);			
+			
+//		System.out.println("Total price: " + totalPrice + " Eur");
+//		return totalPrice;
 		
-		System.out.println("Total price: " + totalPrice + " Eur");
-		return totalPrice;
+		return dishesSelected;
 			
 	}
 	
-	public static void payMenuCash(CashRegister cashregister, double totalPrice) {
+//	public static void payMenuCash(CashRegister cashregister, double totalPrice) {
+	public static void payMenuCash(CashRegister cashregister, ArrayList<Dish> dishesselected) {
+		
+		double totalPrice = 0.00;
+
+		for(Dish dishesprice : dishesselected) {
+			
+			totalPrice = totalPrice + dishesprice.getPrice();
+		}
 		
 		double cashGiven = cashGiven();
 		if(cashGiven>totalPrice)
+//			cashregister.addDish(dishesselected);	
 			cashregister.payMenuCash(cashregister, totalPrice, cashGiven);
 		else
 			System.out.println("Not enough!");
-//			cashregisterCancelDish();
 	}
 
 	public static void payMenuCard(CashRegister cashregister, LyyraCard lyyracard, double totalPrice) {
