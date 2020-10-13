@@ -50,9 +50,9 @@ public class CashRegister {
 		String list = "";
 		double totalPrice = 0;
 		for(Dish dishessoldlist : dishessold) {
-			totalPrice += dishessoldlist.getPrice();
-			list = list + "Dish number: " +dishessoldlist.getDishId()+" - Name: "+
-			dishessoldlist.getName()+" - Price: " +dishessoldlist.getPrice()+"\n";
+		totalPrice += dishessoldlist.getPrice();
+		list = list + "Dish number: " +dishessoldlist.getDishId()+" - Name: "+
+		dishessoldlist.getName()+" - Price: " +dishessoldlist.getPrice()+"\n";
 
 		}
 		return list + "Total Balance: " + totalPrice;
