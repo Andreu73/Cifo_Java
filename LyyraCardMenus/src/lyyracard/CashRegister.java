@@ -15,13 +15,17 @@ public class CashRegister {
 
     }
     
+	public double getCashInRegister() {
+		return cashInRegister;
+	}
+	
     public int getCashregsiterId() {
 		return cashregsiterId;
 	}
     
-    public void addDish(Dish dish) {
+    public void addDish(ArrayList<Dish> dishesselected) {
     	
-    	dishessold.add(dish);
+    	dishessold.addAll(dishesselected);
     }
 
 	public void payMenuCash(CashRegister cashregister, double totalprice, double cashGiven) {
@@ -48,18 +52,21 @@ public class CashRegister {
 		for(Dish dishessoldlist : dishessold) {
 			totalPrice += dishessoldlist.getPrice();
 			list = list + "Dish number: " +dishessoldlist.getDishId()+" - Name: "+
-			dishessoldlist.getName()+" - Price: " +dishessoldlist.getPrice();
+			dishessoldlist.getName()+" - Price: " +dishessoldlist.getPrice()+"\n";
 
 		}
-		return list + "\nTotal Price: " + totalPrice;
+		return list + "Total Balance: " + totalPrice;
 	}
 	
+
+
 	public String listOfCashRegisters() {
     	return "Cash Register Number: " + this.getCashregsiterId();
     }
 
 	 public String toString() { 
-		 return "Cash Register Number: " + this.getCashregsiterId() + " - Money in register "+cashInRegister;
+		 return "Cash Register Number: " + this.getCashregsiterId() + " - Money in register "+this.getCashInRegister()
+		 + "\n" + this.listOfDishesSold();
 	 }
 
 }

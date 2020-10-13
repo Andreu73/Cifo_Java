@@ -108,6 +108,7 @@ public class OptionsMenu {
 			totalPrice = totalPrice + dish.getPrice();
 			System.out.println(dish);
 		}
+		System.out.println("Total Price: " + totalPrice + " Eur");
 //		cashregister.addDish(selecteddish);			
 			
 //		System.out.println("Total price: " + totalPrice + " Eur");
@@ -128,19 +129,27 @@ public class OptionsMenu {
 		}
 		
 		double cashGiven = cashGiven();
-		if(cashGiven>totalPrice)
-//			cashregister.addDish(dishesselected);	
-			cashregister.payMenuCash(cashregister, totalPrice, cashGiven);
+		if(cashGiven>totalPrice) {
+			cashregister.addDish(dishesselected);	
+			cashregister.payMenuCash(cashregister, totalPrice, cashGiven);}
 		else
-			System.out.println("Not enough!");
+			System.out.println("Not enough cash!");
 	}
 
-	public static void payMenuCard(CashRegister cashregister, LyyraCard lyyracard, double totalPrice) {
+	public static void payMenuCard(CashRegister cashregister, LyyraCard lyyracard, ArrayList<Dish> dishesselected) {
 		
-		if(lyyracard.getBalance()>totalPrice)
-			cashregister.payMenuCard(cashregister, lyyracard, totalPrice);
+		double totalPrice = 0.00d;
+
+		for(Dish dishesprice : dishesselected) {
+			
+			totalPrice = totalPrice + dishesprice.getPrice();
+		}
+		
+		if(lyyracard.getBalance()>totalPrice) {
+			cashregister.addDish(dishesselected);
+			cashregister.payMenuCard(cashregister, lyyracard, totalPrice);}
 		else
-			System.out.println("Not enough!");
+			System.out.println("Not enough balance!");
 		
 	}
 	
