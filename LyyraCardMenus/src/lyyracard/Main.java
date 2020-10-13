@@ -45,7 +45,7 @@ public class Main {
 		Dish chicken = new Dish(7,"Chicken & Salad", "Meal",2.5);
 		Dish icecream = new Dish(8,"Ice Cream", "Dessert", 1.0);
 		Dish cheesecake = new Dish(9,"Cheese Cake", "Dessert", 2.0);
-		Dish applepie = new Dish(9,"Apple Pie", "Dessert", 2.0);
+		Dish applepie = new Dish(10,"Apple Pie", "Dessert", 2.0);
 		
 		restaurant1.addDishToRestaurant(salad);
 		restaurant1.addDishToRestaurant(soup);
