@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MyDate {
 	
-	final int DAYS_YEAR = 365 ;
+	final int DAYS_YEAR = 365;
 	private int day;
 	private int month;
 	private int year;
