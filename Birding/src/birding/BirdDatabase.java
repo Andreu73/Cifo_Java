@@ -4,16 +4,18 @@ import java.util.ArrayList;
 
 public class BirdDatabase {
 	
+	private String name;
 	private ArrayList<Bird> birds ;
 	
-	public BirdDatabase() {
+	public BirdDatabase(String name) {
 		
+		this.name = name;
 		this.birds = new ArrayList<Bird>();
 	}
 	
-	public void addBirdToDatabase(String birdname, String latinname) {
+	public void addBirdAndDiscovererToDB(String nameofthebird, String latinnameofthebird, Person discoverer) {
 			
-		birds.add(new Bird(birdname, latinname));
+		birds.add(new Bird(nameofthebird, latinnameofthebird, discoverer));
 	}
 	
 	
