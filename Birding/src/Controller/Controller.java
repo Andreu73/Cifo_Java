@@ -14,7 +14,8 @@ public class Controller {
 	public static void checkBirds(String birdobserved, BirdDatabase birds) {  
 	
 		Bird birdFound = birds.showBird(birdobserved);
-		birdFound.addObservation(birdFound);
+		if(birdFound!= null)
+			birdFound.addObservation(birdFound);
 
 	}
 	
