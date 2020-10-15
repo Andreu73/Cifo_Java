@@ -1,12 +1,10 @@
 package comptadies;
 
-import java.util.Scanner;
-
 public class MyDate {
 	
-	final int DAYS_YEAR = 365;
+	final static int DAYS_YEAR = 365;
 	private int day, month, year;
-	private String[] weekDays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+	private static String[] weekDays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	private int[] monthDays = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 	
 	public MyDate() {
@@ -20,32 +18,9 @@ public class MyDate {
 		this.year = year;
 	}
 	
-	public void start() {
-		
-		Scanner reader = new Scanner(System.in);
-		Boolean isOk = false;
-		MyDate newDate = null;
-		
-		while(isOk==false) {
 
-		System.out.println("Day: ");
-		this.day = reader.nextInt();
-		System.out.println("Month: ");
-		this.month = reader.nextInt();
-		System.out.println("Year: ");
-		this.year = reader.nextInt();
-		
-		newDate = new MyDate(this.day, this.month, this.year);
-		
-		isOk = isYearOk();
-			
-		}
-		
-		returnDays(newDate);
-		
-	}
 
-	public Boolean isLeapYear(int leapyear) {
+	public static Boolean isLeapYear(int leapyear) {
 		
 		if(leapyear%4==0 && (leapyear%100!=0 || leapyear%400==0)) {
 			return true;}
@@ -54,21 +29,21 @@ public class MyDate {
 			
 	}
 	
-	public void returnDays(MyDate mydate) {
+	public static void returnDays(MyDate mydate) {
 		
 		int days = 0;
-		int year2 = this.year - 1978;
-		days = day-1;
+		int year2 = mydate.year - 1978;
+		days = mydate.day-1;
 
-		for (int i = 1978; i <= this.year; i++) {
+		for (int i = 1978; i <= mydate.year; i++) {
 			
 			if(isLeapYear(i))
 				days ++;
 		}
 		
-		for (int i = 0; i < this.month; i++) {
+		for (int i = 0; i < mydate.month; i++) {
 			
-			days += this.monthDays[i];
+			days += mydate.monthDays[i];
 		}
 		
 		days += DAYS_YEAR * year2;	
@@ -76,15 +51,23 @@ public class MyDate {
 		
 	}
 	
-	public void returnWeekDay(int daysperyear) {
+	public int getDay() {
+		return day;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public static void returnWeekDay(int daysperyear) {
 		
 		int dayOfTheWeek = daysperyear%7;
 		System.out.println(weekDays[dayOfTheWeek]);
 	}
 	
-	public Boolean isYearOk() {
+	public static Boolean isYearOk(int year) {
 		
-		if(this.year<1978) {
+		if(year<1978) {
 			System.out.println("Year before 1978 not valid");
 			return false;}
 		else
