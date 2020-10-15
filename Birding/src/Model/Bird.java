@@ -1,6 +1,4 @@
-package birding;
-
-import java.util.ArrayList;
+package Model;
 
 public class Bird {
 	
@@ -24,19 +22,15 @@ public class Bird {
 		return latinName;
 	}
 	
-	public void addObservations() {
+	public void addObservation() {
 		
 		this.observations++;
-	}
-	
-	public void addDiscovererToTheObservation(Person discoverer) {
-		
-		this.discoverer = discoverer;
 	}
 
 	@Override
 	public String toString() {
-		return "Bird [name=" + name + ", latinName=" + latinName + ", observations=" + observations + "]";
+		return "Bird [name=" + name + ", latinName=" + latinName + ", discoverer=" +
+				this.discoverer + ", observations=" + observations +"]";
 	}
 
 }

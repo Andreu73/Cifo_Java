@@ -2,24 +2,27 @@ package birding;
 
 import java.util.ArrayList;
 
+import Model.Bird;
+import Model.Person;
+
 public class BirdDatabase {
 	
 	private String name;
-	private ArrayList<Bird> birds ;
+	private ArrayList<Bird> birds;
 	
 	public BirdDatabase(String name) {
 		
 		this.name = name;
 		this.birds = new ArrayList<Bird>();
 	}
-	
-	public void addBirdAndDiscovererToDB(String nameofthebird, String latinnameofthebird, Person discoverer) {
-			
-		birds.add(new Bird(nameofthebird, latinnameofthebird, discoverer));
+
+	public void addBirdAndDiscovererToDB(Bird bird) {
+		
+		this.birds.add(bird);
 	}
 	
 	
-	public Bird showBirds(String birdname) {
+	public Bird showBird(String birdname) {
 		
 		for(Bird birdToShow : birds) {
 			
