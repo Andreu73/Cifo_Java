@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class MyDate {
 	
 	final int DAYS_YEAR = 365;
-	private int day;
-	private int month;
-	private int year;
+	private int day, month, year;
 	private String[] weekDays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	private int[] monthDays = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 	
