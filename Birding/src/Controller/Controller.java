@@ -14,14 +14,15 @@ public class Controller {
 	public static void checkBirds(String birdobserved, BirdDatabase birds) {  
 	
 		Bird birdFound = birds.showBird(birdobserved);
-		if(birdFound!=null)
-			birdFound.addObservation();
+		birdFound.addObservation(birdFound);
+
 	
 	}
 	
 	public static void showBird(String birdToShow, BirdDatabase birds) {  
 		
-		Bird bird = birds.showBird(birdToShow);
+		birds.showBird(birdToShow);
+		
 	}
 	
 	public static void statistics(BirdDatabase birds) {  

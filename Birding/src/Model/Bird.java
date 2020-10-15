@@ -22,8 +22,9 @@ public class Bird {
 		return latinName;
 	}
 	
-	public void addObservation() {
+	public void addObservation(Bird birdFound) {
 		
+		if(this.name.equals(birdFound.getName()))
 		this.observations++;
 	}
 
