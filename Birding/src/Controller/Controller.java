@@ -16,7 +16,6 @@ public class Controller {
 		Bird birdFound = birds.showBird(birdobserved);
 		birdFound.addObservation(birdFound);
 
-	
 	}
 	
 	public static void showBird(String birdToShow, BirdDatabase birds) {  

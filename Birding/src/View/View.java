@@ -87,6 +87,7 @@ public class View {
 		
 		Person discoverer = new Person(nameOfThePerson, countryOfOrigin, universityOfThePerson);
 		Bird newBird = new Bird(birdname, latinname, discoverer);
+		
 		Controller.addBirdToDB(newBird, birds);
 		
 	}

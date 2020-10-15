@@ -17,10 +17,6 @@ public class Bird {
 	public String getName() {
 		return name;
 	}
-
-	public String getLatinName() {
-		return latinName;
-	}
 	
 	public void addObservation(Bird birdFound) {
 		
