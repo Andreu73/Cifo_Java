@@ -6,8 +6,8 @@ public class Main {
 		
 		MyDate newDate = new MyDate();
 
-		int daysPerYear = newDate.returnDays(newDate.readDate());
-		System.out.println(newDate.returnWeekDay(daysPerYear));
+		newDate.start();
+		
 	}
 
 }

@@ -22,7 +22,7 @@ public class MyDate {
 		this.year = year;
 	}
 	
-	public MyDate readDate() {
+	public void start() {
 		
 		Scanner reader = new Scanner(System.in);
 		Boolean isOk = false;
@@ -43,7 +43,7 @@ public class MyDate {
 			
 		}
 		
-		return newDate;
+		returnDays(newDate);
 		
 	}
 
@@ -56,7 +56,7 @@ public class MyDate {
 			
 	}
 	
-	public int returnDays(MyDate mydate) {
+	public void returnDays(MyDate mydate) {
 		
 		int days = 0;
 		int year2 = this.year - 1978;
@@ -74,14 +74,14 @@ public class MyDate {
 		}
 		
 		days += DAYS_YEAR * year2;	
-		return days;
+		returnWeekDay(days);
 		
 	}
 	
-	public String returnWeekDay(int daysperyear) {
+	public void returnWeekDay(int daysperyear) {
 		
 		int dayOfTheWeek = daysperyear%7;
-		return weekDays[dayOfTheWeek];
+		System.out.println(weekDays[dayOfTheWeek]);
 	}
 	
 	public Boolean isYearOk() {
