@@ -23,7 +23,13 @@ public class MyDate {
 	}
 	
 	public MyDate readDate() {
+		
 		Scanner reader = new Scanner(System.in);
+		Boolean isOk = false;
+		MyDate newDate = null;
+		
+		while(isOk==false) {
+
 		System.out.println("Day: ");
 		this.day = reader.nextInt();
 		System.out.println("Month: ");
@@ -31,7 +37,12 @@ public class MyDate {
 		System.out.println("Year: ");
 		this.year = reader.nextInt();
 		
-		MyDate newDate = new MyDate(this.day, this.month, this.year);
+		newDate = new MyDate(this.day, this.month, this.year);
+		
+		isOk = isYearOk();
+			
+		}
+		
 		return newDate;
 		
 	}
@@ -71,6 +82,16 @@ public class MyDate {
 		
 		int dayOfTheWeek = daysperyear%7;
 		return weekDays[dayOfTheWeek];
+	}
+	
+	public Boolean isYearOk() {
+		
+		if(this.year<1978) {
+			System.out.println("Year before 1978 not valid");
+			return false;}
+		else
+			return true;
+		
 	}
 
 }
