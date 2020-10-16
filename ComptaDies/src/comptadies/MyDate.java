@@ -18,7 +18,13 @@ public class MyDate {
 		this.year = year;
 	}
 	
+	public int getDay() {
+		return day;
+	}
 
+	public int getMonth() {
+		return month;
+	}
 
 	public static Boolean isLeapYear(int leapyear) {
 		
@@ -49,14 +55,6 @@ public class MyDate {
 		days += DAYS_YEAR * year2;	
 		returnWeekDay(days);
 		
-	}
-	
-	public int getDay() {
-		return day;
-	}
-
-	public int getMonth() {
-		return month;
 	}
 
 	public static void returnWeekDay(int daysperyear) {
