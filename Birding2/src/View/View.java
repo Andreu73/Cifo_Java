@@ -23,8 +23,7 @@ public class View {
 				System.out.println("\nType a number please:");
 			}
 		}
-		
-	
+
 	}
 	
 	public void start(BirdDatabase birds) {
@@ -33,7 +32,6 @@ public class View {
 
 		while (true) {
 			
-
 	        System.out.println("------------------");
 	        System.out.println("1. Add            ");
 	        System.out.println("2. Observation    ");
