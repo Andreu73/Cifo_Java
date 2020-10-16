@@ -1,7 +1,7 @@
 package Controller;
 
+import Database.BirdDatabase;
 import Model.Bird;
-import birding.BirdDatabase;
 
 public class Controller {
 	

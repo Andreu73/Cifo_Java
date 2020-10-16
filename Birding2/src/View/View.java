@@ -3,9 +3,9 @@ package View;
 import java.util.Scanner;
 
 import Controller.Controller;
+import Database.BirdDatabase;
 import Model.Bird;
 import Model.Person;
-import birding.BirdDatabase;
 
 public class View {
 	

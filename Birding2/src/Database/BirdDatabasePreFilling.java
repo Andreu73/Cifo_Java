@@ -1,4 +1,4 @@
-package birding;
+package Database;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class BirdDatabasePreFilling {
 		people.add(new Person("Paul", "USA", "NY University"));
 		people.add(new Person("Peter", "Ireland", "Dublin University"));
 		people.add(new Person("Mary", "USA", "LA University"));
-		people.add(new Person("Tina", "Italy", "Università di Roma"));
+		people.add(new Person("Tina", "Italy", "Universitï¿½ di Roma"));
 		
 		PersonDatabase.setPeople(people);
 	

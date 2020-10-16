@@ -1,5 +1,7 @@
-package birding;
+package Main;
 
+import Database.BirdDatabase;
+import Database.BirdDatabasePreFilling;
 import View.View;
 
 public class Main {
