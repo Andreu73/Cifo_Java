@@ -21,7 +21,7 @@ public class Controller {
 	
 	public static void showBird(String birdToShow, BirdDatabase birds) {  
 		
-		birds.showBird(birdToShow);
+		System.out.println(birds.showBird(birdToShow));
 		
 	}
 	

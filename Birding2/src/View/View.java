@@ -69,7 +69,7 @@ public class View {
 	public static void show(Scanner scanner, BirdDatabase birds) {
 		
 		System.out.println("What to show?");
-		String birdToShow = scanner.next();
+		String birdToShow = scanner.nextLine();
 		
 		Controller.showBird(birdToShow, birds);
 		

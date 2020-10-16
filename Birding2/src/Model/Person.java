@@ -18,6 +18,6 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", countryOfOrigin=" + countryOfOrigin + ", university=" + university + "]";
+		return "[name=" + name + ", countryOfOrigin=" + countryOfOrigin + ", university=" + university + "]";
 	}
 }
