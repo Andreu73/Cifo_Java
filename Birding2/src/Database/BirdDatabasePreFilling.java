@@ -13,9 +13,9 @@ public class BirdDatabasePreFilling {
 	public static void preAddBirdToDatabase() {
 		
 		people.add(new Person("Peter", "USA", "NY University"));
-		people.add(new Person("Paul", "Ireland", "Dublin University"));
+		people.add(new Person("Paul", "Ireland", "University of Dublin"));
 		people.add(new Person("Mary", "USA", "UCLA"));
-		people.add(new Person("Anne", "NZ", "Auckland University"));
+		people.add(new Person("Anne", "NZ", "University of Auckland"));
 		
 		PersonDatabase.setPeople(people);
 	
