@@ -27,10 +27,15 @@ public class View {
 
 	}
 	
+	public static void newMethod() {
+		
+		
+	}
+	
 	public void start(BirdDatabase birds) {
 
 		Scanner scanner = new Scanner(System.in);
-		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
+		HashMap<Integer, Runnable> numberOfOptions = new HashMap<Integer, Method>();
 		numberOfOptions.put(1, "Add");
 		numberOfOptions.put(2, "Observation");
 		numberOfOptions.put(3, "Show");
@@ -43,7 +48,7 @@ public class View {
 			
 				int command = ask(scanner);
 			
-		        if (command==1) {
+		        if (command==numberOfOptions.) {
 		        	add(scanner, birds);
 		        } else if (command==2) {
 		        	observation(scanner, birds);
