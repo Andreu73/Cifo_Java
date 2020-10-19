@@ -15,12 +15,24 @@ public class PersonDatabase {
 		people = new ArrayList<Person>();
 	}
 
-	public void addBirdAndDiscovererToDB(Person person) {
+	public void addBirdAndWatcherToDB(Person person) {
 		
 		people.add(person);
 	}
 	
 	public static void setPeople(ArrayList<Person> people) {
 		PersonDatabase.people = people;
+	}
+	
+	public Person showPerson(String personname) {
+		
+		for(Person personToShow : people) {
+			
+			if(personToShow.getName().equals(personname))
+				return personToShow;
+		}
+		System.out.println("Not found in DataBase!");
+		return null;
+		
 	}
 }

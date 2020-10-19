@@ -1,21 +1,25 @@
 package Controller;
 
 import Database.BirdDatabase;
+import Database.PersonDatabase;
 import Model.Bird;
+import Model.Person;
 
 public class Controller {
 	
 	public static void addBirdToDB(Bird bird, BirdDatabase birds) {    
 
-		birds.addBirdAndDiscovererToDB(bird);
+		birds.addBirdAndWatcherToDB(bird);
 			
 	}
 	
-	public static void checkBirds(String birdobserved, BirdDatabase birds) {  
+	public static void checkBirds(String birdobserved, String personwhowatchedit, BirdDatabase birds, PersonDatabase people) {  
 	
+		Person personFound = people.showPerson(personwhowatchedit);
 		Bird birdFound = birds.showBird(birdobserved);
-		if(birdFound!= null)
-			birdFound.addObservation(birdFound);
+		if(birdFound!= null && personFound!= null)
+
+			birdFound.addObservation(birdFound, personFound);
 
 	}
 	

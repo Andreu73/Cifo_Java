@@ -22,7 +22,7 @@ public class UtilsIO {
 		
 	}
 	
-	public static String askForPersonName(Scanner scanner) {
+	public static String askForPersonWhoWatchedIt(Scanner scanner) {
 		
 		System.out.print("Who watched it?");
 		String nameOfThePerson = scanner.next();
@@ -46,16 +46,30 @@ public class UtilsIO {
 		
 	}
 	
-	public static Person createANewPerson(Scanner scanner) {
+	public static String askForBirdWatched(Scanner scanner) {
 		
-		Person newPerson = new Person(askForPersonName(scanner), askForPersonCountry(scanner), askForPersonUniversity(scanner));
+		System.out.println("What was observed?");
+		String birdObserved = scanner.next();
+		return birdObserved;
+	}
+	
+	public static String whatToShow(Scanner scanner) {
+		
+		System.out.println("What to show?");
+		String birdToShow = scanner.nextLine();
+		return birdToShow;
+	}
+	
+	public static Person createNewPerson(Scanner scanner) {
+		
+		Person newPerson = new Person(askForPersonWhoWatchedIt(scanner), askForPersonCountry(scanner), askForPersonUniversity(scanner));
 		return newPerson;
 		
 	}
 	
-	public static Bird createANewBird(Scanner scanner) {
+	public static Bird createNewBird(Scanner scanner) {
 		
-		Bird newBird = new Bird(askForBirdName(scanner), askForBirdLatinName(scanner), createANewPerson(scanner));
+		Bird newBird = new Bird(askForBirdName(scanner), askForBirdLatinName(scanner), createNewPerson(scanner));
 		return newBird;
 		
 	}

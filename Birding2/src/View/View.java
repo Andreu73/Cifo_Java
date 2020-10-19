@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import Controller.Controller;
 import Database.BirdDatabase;
+import Database.PersonDatabase;
 import Model.Bird;
 import Utils.UtilsIO;
 
@@ -27,7 +28,7 @@ public class View {
 
 	}
 	
-	public void start(BirdDatabase birds) {
+	public void start(BirdDatabase birds, PersonDatabase people) {
 
 		Scanner scanner = new Scanner(System.in);
 		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
@@ -36,9 +37,6 @@ public class View {
 		numberOfOptions.put(3, "Show");
 		numberOfOptions.put(4, "Statistics");
 		numberOfOptions.put(5, "Quit");
-		
-		HashMap<String, HashMap<Integer, String>> views = new HashMap<String, HashMap<Integer, String>>();
-		views.put("Add", numberOfOptions);
 
 		while (true) {
 			
@@ -48,13 +46,13 @@ public class View {
 			
 		        if (command==Integer.parseInt(numberOfOptions.get(0))) {
 		        	add(scanner, birds);
-		        } else if (command==2) {
-		        	observation(scanner, birds);
-		        } else if (command==3) {
+		        } else if (command==Integer.parseInt(numberOfOptions.get(1))) {
+		        	observation(scanner, birds, people);
+		        } else if (command==Integer.parseInt(numberOfOptions.get(2))) {
 		        	show(scanner, birds);
-		        } else if (command==4) {
+		        } else if (command==Integer.parseInt(numberOfOptions.get(3))) {
 		        	statistics(birds);
-		        } else if (command==5) {
+		        } else if (command==Integer.parseInt(numberOfOptions.get(4))) {
 		        	break;
 		        } else {
 		            System.out.println("Unknown command!");
@@ -83,27 +81,19 @@ public class View {
 	
 	public static void show(Scanner scanner, BirdDatabase birds) {
 		
-		System.out.println("What to show?");
-		String birdToShow = scanner.nextLine();
-		
-		Controller.showBird(birdToShow, birds);
+		Controller.showBird(UtilsIO.whatToShow(scanner), birds);
 		
 	}
 	
-	public static void observation(Scanner scanner, BirdDatabase birds) {
+	public static void observation(Scanner scanner, BirdDatabase birds, PersonDatabase people) {
 		
-		System.out.println("What was observed?");
-		String birdObserved = scanner.next();
-		
-		Controller.checkBirds(birdObserved, birds);
+		Controller.checkBirds(UtilsIO.askForBirdWatched(scanner), UtilsIO.askForPersonWhoWatchedIt(scanner), birds, people);
 		
 	}
 	
 	public static void add(Scanner scanner, BirdDatabase birds) {	
-
-		Bird newBird = UtilsIO.createANewBird(scanner);
 		
-		Controller.addBirdToDB(newBird, birds);
+		Controller.addBirdToDB(UtilsIO.createNewBird(scanner), birds);
 		
 	}
 
