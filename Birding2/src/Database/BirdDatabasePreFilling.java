@@ -19,9 +19,10 @@ public class BirdDatabasePreFilling {
 		
 		PersonDatabase.setPeople(people);
 	
-		birds.add(new Bird("Raven", "Corvus", people.get(0)));
-		birds.add(new Bird("Eagle", "Aquila", people.get(1)));
-		birds.add(new Bird("Pelican", "Pelicanus", people.get(2)));
+		birds.add(new Bird("Raven", "Corvus"));
+		birds.add(new Bird("Eagle", "Aquila"));
+		birds.add(new Bird("Pelican", "Pelicanus"));
+		birds.add(new Bird("Albatros", "Albatrosus"));
 		
 		BirdDatabase.setBirds(birds);
 		

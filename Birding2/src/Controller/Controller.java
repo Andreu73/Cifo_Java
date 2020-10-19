@@ -9,16 +9,15 @@ public class Controller {
 	
 	public static void addBirdToDB(Bird bird, BirdDatabase birds) {    
 
-		birds.addBirdAndWatcherToDB(bird);
-			
+		birds.addBirdToDB(bird);
 	}
 	
 	public static void checkBirds(String birdobserved, String personwhowatchedit, BirdDatabase birds, PersonDatabase people) {  
 	
 		Person personFound = people.showPerson(personwhowatchedit);
 		Bird birdFound = birds.showBird(birdobserved);
+		
 		if(birdFound!= null && personFound!= null)
-
 			birdFound.addObservation(birdFound, personFound);
 
 	}

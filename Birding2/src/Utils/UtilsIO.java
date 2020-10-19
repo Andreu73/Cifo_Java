@@ -69,7 +69,7 @@ public class UtilsIO {
 	
 	public static Bird createNewBird(Scanner scanner) {
 		
-		Bird newBird = new Bird(askForBirdName(scanner), askForBirdLatinName(scanner), createNewPerson(scanner));
+		Bird newBird = new Bird(askForBirdName(scanner), askForBirdLatinName(scanner));
 		return newBird;
 		
 	}

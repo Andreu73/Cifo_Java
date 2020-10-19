@@ -6,7 +6,6 @@ import java.util.Scanner;
 import Controller.Controller;
 import Database.BirdDatabase;
 import Database.PersonDatabase;
-import Model.Bird;
 import Utils.UtilsIO;
 
 public class View {
@@ -18,7 +17,7 @@ public class View {
 		while(true) {
 			try {	
 					
-				optionSelected = Integer.parseInt(input.nextLine());
+				optionSelected = Integer.parseInt(input.next());
 				return optionSelected;
 				
 			}catch(Exception e){
@@ -43,16 +42,16 @@ public class View {
 				View.optionsValues(numberOfOptions);
 			
 				int command = ask(scanner);
-			
-		        if (command==Integer.parseInt(numberOfOptions.get(0))) {
+
+		        if (command==1) {
 		        	add(scanner, birds);
-		        } else if (command==Integer.parseInt(numberOfOptions.get(1))) {
+		        } else if (command==2) {
 		        	observation(scanner, birds, people);
-		        } else if (command==Integer.parseInt(numberOfOptions.get(2))) {
+		        } else if (command==3) {
 		        	show(scanner, birds);
-		        } else if (command==Integer.parseInt(numberOfOptions.get(3))) {
+		        } else if (command==4) {
 		        	statistics(birds);
-		        } else if (command==Integer.parseInt(numberOfOptions.get(4))) {
+		        } else if (command==5) {
 		        	break;
 		        } else {
 		            System.out.println("Unknown command!");
@@ -65,13 +64,14 @@ public class View {
 	public static void optionsValues(HashMap<Integer, String> numberOfOptions) {
 
 		System.out.println("------------------");
-		for (int i = 1; i < numberOfOptions.size(); i++) {
+		for(Integer numbers : numberOfOptions.keySet()) {
 			
-	        System.out.println((i) + ". " + numberOfOptions.get(i));
+			System.out.println((numbers) + ". " + numberOfOptions.get(numbers));
 			
 		}
 		System.out.println("--------------------");
         System.out.println("Select an option: ");
+		
 	}
 
 	public static void statistics(BirdDatabase birds) {

@@ -15,7 +15,7 @@ public class BirdDatabase {
 		birds = new ArrayList<Bird>();
 	}
 
-	public void addBirdAndWatcherToDB(Bird bird) {
+	public void addBirdToDB(Bird bird) {
 		
 		birds.add(bird);
 	}
