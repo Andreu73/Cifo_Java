@@ -1,12 +1,11 @@
 package View;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import Controller.Controller;
 import Database.BirdDatabase;
 import Model.Bird;
-import Model.Person;
 import Utils.UtilsIO;
 
 public class View {
@@ -31,13 +30,12 @@ public class View {
 	public void start(BirdDatabase birds) {
 
 		Scanner scanner = new Scanner(System.in);
-		ArrayList<String> numberOfOptions = new ArrayList<String>();
-		numberOfOptions.add("1. Add");
-		numberOfOptions.add("2. Observation");
-		numberOfOptions.add("3. Show");
-		numberOfOptions.add("4. Statistics");
-		numberOfOptions.add("5. Add");
-		numberOfOptions.add("6. Quit");
+		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
+		numberOfOptions.put(1, "Add");
+		numberOfOptions.put(2, "Observation");
+		numberOfOptions.put(3, "Show");
+		numberOfOptions.put(4, "Statistics");
+		numberOfOptions.put(5, "Quit");
 
 		while (true) {
 			
@@ -45,7 +43,7 @@ public class View {
 			
 				int command = ask(scanner);
 			
-		        if (command==numberOfOptions.indexOf(numberOfOptions.get(0))){
+		        if (command==1) {
 		        	add(scanner, birds);
 		        } else if (command==2) {
 		        	observation(scanner, birds);
@@ -63,17 +61,15 @@ public class View {
 		
 	}
 	
-	public static void optionsValues(ArrayList<String> numberOfOptions) {
-		
+	public static void optionsValues(HashMap<Integer, String> numberOfOptions) {
+
 		System.out.println("------------------");
-		
-		for (int i = 0; i < numberOfOptions.size(); i++) {
+		for (int i = 1; i < numberOfOptions.size(); i++) {
 			
-	        System.out.println(numberOfOptions.get(i));
+	        System.out.println((i) + ". " + numberOfOptions.get(i));
 			
 		}
-		
-        System.out.println("--------------------");
+		System.out.println("--------------------");
         System.out.println("Select an option: ");
 	}
 
@@ -102,7 +98,7 @@ public class View {
 	
 	public static void add(Scanner scanner, BirdDatabase birds) {	
 
-		Bird newBird = UtilsIO.askForBirdAttributes(scanner);
+		Bird newBird = UtilsIO.createANewBird(scanner);
 		
 		Controller.addBirdToDB(newBird, birds);
 		
