@@ -35,6 +35,22 @@ public class MyDate {
 			
 	}
 	
+	public static void returnWeekDay(int daysperyear) {
+		
+		int dayOfTheWeek = daysperyear%7;
+		System.out.println(weekDays[dayOfTheWeek]);
+	}
+	
+	public static Boolean isYearOk(int year) {
+		
+		if(year<1978) {
+			System.out.println("Year before 1978 not valid");
+			return false;}
+		else
+			return true;
+		
+	}
+	
 	public static void returnDays(MyDate mydate) {
 		
 		int days = 0;
@@ -57,20 +73,6 @@ public class MyDate {
 		
 	}
 
-	public static void returnWeekDay(int daysperyear) {
-		
-		int dayOfTheWeek = daysperyear%7;
-		System.out.println(weekDays[dayOfTheWeek]);
-	}
-	
-	public static Boolean isYearOk(int year) {
-		
-		if(year<1978) {
-			System.out.println("Year before 1978 not valid");
-			return false;}
-		else
-			return true;
-		
-	}
+
 
 }
