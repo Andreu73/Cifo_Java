@@ -4,21 +4,31 @@ import java.util.Scanner;
 
 public class View {
 	
-	public void start() {
-		
-		Scanner reader = new Scanner(System.in);
+	public void start(Scanner input) {
 		
 		Boolean isOk = false;
 		MyDate newDate = null;
+		int day =0;
+		int month= 0;
+		int year =0;
 		
 		while(isOk==false) {
 
+		try {	
+			
 		System.out.println("Day (dd): ");
-		int day = reader.nextInt();
+		day = input.nextInt();
+		}catch(Exception e){
+			e.printStackTrace();
+			
+		}
+		
 		System.out.println("Month (mm): ");
-		int month = reader.nextInt();
+		month = input.nextInt();
 		System.out.println("Year (yyyy): ");
-		int year = reader.nextInt();
+		year = input.nextInt();
+		
+
 		
 		newDate = new MyDate(day, month, year);
 		isOk = MyDate.isYearOk(year);
