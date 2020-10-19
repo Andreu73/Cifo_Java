@@ -27,20 +27,18 @@ public class View {
 
 	}
 	
-	public static void newMethod() {
-		
-		
-	}
-	
 	public void start(BirdDatabase birds) {
 
 		Scanner scanner = new Scanner(System.in);
-		HashMap<Integer, Runnable> numberOfOptions = new HashMap<Integer, Method>();
+		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
 		numberOfOptions.put(1, "Add");
 		numberOfOptions.put(2, "Observation");
 		numberOfOptions.put(3, "Show");
 		numberOfOptions.put(4, "Statistics");
 		numberOfOptions.put(5, "Quit");
+		
+		HashMap<String, HashMap<Integer, String>> views = new HashMap<String, HashMap<Integer, String>>();
+		views.put("Add", numberOfOptions);
 
 		while (true) {
 			
@@ -48,7 +46,7 @@ public class View {
 			
 				int command = ask(scanner);
 			
-		        if (command==numberOfOptions.) {
+		        if (command==Integer.parseInt(numberOfOptions.get(0))) {
 		        	add(scanner, birds);
 		        } else if (command==2) {
 		        	observation(scanner, birds);
