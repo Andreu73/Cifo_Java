@@ -1,11 +1,13 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.Controller;
 import Database.BirdDatabase;
 import Model.Bird;
 import Model.Person;
+import Utils.UtilsIO;
 
 public class View {
 	
@@ -29,21 +31,21 @@ public class View {
 	public void start(BirdDatabase birds) {
 
 		Scanner scanner = new Scanner(System.in);
+		ArrayList<String> numberOfOptions = new ArrayList<String>();
+		numberOfOptions.add("1. Add");
+		numberOfOptions.add("2. Observation");
+		numberOfOptions.add("3. Show");
+		numberOfOptions.add("4. Statistics");
+		numberOfOptions.add("5. Add");
+		numberOfOptions.add("6. Quit");
 
 		while (true) {
 			
-	        System.out.println("------------------");
-	        System.out.println("1. Add            ");
-	        System.out.println("2. Observation    ");
-	        System.out.println("3. Show           ");
-	        System.out.println("4. Statistics     ");
-	    	System.out.println("5. Quit           ");
-	        System.out.println("------------------");
-	        System.out.println("Select an option: ");
-        
+				View.optionsValues(numberOfOptions);
+			
 				int command = ask(scanner);
 			
-		        if (command==1) {
+		        if (command==numberOfOptions.indexOf(numberOfOptions.get(0))){
 		        	add(scanner, birds);
 		        } else if (command==2) {
 		        	observation(scanner, birds);
@@ -59,6 +61,20 @@ public class View {
 
 	    }		
 		
+	}
+	
+	public static void optionsValues(ArrayList<String> numberOfOptions) {
+		
+		System.out.println("------------------");
+		
+		for (int i = 0; i < numberOfOptions.size(); i++) {
+			
+	        System.out.println(numberOfOptions.get(i));
+			
+		}
+		
+        System.out.println("--------------------");
+        System.out.println("Select an option: ");
 	}
 
 	public static void statistics(BirdDatabase birds) {
@@ -85,19 +101,8 @@ public class View {
 	}
 	
 	public static void add(Scanner scanner, BirdDatabase birds) {	
-		System.out.print("Add bird to Database->\nName: ");
-		String birdname = scanner.next();
-		System.out.print("Latin name: ");
-		String latinname = scanner.next();
-		System.out.print("Who discovered it?");
-		String nameOfThePerson = scanner.next();
-		System.out.print("Where was he/she from?");
-		String countryOfOrigin = scanner.next();
-		System.out.print("Which university was he/she from?");
-		String universityOfThePerson = scanner.next();
-		
-		Person discoverer = new Person(nameOfThePerson, countryOfOrigin, universityOfThePerson);
-		Bird newBird = new Bird(birdname, latinname, discoverer);
+
+		Bird newBird = UtilsIO.askForBirdAttributes(scanner);
 		
 		Controller.addBirdToDB(newBird, birds);
 		
