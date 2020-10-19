@@ -19,7 +19,7 @@ public class View {
 		System.out.println("Day (dd): ");
 		day = input.nextInt();
 		}catch(Exception e){
-			e.printStackTrace();
+			e.getMessage();
 			
 		}
 		
