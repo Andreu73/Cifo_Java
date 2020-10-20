@@ -9,14 +9,14 @@ public class UtilsIO {
 	
 	public static String askForBirdName(Scanner scanner) {
 		
-		System.out.print("Add bird to Database->\nName: ");
+		System.out.println("Add bird to Database->\nName: ");
 		String birdname = scanner.next();
 		return birdname;
 	}
 		
 	public static String askForBirdLatinName(Scanner scanner) {
 		
-		System.out.print("Latin name: ");
+		System.out.println("Latin name: ");
 		String latinname = scanner.next();
 		return latinname;
 		
@@ -24,7 +24,7 @@ public class UtilsIO {
 	
 	public static String askForPersonWhoWatchedIt(Scanner scanner) {
 		
-		System.out.print("Who watched it?");
+		System.out.println("Name of the watcher?");
 		String nameOfThePerson = scanner.next();
 		return nameOfThePerson;
 		
@@ -32,7 +32,7 @@ public class UtilsIO {
 	
 	public static String askForPersonCountry(Scanner scanner) {
 		
-		System.out.print("Where was he/she from?");
+		System.out.println("Where was he/she from?");
 		String countryOfOrigin = scanner.next();
 		return countryOfOrigin;
 		
@@ -40,7 +40,7 @@ public class UtilsIO {
 
 	public static String askForPersonUniversity(Scanner scanner) {
 		
-		System.out.print("Which university was he/she from?");
+		System.out.println("Which university was he/she from?");
 		String universityOfThePerson = scanner.next();
 		return universityOfThePerson;
 		
@@ -61,7 +61,7 @@ public class UtilsIO {
 	}
 	
 	public static Person createNewPerson(Scanner scanner) {
-		
+
 		Person newPerson = new Person(askForPersonWhoWatchedIt(scanner), askForPersonCountry(scanner), askForPersonUniversity(scanner));
 		return newPerson;
 		

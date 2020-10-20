@@ -5,7 +5,9 @@ public class Person {
 	private String name;
 	private String countryOfOrigin;
 	private String university;
-
+	private Bird bird;
+	private int birdObservations;
+	
 	public Person(String name, String countryoforigin, String university) {
 		this.name = name;
 		this.countryOfOrigin = countryoforigin;
@@ -16,8 +18,14 @@ public class Person {
 		return name;
 	}
 	
+	public void birdObserved() {
+		
+		this.birdObservations++;
+	}
+	
 	@Override
 	public String toString() {
-		return "[name=" + name + ", countryOfOrigin=" + countryOfOrigin + ", university=" + university + "]";
+		return "Name: " + name + " - countryOfOrigin: " + countryOfOrigin + " - university: " + university +
+				" - observations: " + birdObservations;
 	}
 }

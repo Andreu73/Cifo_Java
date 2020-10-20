@@ -11,6 +11,11 @@ public class Controller {
 
 		birds.addBirdToDB(bird);
 	}
+
+	public static void addWatcherToDB(Person person, PersonDatabase people) {    
+
+		people.addWatcherToDB(person);
+	}
 	
 	public static void checkBirds(String birdobserved, String personwhowatchedit, BirdDatabase birds, PersonDatabase people) {  
 	

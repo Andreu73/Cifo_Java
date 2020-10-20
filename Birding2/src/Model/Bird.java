@@ -8,13 +8,6 @@ public class Bird {
 	private String latinName;
 	public int observations;
 	public ArrayList<Person> watchers;
-
-//	public Bird(String name, String latinName, Person watcher, int observations) {
-//		this.name = name;
-//		this.latinName = latinName;
-//		this.observations = observations;
-//		watcher = watcher;	
-//	}
 	
 	public Bird(String name, String latinName) {
 		this.name = name;
@@ -27,16 +20,27 @@ public class Bird {
 	}
 	
 	public void addObservation(Bird birdFound, Person watcher) {
-		
+
 		if(this.name.equals(birdFound.getName()))
 			watchers.add(watcher);
+			watcher.birdObserved();
 			this.observations++;
 	}
 
 	@Override
 	public String toString() {
-		return "Bird [name=" + name + ", latinName=" + latinName + ", watcher=" +
-				watchers + ", observations=" + observations +"]";
+		return "Bird - name: " + name + " - latinName: " + latinName + " - observations: " + observations + "\n" +
+				this.listOfWatchers();
+	}
+	
+	public String listOfWatchers() {
+		
+		String watchersList = "";
+		for(Person watcher : watchers) {
+			
+			watchersList = watchersList + "Watcher: " + watcher + "\n";
+		}
+		return  watchersList;
 	}
 
 }

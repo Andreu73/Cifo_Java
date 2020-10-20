@@ -31,11 +31,12 @@ public class View {
 
 		Scanner scanner = new Scanner(System.in);
 		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
-		numberOfOptions.put(1, "Add");
-		numberOfOptions.put(2, "Observation");
-		numberOfOptions.put(3, "Show");
-		numberOfOptions.put(4, "Statistics");
-		numberOfOptions.put(5, "Quit");
+		numberOfOptions.put(1, "Add Bird");
+		numberOfOptions.put(2, "Add Watcher");
+		numberOfOptions.put(3, "Observation");
+		numberOfOptions.put(4, "Show");
+		numberOfOptions.put(5, "Statistics");
+		numberOfOptions.put(6, "Quit");
 
 		while (true) {
 			
@@ -46,12 +47,14 @@ public class View {
 		        if (command==1) {
 		        	add(scanner, birds);
 		        } else if (command==2) {
-		        	observation(scanner, birds, people);
+		        	addWatcher(scanner, people);
 		        } else if (command==3) {
-		        	show(scanner, birds);
+		        	observation(scanner, birds, people);
 		        } else if (command==4) {
-		        	statistics(birds);
+		        	show(scanner, birds);
 		        } else if (command==5) {
+		        	statistics(birds);
+		        } else if (command==6) {
 		        	break;
 		        } else {
 		            System.out.println("Unknown command!");
@@ -97,4 +100,10 @@ public class View {
 		
 	}
 
+	public static void addWatcher(Scanner scanner, PersonDatabase people) {	
+		
+		Controller.addWatcherToDB(UtilsIO.createNewPerson(scanner), people);
+		
+	}
+	
 }
