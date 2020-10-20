@@ -21,7 +21,7 @@ public class Controller {
 	
 		Bird birdFound = birds.showBird(birdobserved);
 		if(birdFound==null)
-			System.out.println("not a bird");
+			System.out.println("Not a bird!");
 		return birdFound;
 	}
 	
@@ -29,7 +29,7 @@ public class Controller {
 		
 		Person personFound = people.showPerson(personwhowatchedit);
 		if(personFound==null)
-			System.out.println("not a person");
+			System.out.println("Not a person!");
 		return personFound;
 }
 	
