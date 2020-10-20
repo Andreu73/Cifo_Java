@@ -8,8 +8,13 @@ public class View {
 	
 	public int askOption(Scanner input) {
 		
-		System.out.println("Select an option:");
-		int option = input.nextInt();
+		int option = 0;		
+		try {
+			System.out.println("Select an option:");
+			option = Integer.parseInt(input.next());
+		}catch(Exception e) {
+			System.out.println("Type a number!");
+		}
 		return option;
 	}
 	
@@ -18,7 +23,7 @@ public class View {
 		System.out.println("---------------------");
 		for(Integer option : options.keySet()) {
 			
-			System.out.println(option + options.get(option));
+			System.out.println(option + " " + options.get(option));
 		}
 		System.out.println("---------------------");
 	}
@@ -29,16 +34,24 @@ public class View {
 		options.put(1, "Add student");
 		options.put(2, "Quit");
 		
-
-		
 		while(true) {
 			
 		showOptionsMenu(options);
 		
 		int option = askOption(input);
 		
+		if(option==1)
+			addStudent();
+		else if(option==2)
+			break;
 		
 		}
+	}
+	
+	public static void addStudent() {
+		
+//		StudentController.addStudentToDb();
+		
 	}
 
 }
