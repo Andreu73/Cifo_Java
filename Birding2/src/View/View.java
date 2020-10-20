@@ -29,7 +29,7 @@ public class View {
 
 	}
 	
-	public static void start(BirdDatabase birds, PersonDatabase people) {
+	public void start(BirdDatabase birds, PersonDatabase people) {
 
 		Scanner scanner = new Scanner(System.in);
 		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();

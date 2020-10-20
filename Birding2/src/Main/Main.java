@@ -13,7 +13,8 @@ public class Main {
 		PersonDatabase people = new PersonDatabase("People DB");
 		
 		BirdDatabasePreFilling.preAddBirdToDatabase();
-		View.start(birds, people);
+		View view = new View();
+		view.start(birds, people);
 
 	}
 }
