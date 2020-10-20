@@ -90,7 +90,7 @@ public class View {
 	
 	public static void observation(Scanner scanner, BirdDatabase birds, PersonDatabase people) {
 		
-		Controller.checkBirds(UtilsIO.askForBirdWatched(scanner), UtilsIO.askForPersonWhoWatchedIt(scanner), birds, people);
+		Controller.checkBirds(UtilsIO.askForBirdWatched(scanner, birds), UtilsIO.askForPersonWhoWatchedIt(scanner, people), birds, people);
 		
 	}
 	
@@ -102,7 +102,7 @@ public class View {
 
 	public static void addWatcher(Scanner scanner, PersonDatabase people) {	
 		
-		Controller.addWatcherToDB(UtilsIO.createNewPerson(scanner), people);
+		Controller.addWatcherToDB(UtilsIO.createNewPerson(scanner, people), people);
 		
 	}
 	

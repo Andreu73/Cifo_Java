@@ -2,6 +2,8 @@ package Utils;
 
 import java.util.Scanner;
 
+import Database.BirdDatabase;
+import Database.PersonDatabase;
 import Model.Bird;
 import Model.Person;
 
@@ -22,10 +24,11 @@ public class UtilsIO {
 		
 	}
 	
-	public static String askForPersonWhoWatchedIt(Scanner scanner) {
+	public static String askForPersonWhoWatchedIt(Scanner scanner, PersonDatabase people) {
 		
 		System.out.println("Name of the watcher?");
 		String nameOfThePerson = scanner.next();
+		people.showPerson(nameOfThePerson);
 		return nameOfThePerson;
 		
 	}
@@ -46,23 +49,24 @@ public class UtilsIO {
 		
 	}
 	
-	public static String askForBirdWatched(Scanner scanner) {
+	public static String askForBirdWatched(Scanner scanner, BirdDatabase birds) {
 		
 		System.out.println("What was observed?");
 		String birdObserved = scanner.next();
-		return birdObserved;
+		birds.showBird(birdObserved);
+		return birdObserved;		
 	}
 	
 	public static String whatToShow(Scanner scanner) {
 		
 		System.out.println("What to show?");
-		String birdToShow = scanner.nextLine();
+		String birdToShow = scanner.next();
 		return birdToShow;
 	}
 	
-	public static Person createNewPerson(Scanner scanner) {
+	public static Person createNewPerson(Scanner scanner, PersonDatabase people) {
 
-		Person newPerson = new Person(askForPersonWhoWatchedIt(scanner), askForPersonCountry(scanner), askForPersonUniversity(scanner));
+		Person newPerson = new Person(askForPersonWhoWatchedIt(scanner, people), askForPersonCountry(scanner), askForPersonUniversity(scanner));
 		return newPerson;
 		
 	}
