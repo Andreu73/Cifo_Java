@@ -29,7 +29,7 @@ public class Bird {
 
 	@Override
 	public String toString() {
-		return "Bird - name: " + name + " - latinName: " + latinName + " - observations: " + observations + "\n" +
+		return "Bird - name: " + name + " - latin name: " + latinName + " - observations: " + observations + "\n" +
 				this.listOfWatchers();
 	}
 	

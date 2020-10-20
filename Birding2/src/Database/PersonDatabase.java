@@ -35,4 +35,14 @@ public class PersonDatabase {
 		return null;
 		
 	}
+	
+	public static String listOfPeople() {
+		
+		String peopleList = "";
+		for(Person p : people) {
+			
+			peopleList = peopleList + "Watcher: " + p + "\n";
+		}
+		return  peopleList;
+	}
 }

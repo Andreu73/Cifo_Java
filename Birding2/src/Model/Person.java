@@ -5,7 +5,7 @@ public class Person {
 	private String name;
 	private String countryOfOrigin;
 	private String university;
-	private Bird bird;
+//	private Bird bird;
 	private int birdObservations;
 	
 	public Person(String name, String countryoforigin, String university) {
