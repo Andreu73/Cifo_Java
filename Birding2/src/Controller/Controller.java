@@ -42,7 +42,6 @@ public class Controller {
 	public static void statistics(BirdDatabase birds) {  
 	
 		birds.getStatistics();
-		System.out.println();
 		System.out.println(PersonDatabase.listOfPeople());
 	}
 

@@ -26,6 +26,6 @@ public class Person {
 	@Override
 	public String toString() {
 		return name + " - country of origin: " + countryOfOrigin + " - university: " + university +
-				" - observations: " + birdObservations;
+				" - observations: " + birdObservations +"\n";
 	}
 }
