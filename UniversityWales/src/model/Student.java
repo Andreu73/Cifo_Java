@@ -11,13 +11,14 @@ public class Student extends Person{
 	public static ArrayList<Subject> subjects;
 	public static ArrayList<Card> cards;
 	
-	public Student(String numberId, String name, int age, String countryOfOrigin, Date birthday, 
+	public Student(String name, int age, String countryOfOrigin, Date birthday, 
 			float finalMark, int courseYear, Apartment apartment, Pet pet) {
 		super(name, age, countryOfOrigin, birthday);
 		this.finalMark = finalMark;
 		this.courseYear = courseYear;
 		this.pet = pet;
 		subjects = new ArrayList<Subject>();
+		cards = new ArrayList<Card>();
 	}
 	
 	public static void studentDbSubjectPreFilling(Subject subject) {
