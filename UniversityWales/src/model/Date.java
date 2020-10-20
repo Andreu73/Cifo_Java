@@ -5,15 +5,29 @@ import java.time.format.DateTimeFormatter;
 
 public class Date {
 	
-	private LocalDateTime myDate = LocalDateTime.now();
+	private int day;
+	private int month;
+	private int year;
+	private LocalDateTime now; 
 	
-	public Date(){
+	public Date(int day, int month, int year){
+		
+		this.day = day;
+		this.month = month;
+		this.year = year;
+		this.now = LocalDateTime.now();
 		
 	}
 
-	public String formatMyDate() {
+	public String formatNow() {
 		DateTimeFormatter newDateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	    String formattedDate = myDate.format(newDateFormat);
+	    String formattedDate = now.format(newDateFormat);
 	    return formattedDate;
+	}
+	
+	public String formatDate() {
+		String formattedDate = Integer.toString(this.day) + "-" + Integer.toString(this.month) + "-" 
+		+ Integer.toString(this.year);
+		return formattedDate;
 	}
 }
