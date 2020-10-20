@@ -31,7 +31,6 @@ public class PersonDatabase {
 			if(personToShow.getName().equals(personname))
 				return personToShow;
 		}
-		System.out.println("Not found in DataBase!");
 		return null;
 		
 	}
@@ -41,8 +40,8 @@ public class PersonDatabase {
 		String peopleList = "";
 		for(Person p : people) {
 			
-			peopleList = peopleList + "Watcher: " + p + "\n";
+			peopleList = peopleList + p + "\n";
 		}
-		return  peopleList;
+		return  "People:\n" + peopleList;
 	}
 }

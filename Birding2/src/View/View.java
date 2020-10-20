@@ -27,7 +27,7 @@ public class View {
 
 	}
 	
-	public void start(BirdDatabase birds, PersonDatabase people) {
+	public static void start(BirdDatabase birds, PersonDatabase people) {
 
 		Scanner scanner = new Scanner(System.in);
 		HashMap<Integer, String> numberOfOptions = new HashMap<Integer, String>();
@@ -90,8 +90,9 @@ public class View {
 	
 	public static void observation(Scanner scanner, BirdDatabase birds, PersonDatabase people) {
 		
-		Controller.checkBirds(UtilsIO.askForBirdWatched(scanner, birds), UtilsIO.askForPersonWhoWatchedIt(scanner, people), birds, people);
-		
+		if(UtilsIO.askForBirdWatched(scanner, birds)!=null)
+			Controller.checkBirds(UtilsIO.askForBirdWatched(scanner, birds), UtilsIO.askForPersonWhoWatchedIt(scanner, people), birds, people);
+
 	}
 	
 	public static void add(Scanner scanner, BirdDatabase birds) {	

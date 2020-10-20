@@ -32,13 +32,12 @@ public class BirdDatabase {
 			if(birdToShow.getName().equals(birdname))
 				return birdToShow;
 		}
-		System.out.println("Is not a bird!");
 		return null;
 		
 	}
 	
 	public void getStatistics() {
-		
+		System.out.println("Birds:");
 		for(Bird allbirds : birds) {
 			
 			System.out.println(allbirds);

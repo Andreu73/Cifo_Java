@@ -11,10 +11,9 @@ public class Main {
 		
 		BirdDatabase birds = new BirdDatabase("Birds DB");
 		PersonDatabase people = new PersonDatabase("People DB");
-		BirdDatabasePreFilling.preAddBirdToDatabase();
 		
-		View menu = new View();
-		menu.start(birds, people);
+		BirdDatabasePreFilling.preAddBirdToDatabase();
+		View.start(birds, people);
 
 	}
 }

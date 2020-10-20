@@ -29,8 +29,7 @@ public class Bird {
 
 	@Override
 	public String toString() {
-		return "Bird - name: " + name + " - latin name: " + latinName + " - observations: " + observations + "\n" +
-				this.listOfWatchers();
+		return name + " - latin name: " + latinName + " - observations: " + observations +"\nWatched by:\n" + this.listOfWatchers();
 	}
 	
 	public String listOfWatchers() {
@@ -38,7 +37,7 @@ public class Bird {
 		String watchersList = "";
 		for(Person watcher : watchers) {
 			
-			watchersList = watchersList + "Watcher: " + watcher + "\n";
+			watchersList = watchersList + watcher;
 		}
 		return  watchersList;
 	}
