@@ -17,15 +17,21 @@ public class Controller {
 		people.addWatcherToDB(person);
 	}
 	
-	public static void checkBirds(String birdobserved, String personwhowatchedit, BirdDatabase birds, PersonDatabase people) {  
+	public static Bird checkBirds(String birdobserved, BirdDatabase birds) {  
 	
-		Person personFound = people.showPerson(personwhowatchedit);
 		Bird birdFound = birds.showBird(birdobserved);
-		
-		if(birdFound!= null && personFound!= null)
-			birdFound.addObservation(birdFound, personFound);
-
+		if(birdFound==null)
+			System.out.println("not a bird");
+		return birdFound;
 	}
+	
+	public static Person checkPeople(String personwhowatchedit, PersonDatabase people) {  
+		
+		Person personFound = people.showPerson(personwhowatchedit);
+		if(personFound==null)
+			System.out.println("not a person");
+		return personFound;
+}
 	
 	public static void showBird(String birdToShow, BirdDatabase birds) {  
 		

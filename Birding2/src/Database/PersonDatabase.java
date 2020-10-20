@@ -2,6 +2,7 @@ package Database;
 
 import java.util.ArrayList;
 
+import Model.Bird;
 import Model.Person;
 
 public class PersonDatabase {
@@ -44,4 +45,5 @@ public class PersonDatabase {
 		}
 		return  "People:\n" + peopleList;
 	}
+	
 }

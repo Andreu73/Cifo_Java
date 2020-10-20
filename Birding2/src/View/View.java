@@ -6,6 +6,8 @@ import java.util.Scanner;
 import Controller.Controller;
 import Database.BirdDatabase;
 import Database.PersonDatabase;
+import Model.Bird;
+import Model.Person;
 import Utils.UtilsIO;
 
 public class View {
@@ -90,9 +92,15 @@ public class View {
 	
 	public static void observation(Scanner scanner, BirdDatabase birds, PersonDatabase people) {
 		
-		if(UtilsIO.askForBirdWatched(scanner, birds)!=null)
-			Controller.checkBirds(UtilsIO.askForBirdWatched(scanner, birds), UtilsIO.askForPersonWhoWatchedIt(scanner, people), birds, people);
+		String bird = UtilsIO.askForBirdWatched(scanner, birds);
+		Bird bird2 = Controller.checkBirds(bird, birds);
+		if(bird2!=null) {
+			String person = UtilsIO.askForPersonWhoWatchedIt(scanner, people);
+			Person person2 = Controller.checkPeople(person, people);
 
+			if(person2!=null)
+				bird2.addObservation(bird2, person2);
+		}
 	}
 	
 	public static void add(Scanner scanner, BirdDatabase birds) {	

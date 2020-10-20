@@ -28,8 +28,8 @@ public class UtilsIO {
 		
 		System.out.println("Name of the watcher?");
 		String nameOfThePerson = scanner.next();
-		if(people.showPerson(nameOfThePerson)==null)
-			System.out.println("Not found in DataBase!");
+//		if(people.showPerson(nameOfThePerson).equals(null))
+//			System.out.println("Not found in DataBase!");
 		return nameOfThePerson;
 		
 	}
@@ -54,8 +54,6 @@ public class UtilsIO {
 		
 		System.out.println("What was observed?");
 		String birdObserved = scanner.next();
-		if(birds.showBird(birdObserved)==null)
-			System.out.println("Is not a bird!");
 		return birdObserved;		
 	}
 	
