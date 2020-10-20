@@ -15,7 +15,7 @@ public class Subject {
 	
 	@Override
 	public String toString() {
-		return "Subject [name=" + name + ", courseOfStudy=" + courseOfStudy + ", numberOfStudents=" + numberOfStudents
+		return "Subject [name: " + name + ", course of study: " + courseOfStudy + ", number of students: " + numberOfStudents
 				+ "]";
 	}
 

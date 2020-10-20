@@ -3,16 +3,16 @@ package model;
 public class Card {
 	
 	protected int cardNumber;
-	private Date dateOfActivation;
-	protected String type;
+	protected Boolean isActivated;
+	protected Date dateOfActivation;
 	protected double balance;
 
 	
-	public Card(Date dateOfActivation, String type, double balance) {
+	public Card(Boolean isActivated, Date dateOfActivation, double balance) {
 		super();
 		this.cardNumber = hashCode();
+		this.isActivated = isActivated;
 		this.dateOfActivation = dateOfActivation;
-		this.type = type;
 		this.balance = 0.00d;
 	}
 
