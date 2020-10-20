@@ -18,15 +18,6 @@ public class Student extends Person{
 		subjects = new ArrayList<Subject>();
 		cards = new ArrayList<Card>();
 	}
-	
-	public static void studentDbSubjectPreFilling(Subject subject) {
-		
-		subjects.add(subject);
-	}
 
-	public static void studentDbCardPreFilling(Card card) {
-		
-		cards.add(card);
-	}
 	
 }
