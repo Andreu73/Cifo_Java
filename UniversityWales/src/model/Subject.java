@@ -7,13 +7,15 @@ public class Subject {
 	public String name;
 	public int courseOfStudy;
 	public int numberOfStudents;
+	public Lecturer lecturer;
 	public HashMap<Student, Double> studentsMark;
 	
-	public Subject(String name, int courseOfStudy, int numberOfStudents) {
+	public Subject(String name, int courseOfStudy, int numberOfStudents, Lecturer lecturer) {
 		super();
 		this.name = name;
 		this.courseOfStudy = courseOfStudy;
 		this.numberOfStudents = numberOfStudents;
+		this.lecturer = lecturer;
 		this.studentsMark = new HashMap<Student, Double>();
 	}
 

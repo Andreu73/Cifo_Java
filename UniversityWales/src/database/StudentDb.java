@@ -14,6 +14,11 @@ public class StudentDb {
 		this.name = name;
 	}
 	
+	public static void addStudentToDb(Student student) {
+		
+		students.add(student);
+	}
+	
 
 
 }
