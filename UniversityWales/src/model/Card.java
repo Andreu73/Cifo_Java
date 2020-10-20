@@ -14,6 +14,7 @@ public class Card {
 		this.isActivated = isActivated;
 		this.dateOfActivation = dateOfActivation;
 		this.balance = 0.00d;
+		
 	}
 
 }

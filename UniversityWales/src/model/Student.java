@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Student extends Person{
 
-	public float finalMark;
 	public int courseYear;
 	public Apartment apartment;
 	public Pet pet;
@@ -12,9 +11,8 @@ public class Student extends Person{
 	public static ArrayList<Card> cards;
 	
 	public Student(String name, int age, String countryOfOrigin, Date birthday, 
-			float finalMark, int courseYear, Apartment apartment, Pet pet) {
+			int courseYear, Apartment apartment, Pet pet) {
 		super(name, age, countryOfOrigin, birthday);
-		this.finalMark = finalMark;
 		this.courseYear = courseYear;
 		this.pet = pet;
 		subjects = new ArrayList<Subject>();
