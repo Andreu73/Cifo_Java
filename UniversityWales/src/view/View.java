@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 import controller.ApartmentController;
 import controller.StudentController;
+import controller.VaccineController;
 import service.ApartmentDb;
 import service.LecturerDb;
 import service.StudentDb;
+import service.VaccineDb;
 
 public class View {
 	
@@ -17,7 +19,8 @@ public class View {
 		options.put(1, "Add student");
 		options.put(2, "Add lecturer");
 		options.put(3, "Add apartment");
-		options.put(4, "Quit");
+		options.put(4, "Add vaccine");
+		options.put(5, "Quit");
 		
 		while(true) {
 			
@@ -78,4 +81,9 @@ public class View {
 		
 	}
 
+	public static void addVaccine(Scanner input, VaccineDb vaccineDb) {
+		
+		VaccineController.addVaccineToDb(input, vaccineDb);
+		
+	}
 }
