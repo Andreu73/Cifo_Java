@@ -8,13 +8,20 @@ public class Person implements IPersonAction{
 	protected String countryOfOrigin;
 	protected Date birthday;
 	
-	public Person(String name, int age, String countryOfOrigin, Date birthday) {
+	public Person(String name, String countryOfOrigin, Date birthday) {
 		super();
 		this.numberId = hashCode();
 		this.name = name;
-		this.age = age;
+		this.age = calculateAgeOfThePerson();
 		this.countryOfOrigin = countryOfOrigin;
 		this.birthday = birthday;
+	}
+	
+	public int calculateAgeOfThePerson() {
+		
+		String year = this.birthday.date.substring(4, 8);
+		int yearOFBirth = Integer.parseInt(year);
+		return yearOFBirth;
 	}
 
 	public void getPersonalUniversityEmail() {

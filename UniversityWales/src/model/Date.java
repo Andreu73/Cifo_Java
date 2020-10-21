@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Date {
 	
-	private String date;
-	private LocalDateTime now; 
+	public String date;
+	public LocalDateTime now; 
 	
 	public Date(String date){
 		

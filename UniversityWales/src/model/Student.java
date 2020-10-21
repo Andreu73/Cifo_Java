@@ -10,9 +10,9 @@ public class Student extends Person{
 	public static ArrayList<Subject> subjects;
 //	public static ArrayList<Card> cards;
 	
-	public Student(String name, int age, String countryOfOrigin, Date birthday, 
+	public Student(String name, String countryOfOrigin, Date birthday, 
 			int courseYear, Apartment apartment, Pet pet) {
-		super(name, age, countryOfOrigin, birthday);
+		super(name, countryOfOrigin, birthday);
 		this.courseYear = courseYear;
 		this.pet = pet;
 		subjects = new ArrayList<Subject>();
