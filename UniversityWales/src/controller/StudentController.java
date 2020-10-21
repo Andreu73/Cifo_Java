@@ -13,7 +13,6 @@ public class StudentController {
 		String countryOfOrigin = UtilsIOPerson.askForPersonCountryOfOrigin(input);
 		String birthday = UtilsIOPerson.askForPersonBirthday(input);
 		
-		
 	}
 
 }

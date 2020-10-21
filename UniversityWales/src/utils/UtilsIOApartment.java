@@ -4,16 +4,22 @@ import java.util.Scanner;
 
 public class UtilsIOApartment {
 	
-//	public static void executeTryCatch(int number) {
-//		
-//		try {
-//			
-//			int numberGiven = number;
-//			
-//		}catch(Exception e) {
-//			System.out.println("Type a number, please!");
-//		}
-//	}
+	public static int executeTryCatch(Scanner input) {
+		
+		int numberGiven = 0;
+		while(true) {
+			try {
+				
+				numberGiven = Integer.parseInt(input.next());
+				return numberGiven;
+				
+			}catch(Exception e) {
+				System.out.println("Type a number, please!");
+			}
+
+		}
+
+	}
 	
 	public static String askForBlockName(Scanner input) {
 	
@@ -25,40 +31,24 @@ public class UtilsIOApartment {
 
     public static int askForApartmentNumber(Scanner input) {
     	
-    	int apartmentNumber = 0;
-    	try {
-    	    System.out.println("Course year:");
-    	    apartmentNumber = Integer.parseInt(input.next());
-//    	executeTryCatch(apartmentNumber);
-    	}catch(Exception e) {
-    		System.out.println("Type a number, please!");
-    	}
-        return apartmentNumber;
+   	    System.out.println("Course year:");
+    	int apartmentNumber = executeTryCatch(input);
+   	    return apartmentNumber;
     	
     }
 	
     public static int askForRoomNumber(Scanner input) {
     	
-    	int roomNumber = 0;
-    	try {
     	System.out.println("Number of rooms:");
-    	    roomNumber = Integer.parseInt(input.next());
-    	}catch(Exception e) {
-    		System.out.println("Type a number, please!");
-    	}
+    	int roomNumber = executeTryCatch(input);
         return roomNumber;
     	
     }
     
     public static int askForRoomPlaces(Scanner input) {
     	
-    	int roomPlaces = 0;
-    	try {
     	System.out.println("Places in the room:");
-    	    roomPlaces = Integer.parseInt(input.next());
-    	}catch(Exception e) {
-    		System.out.println("Type a number, please!");
-    	}
+    	int roomPlaces = executeTryCatch(input);
         return roomPlaces;
     	
     }

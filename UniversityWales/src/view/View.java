@@ -3,17 +3,21 @@ package view;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import controller.ApartmentController;
 import controller.StudentController;
+import service.ApartmentDb;
+import service.LecturerDb;
 import service.StudentDb;
 
 public class View {
 	
-	public void start(Scanner input, StudentDb studentDb) {
+	public void start(Scanner input, StudentDb studentDb, ApartmentDb apartmentDb) {
 		
 		HashMap<Integer,String> options = new HashMap<>();
 		options.put(1, "Add student");
 		options.put(2, "Add lecturer");
-		options.put(3, "Quit");
+		options.put(3, "Add apartment");
+		options.put(4, "Quit");
 		
 		while(true) {
 			
@@ -26,6 +30,8 @@ public class View {
 //		if(option==2)
 //			addLecturer(input, studentDb);
 //		else if(option==3)
+		if(option==3)
+			addApartment(input, apartmentDb);
 			break;
 		
 		}
@@ -57,6 +63,18 @@ public class View {
 	public static void addStudent(Scanner input, StudentDb studentDb) {
 		
 		StudentController.addStudentToDb(input, studentDb);
+		
+	}
+	
+//	public static void addLecturer(Scanner input, LecturerDb lecturerDb) {
+//		
+//		StudentController.addLecturerToDb(input, lecturerDb);
+//		
+//	}
+	
+	public static void addApartment(Scanner input, ApartmentDb apartmentDb) {
+		
+		ApartmentController.addApartmentToDb(input, apartmentDb);
 		
 	}
 
