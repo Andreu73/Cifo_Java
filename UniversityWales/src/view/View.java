@@ -24,9 +24,9 @@ public class View {
 		
 		if(option==1)
 			addStudent(input, studentDb);
-		if(option==2)
-			addLecturer(input, studentDb);
-		else if(option==3)
+//		if(option==2)
+//			addLecturer(input, studentDb);
+//		else if(option==3)
 			break;
 		
 		}
