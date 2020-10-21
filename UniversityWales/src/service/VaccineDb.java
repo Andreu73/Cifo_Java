@@ -13,4 +13,9 @@ public class VaccineDb {
 		super();
 		this.name = name;
 	}
+	
+	public static void addVaccineToDb(Vaccine vaccine) {
+		
+		vaccines.add(vaccine);
+	}
 }
