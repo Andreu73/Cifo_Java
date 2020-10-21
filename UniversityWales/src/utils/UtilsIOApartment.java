@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 public class UtilsIOApartment {
 	
+//	public static void executeTryCatch(int number) {
+//		
+//		try {
+//			
+//			int numberGiven = number;
+//			
+//		}catch(Exception e) {
+//			System.out.println("Type a number, please!");
+//		}
+//	}
+	
 	public static String askForBlockName(Scanner input) {
 	
 		System.out.println("Name of the Block:");
@@ -16,8 +27,9 @@ public class UtilsIOApartment {
     	
     	int apartmentNumber = 0;
     	try {
-    	System.out.println("Course year:");
+    	    System.out.println("Course year:");
     	    apartmentNumber = Integer.parseInt(input.next());
+//    	executeTryCatch(apartmentNumber);
     	}catch(Exception e) {
     		System.out.println("Type a number, please!");
     	}

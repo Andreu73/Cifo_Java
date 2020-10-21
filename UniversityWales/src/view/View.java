@@ -3,7 +3,6 @@ package view;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import controller.PersonController;
 import controller.StudentController;
 import service.StudentDb;
 
