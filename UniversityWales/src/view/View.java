@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import controller.ApartmentController;
+import controller.LecturerController;
 import controller.PetController;
 import controller.StudentController;
 import controller.VaccineController;
@@ -15,7 +16,7 @@ import service.VaccineDb;
 
 public class View {
 	
-	public void start(Scanner input, StudentDb studentDb, ApartmentDb apartmentDb, PetDb petDb, VaccineDb vaccineDb) {
+	public void start(Scanner input, StudentDb studentDb, LecturerDb lecturerDb, ApartmentDb apartmentDb, PetDb petDb, VaccineDb vaccineDb) {
 		
 		HashMap<Integer,String> options = new HashMap<>();
 		options.put(1, "Add student");
@@ -34,17 +35,19 @@ public class View {
 			if(option==1) {
 				addStudent(input, studentDb);
 				break;
-	//		else if(option==2)
-	//			addLecturer(input, studentDb);
-	//			break;
+			}else if(option==2) {
+				addLecturer(input, lecturerDb);
+				break;
 			}else if(option==3) {
 				addApartment(input, apartmentDb);
 				break;
 			}else if(option==4) {
 				addPet(input, petDb);
 				break;
-			}else if(option==4) {
+			}else if(option==5) {
 				addVaccine(input, vaccineDb);
+				break;	
+			}else if(option==6) {
 				break;	
 			}
 		}
@@ -79,11 +82,11 @@ public class View {
 		
 	}
 	
-//	public static void addLecturer(Scanner input, LecturerDb lecturerDb) {
-//		
-//		StudentController.addLecturerToDb(input, lecturerDb);
-//		
-//	}
+	public static void addLecturer(Scanner input, LecturerDb lecturerDb) {
+		
+		LecturerController.addLecturerToDb(input, lecturerDb);
+		
+	}
 	
 	public static void addApartment(Scanner input, ApartmentDb apartmentDb) {
 		
