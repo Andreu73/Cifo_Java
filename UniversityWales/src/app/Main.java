@@ -2,7 +2,7 @@ package app;
 
 import java.util.Scanner;
 
-import database.StudentDb;
+import service.StudentDb;
 import view.View;
 
 public class Main {

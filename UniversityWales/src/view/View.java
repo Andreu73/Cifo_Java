@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import controller.PersonController;
 import controller.StudentController;
-import database.StudentDb;
+import service.StudentDb;
 
 public class View {
 	

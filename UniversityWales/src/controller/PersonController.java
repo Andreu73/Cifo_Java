@@ -2,7 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
-import database.StudentDb;
+import service.StudentDb;
 import utils.UtilsIOPerson;
 
 public class PersonController {
