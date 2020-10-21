@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 import model.Date;
 import model.Lecturer;
-import model.Student;
-import service.ApartmentDb;
-import service.PetDb;
+import service.LecturerDb;
 import service.SubjectDb;
 
 public class LecturerInitialFilling {
@@ -20,6 +18,7 @@ public class LecturerInitialFilling {
 	lecturers.add(new Lecturer("Lisa", "USA", new Date("11121980"), 15, 89, SubjectDb.subjects.get(2)));
 	lecturers.add(new Lecturer("Rosa", "Cuba", new Date("02071985"), 23, 3, SubjectDb.subjects.get(3)));
 	
+	LecturerDb.setLecturers(lecturers);
 	}
 
 }

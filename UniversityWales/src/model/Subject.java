@@ -3,7 +3,7 @@ package model;
 import java.util.HashMap;
 
 public class Subject {
-	
+
 	public String name;
 	public int courseOfStudy;
 	public int numberOfStudents;
@@ -18,6 +18,9 @@ public class Subject {
 		this.lecturer = lecturer;
 		this.studentsMark = studentsMark;
 	}
-
-
+	
+	public void setStudentsMark(HashMap<Student, Double> studentsMark) {
+		this.studentsMark = studentsMark;
+	}
+	
 }

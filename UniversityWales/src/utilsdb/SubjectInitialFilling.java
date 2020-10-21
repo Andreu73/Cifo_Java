@@ -7,6 +7,7 @@ import model.Student;
 import model.Subject;
 import service.LecturerDb;
 import service.StudentDb;
+import service.SubjectDb;
 
 public class SubjectInitialFilling {
 	
@@ -36,11 +37,15 @@ public class SubjectInitialFilling {
 	studentsMarkMaths.put(StudentDb.students.get(2), 6.0);
 	studentsMarkMaths.put(StudentDb.students.get(3), 4.4);
 	
+
 	ArrayList<Subject> subjects = new ArrayList<>();
 	subjects.add(new Subject("Linguistics", 2, 4, LecturerDb.lecturers.get(0), studentsMarkLinguistics));
 	subjects.add(new Subject("Physics", 3, 4, LecturerDb.lecturers.get(1), studentsMarkLinguistics));
 	subjects.add(new Subject("Computering", 2, 4, LecturerDb.lecturers.get(2), studentsMarkComputering));
 	subjects.add(new Subject("Mathematics", 2, 4, LecturerDb.lecturers.get(3), studentsMarkMaths));
+
+	SubjectDb.setSubjects(subjects);
+
 	
 	}
 }

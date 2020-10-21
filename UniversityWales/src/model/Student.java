@@ -7,7 +7,7 @@ public class Student extends Person{
 	public int courseYear;
 	public Apartment apartment;
 	public Pet pet;
-	public static ArrayList<Subject> subjects;
+	public ArrayList<Subject> subjects;
 //	public static ArrayList<Card> cards;
 	
 	public Student(String name, String countryOfOrigin, Date birthday, 
@@ -17,6 +17,10 @@ public class Student extends Person{
 		this.pet = pet;
 		subjects = new ArrayList<Subject>();
 //		cards = new ArrayList<Card>();
+	}
+
+	public void addSubjectsToStudent(Subject subject) {
+		this.subjects.add(subject);
 	}
 
 	

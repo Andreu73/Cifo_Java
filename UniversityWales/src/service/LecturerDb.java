@@ -20,4 +20,9 @@ public class LecturerDb {
 		lecturers.add(lecturer);
 	}
 
+	public static void setLecturers(ArrayList<Lecturer> lecturers) {
+		LecturerDb.lecturers = lecturers;
+	}
+
+	
 }

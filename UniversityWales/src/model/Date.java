@@ -6,11 +6,16 @@ import java.time.format.DateTimeFormatter;
 public class Date {
 	
 	public String date;
-	public LocalDateTime now; 
+	public LocalDateTime now;
 	
 	public Date(String date){
 		
 		this.date = date;
+		
+	}
+	
+	public Date(){
+		
 		this.now = LocalDateTime.now();
 		
 	}

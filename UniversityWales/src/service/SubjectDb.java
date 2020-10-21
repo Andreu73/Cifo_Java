@@ -19,4 +19,9 @@ public class SubjectDb {
 		subjects.add(subject);
 	}
 
+	public static void setSubjects(ArrayList<Subject> subjects) {
+		SubjectDb.subjects = subjects;
+	}
+
+	
 }
