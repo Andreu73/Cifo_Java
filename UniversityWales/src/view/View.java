@@ -3,10 +3,34 @@ package view;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import controller.PersonController;
 import controller.StudentController;
 import database.StudentDb;
 
 public class View {
+	
+	public void start(Scanner input, StudentDb studentDb) {
+		
+		HashMap<Integer,String> options = new HashMap<>();
+		options.put(1, "Add student");
+		options.put(2, "Add lecturer");
+		options.put(3, "Quit");
+		
+		while(true) {
+			
+		showOptionsMenu(options);
+		
+		int option = askOption(input);
+		
+		if(option==1)
+			addStudent(input, studentDb);
+		if(option==2)
+			addLecturer(input, studentDb);
+		else if(option==3)
+			break;
+		
+		}
+	}
 	
 	public int askOption(Scanner input) {
 		
@@ -30,26 +54,7 @@ public class View {
 		System.out.println("---------------------");
 	}
 	
-	public void start(Scanner input, StudentDb studentDb) {
-		
-		HashMap<Integer,String> options = new HashMap<>();
-		options.put(1, "Add student");
-		options.put(2, "Quit");
-		
-		while(true) {
-			
-		showOptionsMenu(options);
-		
-		int option = askOption(input);
-		
-		if(option==1)
-			addStudent(input, studentDb);
-		else if(option==2)
-			break;
-		
-		}
-	}
-	
+
 	public static void addStudent(Scanner input, StudentDb studentDb) {
 		
 		StudentController.addStudentToDb(input, studentDb);

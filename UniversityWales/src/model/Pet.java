@@ -6,7 +6,7 @@ public class Pet {
 	
 	public String petName;
 	public String kindOfAnimal;
-	public Date birthday;
+	public int age;
 	public ArrayList<Vaccine> vaccines;
 
 }
