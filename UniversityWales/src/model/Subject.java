@@ -10,13 +10,13 @@ public class Subject {
 	public Lecturer lecturer;
 	public HashMap<Student, Double> studentsMark;
 	
-	public Subject(String name, int courseOfStudy, int numberOfStudents, Lecturer lecturer) {
+	public Subject(String name, int courseOfStudy, int numberOfStudents, Lecturer lecturer, HashMap<Student,Double> studentsMark) {
 		super();
 		this.name = name;
 		this.courseOfStudy = courseOfStudy;
 		this.numberOfStudents = numberOfStudents;
 		this.lecturer = lecturer;
-		this.studentsMark = new HashMap<Student, Double>();
+		this.studentsMark = studentsMark;
 	}
 
 
