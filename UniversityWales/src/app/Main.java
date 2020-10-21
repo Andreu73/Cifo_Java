@@ -7,6 +7,7 @@ import service.LecturerDb;
 import service.PetDb;
 import service.StudentDb;
 import service.VaccineDb;
+import utilsdb.VaccineInitialFilling;
 import view.View;
 
 public class Main {
@@ -18,6 +19,7 @@ public class Main {
 		ApartmentDb apartmentDb = new ApartmentDb("Apartments Database");
 		PetDb petDb = new PetDb("Pets' DataBase");
 		VaccineDb vaccineDb = new VaccineDb("Vaccine Database");
+		VaccineInitialFilling.vaccineDbPreFilling();
 		
 		Scanner input = new Scanner(System.in);
 		View view = new View();

@@ -8,7 +8,7 @@ public class Student extends Person{
 	public Apartment apartment;
 	public Pet pet;
 	public static ArrayList<Subject> subjects;
-	public static ArrayList<Card> cards;
+//	public static ArrayList<Card> cards;
 	
 	public Student(String name, int age, String countryOfOrigin, Date birthday, 
 			int courseYear, Apartment apartment, Pet pet) {
@@ -16,7 +16,7 @@ public class Student extends Person{
 		this.courseYear = courseYear;
 		this.pet = pet;
 		subjects = new ArrayList<Subject>();
-		cards = new ArrayList<Card>();
+//		cards = new ArrayList<Card>();
 	}
 
 	

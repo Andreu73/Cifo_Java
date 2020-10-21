@@ -14,4 +14,10 @@ public class ApartmentDb {
 		this.name = name;
 	}
 
+	public static void setApartments(ArrayList<Apartment> apartments) {
+		ApartmentDb.apartments = apartments;
+	}
+	
+	
+
 }

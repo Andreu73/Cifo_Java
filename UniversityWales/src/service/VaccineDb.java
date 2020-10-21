@@ -18,4 +18,10 @@ public class VaccineDb {
 		
 		vaccines.add(vaccine);
 	}
+
+	public static void setVaccines(ArrayList<Vaccine> vaccines) {
+		VaccineDb.vaccines = vaccines;
+	}
+	
+
 }
