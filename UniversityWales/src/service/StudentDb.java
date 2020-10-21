@@ -18,6 +18,10 @@ public class StudentDb {
 		
 		students.add(student);
 	}
+
+	public static void setStudents(ArrayList<Student> students) {
+		StudentDb.students = students;
+	}
 	
 
 
