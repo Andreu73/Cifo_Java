@@ -6,9 +6,12 @@ import service.ApartmentDb;
 import service.LecturerDb;
 import service.PetDb;
 import service.StudentDb;
+import service.SubjectDb;
 import service.VaccineDb;
 import utilsdb.ApartmentInitialFilling;
+import utilsdb.LecturerInitialFilling;
 import utilsdb.PetInitialFilling;
+import utilsdb.SubjectInitialFilling;
 import utilsdb.VaccineInitialFilling;
 import view.View;
 
@@ -21,14 +24,17 @@ public class Main {
 		ApartmentDb apartmentDb = new ApartmentDb("Apartments Database");
 		PetDb petDb = new PetDb("Pets' DataBase");
 		VaccineDb vaccineDb = new VaccineDb("Vaccine Database");
+		SubjectDb subjectDb = new SubjectDb("Subject Database");
+		
 		VaccineInitialFilling.vaccineDbPreFilling();
 		PetInitialFilling.petDbPreFilling();
 		ApartmentInitialFilling.apartmentDbPreFilling();
-
+		LecturerInitialFilling.lecturerDbPreFilling();
+		SubjectInitialFilling.subjectDbPreFilling();
 		
 		Scanner input = new Scanner(System.in);
 		View view = new View();
-		view.start(input, studentDb, lecturerDb, apartmentDb, petDb, vaccineDb);
+		view.start(input, studentDb, apartmentDb, petDb, vaccineDb, lecturerDb, subjectDb);
 		
 	}
 

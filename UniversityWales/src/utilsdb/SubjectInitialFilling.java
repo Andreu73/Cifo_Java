@@ -10,7 +10,7 @@ import service.StudentDb;
 
 public class SubjectInitialFilling {
 	
-	public void subjectDbPreFilling() {
+	public static void subjectDbPreFilling() {
 		
 	HashMap<Student,Double> studentsMarkLinguistics = new HashMap<>();
 	studentsMarkLinguistics.put(StudentDb.students.get(0), 5.9);

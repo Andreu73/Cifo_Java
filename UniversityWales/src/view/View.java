@@ -12,11 +12,13 @@ import service.ApartmentDb;
 import service.LecturerDb;
 import service.PetDb;
 import service.StudentDb;
+import service.SubjectDb;
 import service.VaccineDb;
 
 public class View {
 	
-	public void start(Scanner input, StudentDb studentDb, LecturerDb lecturerDb, ApartmentDb apartmentDb, PetDb petDb, VaccineDb vaccineDb) {
+	public void start(Scanner input, StudentDb studentDb, ApartmentDb apartmentDb, 
+			PetDb petDb, VaccineDb vaccineDb, LecturerDb lecturerDb, SubjectDb subjectDb) {
 		
 		HashMap<Integer,String> options = new HashMap<>();
 		options.put(1, "Add student");
