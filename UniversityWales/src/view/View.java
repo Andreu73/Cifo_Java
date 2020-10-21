@@ -2,6 +2,8 @@ package view;
 
 import java.util.HashMap;
 import java.util.Scanner;
+
+import controller.StudentController;
 import database.StudentDb;
 
 public class View {
@@ -41,16 +43,16 @@ public class View {
 		int option = askOption(input);
 		
 		if(option==1)
-			addStudent();
+			addStudent(input, studentDb);
 		else if(option==2)
 			break;
 		
 		}
 	}
 	
-	public static void addStudent() {
+	public static void addStudent(Scanner input, StudentDb studentDb) {
 		
-//		StudentController.addStudentToDb();
+		StudentController.addStudentToDb(input, studentDb);
 		
 	}
 
