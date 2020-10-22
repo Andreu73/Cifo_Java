@@ -36,19 +36,14 @@ public class View {
 			
 			if(option==1) {
 				addStudent(input, studentDb);
-				break;
 			}else if(option==2) {
 				addLecturer(input, lecturerDb);
-				break;
 			}else if(option==3) {
 				addApartment(input, apartmentDb);
-				break;
 			}else if(option==4) {
 				addPet(input, petDb);
-				break;
 			}else if(option==5) {
 				addVaccine(input, vaccineDb);
-				break;	
 			}else if(option==6) {
 				break;	
 			}
