@@ -1,6 +1,6 @@
 package model;
 
-public class Airplane {
+public class Airplane implements IAirplane{
 	
 	public int idNumber;
 	public AirCompany airCompany;
