@@ -8,6 +8,7 @@ public class Airplane implements IAirplane{
 	public Airplane(AirCompany airCompany) {
 		super();
 		this.idNumber = hashCode();
+		this.airCompany = airCompany;
 	}
 
 	public int getIdNumber() {
@@ -16,7 +17,7 @@ public class Airplane implements IAirplane{
 
 	@Override
 	public String toString() {
-		return "Airplane - code number: " + idNumber + " company: " + airCompany + "\n";
+		return "Airplane - code number: " + idNumber + " - " + airCompany;
 	}
 
 	

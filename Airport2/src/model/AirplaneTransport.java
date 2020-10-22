@@ -11,7 +11,7 @@ public class AirplaneTransport extends Airplane{
 
 	@Override
 	public String toString() {
-		return "Cargo Airplane: load: " + load + "\n";
+		return super.toString() + "Cargo Airplane: load: " + load + "\n";
 	}
 
 
