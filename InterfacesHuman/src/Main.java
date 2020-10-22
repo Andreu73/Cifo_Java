@@ -11,7 +11,7 @@ public class Main {
 	
 	Animal misha = new Cat("Misha", 2, 7);
 	Animal catt = new Cat("Catty", 3, 4); 
-	
+
 	Dog doggy = new Dog("Doggy", 6, true);
 	Dog bobby = new Dog("Bobby", 7, false);
 	
@@ -22,6 +22,10 @@ public class Main {
 	
 	Teacher paul = new Teacher("Paul", 56, "Physics");
 	Teacher anne = new Teacher("Anne", 36, "Mathematics");
+	
+	Alien et = new Alien("ET", true);
+	Alien mac = new Alien("Mac", false);
+
 	
 	
 }
