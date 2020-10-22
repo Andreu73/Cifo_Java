@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import model.Airplane;
 import model.Airport;
 
 public class AirportDb {
@@ -23,6 +24,25 @@ public class AirportDb {
 		AirportDb.airports = airports;
 	}
 	
+	public static void listOfAirports() {
+		String list = "";
+		int count =1;
+		for(Airport airportList : airports) {
+			
+			list = list + count +". "+ airportList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 	
+	public static Airport selectAirport(int airportId) {
+
+		for(Airport airportList : airports) {
+			
+			if(airportList.getAirportId()==airportId)
+					return airportList;
+		}
+		return null;
+	} 
 
 }

@@ -9,6 +9,11 @@ public class AirplanePassengers extends Airplane{
 		this.numberOfPassengers = numberOfPassengers;
 	}
 
+	@Override
+	public String toString() {
+		return "Airplane Passengers [number of passengers: " + numberOfPassengers + "]\n";
+	}
+
 
 	
 

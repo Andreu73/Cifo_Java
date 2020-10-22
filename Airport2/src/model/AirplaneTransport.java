@@ -9,5 +9,10 @@ public class AirplaneTransport extends Airplane{
 		this.load = load;
 	}
 
+	@Override
+	public String toString() {
+		return "Airplane Transport [load: " + load + "]\n";
+	}
+
 
 }

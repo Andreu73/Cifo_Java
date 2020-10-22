@@ -6,8 +6,8 @@ public class AirCompanyUtilsIO {
 
 	public static String askForAirCompanyCode(Scanner input) {
 		
-		System.out.println("Code of the air company:");
-		String codeOfTheAirCompany = input.next();
-		return codeOfTheAirCompany;
+		System.out.println("Name of the air company:");
+		String nameOfTheAirCompany = input.next();
+		return nameOfTheAirCompany;
 	}
 }

@@ -22,11 +22,11 @@ public class AirplanePreFillingDb {
 		airplanes.add(new AirplanePassengers(AirCompanyDb.aircompanies.get(5), 500));
 		
 		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(0), 10000));
-		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(1), 10000));
-		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(2), 10000));
-		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(3), 10000));
-		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(4), 10000));
-		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(5), 10000));
+		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(1), 5000));
+		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(2), 60000));
+		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(3), 6500));
+		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(4), 3000));
+		airplanes.add(new AirplaneTransport(AirCompanyDb.aircompanies.get(5), 8000));
 		
 		AirplaneDb.setAirplanes(airplanes);
 		

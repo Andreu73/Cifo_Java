@@ -3,35 +3,42 @@ package controller;
 import java.util.Scanner;
 
 import model.Airplane;
-import model.AirplanePassengers;
 import model.Airport;
 import model.Flight;
+import service.AirplaneDb;
 import service.AirportDb;
 import service.FlightDb;
-import utilsIO.AirplaneUtilsIO;
-import utilsIO.AirportUtilsIO;
-import utilsIO.FlightUtilsIO;
 
 public class FlightController {
 	
 	public static void addFlightToDb(Scanner input) {
 		
-//		int airplanePassengers = 0;
-//		double airplaneLoad =0.00d;
-//		if(AirplaneUtilsIO.askForKindOfPlane(input)==1) {
-//			airplanePassengers = AirplaneUtilsIO.askForNumberOfPassengers(input);
-//			Airplane newAirplane = new AirplanePassengers(airplanePassengers);
-//		}
-//		else {
-//			airplaneLoad = AirplaneUtilsIO.askForAirplaneLoad(input);
-//			Airplane newAirplane = new AirplaneTransport(airplanePasseLoad);
-//		}
-//
-//		String airportOrigin = AirportUtilsIO
-//		String airportDestination = AirportUtilsIO
-//		
-//		Flight newFlight = new Flight(newAirplane, airportOrigin, airportDestination);
-//		FlightDb.addFlightToDb(newFlight);
+		AirplaneDb.listOfAirplanes();
+		
+		System.out.println("Select a number:");
+		int optionSelected1 = input.nextInt();
+		
+		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1).getIdNumber();
+		Airplane airplane = AirplaneDb.selectAirplane(airplaneSelected);
+		
+		AirportDb.listOfAirports();
+		
+		System.out.println("Select a number for Origin:");
+		int optionSelected2 = input.nextInt();
+		
+		int airportSelected = AirportDb.airports.get(optionSelected2).getAirportId();
+		Airport airportOrigin = AirportDb.selectAirport(airportSelected);		
+
+		AirportDb.listOfAirports();
+		
+		System.out.println("Select a number for Destination:");
+		int optionSelected3 = input.nextInt();
+		
+		int airportSelected2 = AirportDb.airports.get(optionSelected3).getAirportId();
+		Airport airportDestination = AirportDb.selectAirport(airportSelected2);
+		
+		Flight newFlight = new Flight(airplane, airportOrigin, airportDestination);
+		FlightDb.addFlightToDb(newFlight);
 		
 	}
 

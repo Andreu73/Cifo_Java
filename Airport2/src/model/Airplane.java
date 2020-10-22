@@ -10,4 +10,14 @@ public class Airplane {
 		this.idNumber = hashCode();
 	}
 
+	public int getIdNumber() {
+		return idNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "Airplane [idNumber: " + idNumber + ", Company: " + airCompany + "]\n";
+	}
+
+	
 }
