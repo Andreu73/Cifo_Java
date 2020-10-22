@@ -11,6 +11,7 @@ import service.VaccineDb;
 import utilsdb.ApartmentInitialFilling;
 import utilsdb.LecturerInitialFilling;
 import utilsdb.PetInitialFilling;
+import utilsdb.StudentInitialFilling;
 import utilsdb.SubjectInitialFilling;
 import utilsdb.VaccineInitialFilling;
 import view.View;
@@ -29,9 +30,10 @@ public class Main {
 		VaccineInitialFilling.vaccineDbPreFilling();
 		PetInitialFilling.petDbPreFilling();
 		ApartmentInitialFilling.apartmentDbPreFilling();
+		StudentInitialFilling.studentDbPreFilling();
 		LecturerInitialFilling.lecturerDbPreFilling();
 		SubjectInitialFilling.subjectDbPreFilling();
-		
+
 		Scanner input = new Scanner(System.in);
 		View view = new View();
 		view.start(input, studentDb, apartmentDb, petDb, vaccineDb, lecturerDb, subjectDb);

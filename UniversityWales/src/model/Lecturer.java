@@ -8,12 +8,11 @@ public class Lecturer extends Person{
 	public int parkingLotNumber;
 	public ArrayList<Subject> subjects;
 	
-	public Lecturer(String name, String countryOfOrigin, Date birthday, int officeNumber, int parkingLotNumber,
-			Subject subject) {
+	public Lecturer(String name, String countryOfOrigin, Date birthday, int officeNumber, int parkingLotNumber, ArrayList<Subject> subjects) {
 		super(name, countryOfOrigin, birthday);
 		this.officeNumber = officeNumber;
 		this.parkingLotNumber = parkingLotNumber;
-		this.subjects = new ArrayList<Subject>();
+		this.subjects = subjects;
 	}
 
 	public void setSubjects(ArrayList<Subject> subjects) {

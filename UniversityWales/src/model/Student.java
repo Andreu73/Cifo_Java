@@ -11,11 +11,12 @@ public class Student extends Person{
 //	public static ArrayList<Card> cards;
 	
 	public Student(String name, String countryOfOrigin, Date birthday, 
-			int courseYear, Apartment apartment, Pet pet) {
+			int courseYear, ArrayList<Subject> subjects, Apartment apartment, Pet pet) {
 		super(name, countryOfOrigin, birthday);
 		this.courseYear = courseYear;
+		this.apartment = apartment;
 		this.pet = pet;
-		subjects = new ArrayList<Subject>();
+		this.subjects = subjects;
 //		cards = new ArrayList<Card>();
 	}
 

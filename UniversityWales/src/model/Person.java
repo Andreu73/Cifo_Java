@@ -4,17 +4,17 @@ public class Person implements IPersonAction{
 	
 	protected int numberId;
 	protected String name;
-	protected int age;
 	protected String countryOfOrigin;
 	protected Date birthday;
+	protected int age;
 	
 	public Person(String name, String countryOfOrigin, Date birthday) {
 		super();
 		this.numberId = hashCode();
 		this.name = name;
-		this.age = calculateAgeOfThePerson();
 		this.countryOfOrigin = countryOfOrigin;
 		this.birthday = birthday;
+		this.age = calculateAgeOfThePerson();
 	}
 	
 	public int calculateAgeOfThePerson() {
