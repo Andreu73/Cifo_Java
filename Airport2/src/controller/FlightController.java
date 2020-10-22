@@ -11,30 +11,39 @@ import service.FlightDb;
 
 public class FlightController {
 	
+	public static int selectANumberTryCatch(Scanner input) {
+		
+		int optionSelected = 0;	
+		while(true) {
+			try {
+				System.out.println("Select a number:");
+				optionSelected = Integer.parseInt(input.next());
+				return optionSelected;
+			}catch(Exception e) {
+				System.out.println("Type a number, please!");
+			}
+
+		}
+
+	}
+	
 	public static void addFlightToDb(Scanner input) {
 		
 		AirplaneDb.listOfAirplanes();
 		
-		System.out.println("Select a number:");
-		int optionSelected1 = input.nextInt();
-		
-		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1).getIdNumber();
+		int airplaneSelected = AirplaneDb.airplanes.get(selectANumberTryCatch(input)-1).getIdNumber();
 		Airplane airplane = AirplaneDb.selectAirplane(airplaneSelected);
 		
 		AirportDb.listOfAirports();
 		
-		System.out.println("Select a number for Origin:");
-		int optionSelected2 = input.nextInt();
-		
-		int airportSelected = AirportDb.airports.get(optionSelected2).getAirportId();
+		System.out.println("Origin airport:");
+		int airportSelected = AirportDb.airports.get(selectANumberTryCatch(input)-1).getAirportId();
 		Airport airportOrigin = AirportDb.selectAirport(airportSelected);		
 
 		AirportDb.listOfAirports();
 		
-		System.out.println("Select a number for Destination:");
-		int optionSelected3 = input.nextInt();
-		
-		int airportSelected2 = AirportDb.airports.get(optionSelected3).getAirportId();
+		System.out.println("Destination airport:");		
+		int airportSelected2 = AirportDb.airports.get(selectANumberTryCatch(input)-1).getAirportId();
 		Airport airportDestination = AirportDb.selectAirport(airportSelected2);
 		
 		Flight newFlight = new Flight(airplane, airportOrigin, airportDestination);

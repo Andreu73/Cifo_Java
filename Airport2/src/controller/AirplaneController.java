@@ -12,6 +12,22 @@ import utilsIO.AirCompanyUtilsIO;
 import utilsIO.AirplaneUtilsIO;
 
 public class AirplaneController {
+	
+	public static int selectANumberTryCatch(Scanner input) {
+		
+		int optionSelected = 0;	
+		while(true) {
+			try {
+				System.out.println("Select a number:");
+				optionSelected = Integer.parseInt(input.next());
+				return optionSelected;
+			}catch(Exception e) {
+				System.out.println("Type a number, please!");
+			}
+
+		}
+
+	}
 		
 	public static void addAirplaneToDb(Scanner input) {
 
@@ -20,10 +36,7 @@ public class AirplaneController {
 		
 		AirCompanyDb.listOfAirCompanies();
 		
-		System.out.println("Select a number:");
-		int optionSelected = input.nextInt();
-		
-		String companySelected = AirCompanyDb.aircompanies.get(optionSelected-1).getAirCompanyName();
+		String companySelected = AirCompanyDb.aircompanies.get(selectANumberTryCatch(input)-1).getAirCompanyName();
 		AirCompany airCompany = AirCompanyDb.selectAirCompany(companySelected);
 
 		if(AirplaneUtilsIO.askForKindOfPlane(input)==1) {
@@ -43,10 +56,10 @@ public class AirplaneController {
 	public static void selectAirplane(Scanner input) {
 		
 		AirplaneDb.listOfAirplanes();
-		System.out.println("Select a number:");
-		int optionSelected1 = input.nextInt();
 		
-		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1-1).getIdNumber();
+		System.out.println("Select a number:");
+		
+		int airplaneSelected = AirplaneDb.airplanes.get(selectANumberTryCatch(input)-1).getIdNumber();
 		Airplane airplane = AirplaneDb.selectAirplane(airplaneSelected);
 		System.out.println(airplane);
 	}
