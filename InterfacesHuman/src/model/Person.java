@@ -6,8 +6,8 @@ import interfaces.IHumanAction;
 public class Person implements IHumanAction, IAction{
 	
 	public String name;
-	public String age;
-	public Person(String name, String age) {
+	public int age;
+	public Person(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;

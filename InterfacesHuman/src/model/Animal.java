@@ -5,16 +5,18 @@ import interfaces.IAction;
 public class Animal implements IAction{
 	
 	public String name;
+	public int age;
 
-	public Animal(String name) {
+	public Animal(String name, int age) {
 		super();
 		this.name = name;
+		this.age = age;
 	}
 	
 	
 	public void listen(){
 		
-		System.out.println("Listen to its Master!");
+		System.out.println("It listens to classical music");
 	}
 	
 	public void eat(){
@@ -24,7 +26,7 @@ public class Animal implements IAction{
 	
 	public void play(){
 		
-		System.out.println("It is old");
+		System.out.println("It plays with a ball");
 	}
 	
 	public void sleep(){
