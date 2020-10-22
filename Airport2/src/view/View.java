@@ -127,7 +127,6 @@ public class View {
 		
 		AirportController.selectAirport(input);
 	}	
-	
 	public static void selectFlight(Scanner input) {
 		
 		FlightController.selectFlight(input);
