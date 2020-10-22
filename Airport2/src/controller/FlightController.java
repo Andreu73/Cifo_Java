@@ -43,5 +43,16 @@ public class FlightController {
 		System.out.println("Flight added!");
 		
 	}
+	
+	public static void selectFlight(Scanner input) {
+		
+		FlightDb.listOfFlights();
+		System.out.println("Select a number:");
+		int optionSelected1 = input.nextInt();
+		
+		int flightSelected = FlightDb.flights.get(optionSelected1-1).flightCodeNumber;
+		Flight flight = FlightDb.selectFlight(flightSelected);
+		System.out.println(flight);
+	}
 
 }

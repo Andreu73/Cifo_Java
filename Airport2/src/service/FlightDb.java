@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import model.Airplane;
 import model.Airport;
 import model.Flight;
 
@@ -35,4 +36,14 @@ public class FlightDb {
 		System.out.println(list);
 	} 
 
+	public static Flight selectFlight(int flightNumber) {
+
+		for(Flight flightsList : flights) {
+			
+			if(flightsList.getFlightCodeNumber()==flightNumber)
+					return flightsList;
+		}
+		return null;
+	} 
+	
 }

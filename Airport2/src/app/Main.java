@@ -17,10 +17,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
-		AirportDb airportDb = new AirportDb("Airport Database");
-		AirplaneDb airplaneDb = new AirplaneDb("Airplane Database");
-		AirCompany airCompanyDb = new AirCompany("AirCompany Database");
-		FlightDb flightDb = new FlightDb("Flight Database");
+//		AirportDb airportDb = new AirportDb("Airport Database");
+//		AirplaneDb airplaneDb = new AirplaneDb("Airplane Database");
+//		AirCompany airCompanyDb = new AirCompany("AirCompany Database");
+//		FlightDb flightDb = new FlightDb("Flight Database");
 		
 		AirportPreFillingDb.preFillingAirportsToDb();
 		AirCompanyPreFillingDb.preFillingAirCompaniesToDb();
@@ -28,7 +28,7 @@ public class Main {
 		FlightPreFillingDb.preFillingFlightsToDb();
 		
 		View view = new View();
-		view.start(input, airportDb, airplaneDb, airCompanyDb, flightDb);
+		view.start(input);
 
 	}
 

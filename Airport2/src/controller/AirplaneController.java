@@ -46,7 +46,7 @@ public class AirplaneController {
 		System.out.println("Select a number:");
 		int optionSelected1 = input.nextInt();
 		
-		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1).getIdNumber();
+		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1-1).getIdNumber();
 		Airplane airplane = AirplaneDb.selectAirplane(airplaneSelected);
 		System.out.println(airplane);
 	}

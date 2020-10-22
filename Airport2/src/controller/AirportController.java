@@ -18,4 +18,15 @@ public class AirportController {
 		System.out.println("Airport added!");
 		
 	}
+	
+	public static void selectAirport(Scanner input) {
+		
+		AirportDb.listOfAirports();
+		System.out.println("Select a number:");
+		int optionSelected1 = input.nextInt();
+		
+		int airportSelected = AirportDb.airports.get(optionSelected1-1).getAirportId();
+		Airport airport = AirportDb.selectAirport(airportSelected);
+		System.out.println(airport);
+	}
 }

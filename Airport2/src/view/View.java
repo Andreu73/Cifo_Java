@@ -15,8 +15,7 @@ import service.FlightDb;
 
 public class View {
 	
-	public void start(Scanner input, AirportDb airportDb, AirplaneDb airplaneDb, 
-			AirCompany airCompanyDb, FlightDb flightDb) {
+	public void start(Scanner input) {
 		
 		HashMap<Integer,String> options = new HashMap<>();
 		options.put(1, "Add airplane");
@@ -41,7 +40,7 @@ public class View {
 			}else if(option==4) {
 				addFlight(input);
 			}else if(option==5) {
-				selectFlight(input);
+				selectData(input);
 			}else if(option==6) {
 				System.out.println("Menu off!");
 				break;
@@ -71,7 +70,7 @@ public class View {
 		System.out.println("---------------------");
 	}
 		
-	public static void selectFlight(Scanner input) {
+	public static void selectData(Scanner input) {
 		
 		HashMap<Integer,String> options = new HashMap<>();
 		options.put(1, "Select airplane");
@@ -88,8 +87,8 @@ public class View {
 			
 			if(option==1) {
 				selectAirplane(input);
-//			}else if(option==2) {
-//				select(input, airportDb);
+			}else if(option==2) {
+				selectAirport(input);
 			}else if(option==3) {
 				selectFlight(input);
 			}else if(option==4) {
@@ -124,7 +123,13 @@ public class View {
 		
 		AirplaneController.selectAirplane(input);
 	}
+	public static void selectAirport(Scanner input) {
+		
+		AirportController.selectAirport(input);
+	}	
 	
-	
-	
+	public static void selectFlight(Scanner input) {
+		
+		FlightController.selectFlight(input);
+	}	
 }
