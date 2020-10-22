@@ -38,9 +38,18 @@ public class AirplaneController {
 			AirplaneDb.addAirplaneToDb(newAirplaneTransport);
 			System.out.println("Cargo airplane added!");
 		}
-
-
-		
 	}
+
+	public static void selectAirplane(Scanner input) {
+		
+		AirplaneDb.listOfAirplanes();
+		System.out.println("Select a number:");
+		int optionSelected1 = input.nextInt();
+		
+		int airplaneSelected = AirplaneDb.airplanes.get(optionSelected1).getIdNumber();
+		Airplane airplane = AirplaneDb.selectAirplane(airplaneSelected);
+		System.out.println(airplane);
+	}
+
 
 }

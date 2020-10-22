@@ -25,7 +25,8 @@ public class AirCompany {
 
 	@Override
 	public String toString() {
-		return "AirCompany [CodeNumber: " + airCompanyCodeNumber + ", Name: " + airCompanyName + "]\n";
+		return "AirCompany: " + airCompanyName + "\n";
+		// code: " + airCompanyCodeNumber
 	}
 	
 	

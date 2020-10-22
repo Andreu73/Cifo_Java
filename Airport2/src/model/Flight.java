@@ -14,6 +14,14 @@ public class Flight {
 		this.airportOrigin = airportOrigin;
 		this.airportDestination = airportDestination;
 	}
+
+	@Override
+	public String toString() {
+		return "Flight - Flight code: " + flightCodeNumber + ", airplane: " + airplane + "origin: "
+				+ airportOrigin + "destination: " + airportDestination + "\n";
+	}
+	
+	
 	
 	
 }

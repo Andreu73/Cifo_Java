@@ -11,7 +11,7 @@ public class AirplanePassengers extends Airplane{
 
 	@Override
 	public String toString() {
-		return "Airplane Passengers [passengers: " + numberOfPassengers + "]\n";
+		return "Passengers airplane: passengers: " + numberOfPassengers + "\n";
 	}
 
 

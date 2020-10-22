@@ -16,7 +16,7 @@ public class Airplane implements IAirplane{
 
 	@Override
 	public String toString() {
-		return "Airplane [idNumber: " + idNumber + ", Company: " + airCompany + "]\n";
+		return "Airplane - code number: " + idNumber + " company: " + airCompany + "\n";
 	}
 
 	

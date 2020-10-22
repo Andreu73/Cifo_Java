@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import model.Airport;
 import model.Flight;
 
 public class FlightDb {
@@ -22,5 +23,16 @@ public class FlightDb {
 	public static void setFlights(ArrayList<Flight> flights) {
 		FlightDb.flights = flights;
 	}
+	
+	public static void listOfFlights() {
+		String list = "";
+		int count =1;
+		for(Flight flightList : flights) {
+			
+			list = list + count +". "+ flightList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 
 }

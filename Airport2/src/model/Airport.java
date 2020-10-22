@@ -23,7 +23,7 @@ public class Airport {
 
 	@Override
 	public String toString() {
-		return "Airport [City: " + airportCity + ", Code: " + airportCode + "]\n";
+		return "Airport: " + airportCity + " - " + airportCode + "\n";
 	}
 
 	

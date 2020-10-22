@@ -6,6 +6,7 @@ import java.util.Scanner;
 import controller.AirCompanyController;
 import controller.AirplaneController;
 import controller.AirportController;
+import controller.DataController;
 import controller.FlightController;
 import model.AirCompany;
 import service.AirplaneDb;
@@ -23,8 +24,7 @@ public class View {
 		options.put(3, "Add airport");
 		options.put(4, "Add flight");		
 		options.put(5, "Show data");
-		options.put(6, "Select flight");
-		options.put(7, "Quit");
+		options.put(6, "Quit");
 		
 		while(true) {
 			
@@ -40,11 +40,9 @@ public class View {
 				addAirport(input);
 			}else if(option==4) {
 				addFlight(input);
-//			}else if(option==5) {
-//				showData(input, flightDb);
-//			}else if(option==6) {
-//				selectFlight(input, flightDb, airportDb);
-			}else if(option==7) {
+			}else if(option==5) {
+				selectFlight(input);
+			}else if(option==6) {
 				System.out.println("Menu off!");
 				break;
 			}
@@ -73,38 +71,34 @@ public class View {
 		System.out.println("---------------------");
 	}
 		
-//	public static void selectFlight(Scanner input, FlightDb flightDb, AirportDb airportDb, AirplaneDb airplaneDb) {
-//		
-//		HashMap<Integer,String> options = new HashMap<>();
-//		options.put(1, "Select airplane");
-//		options.put(2, "Select origin airport");
-//		options.put(3, "Select destination airport");
-//		options.put(4, "Show flights");
-//		options.put(5, "Back");
-//		
-//		while(true) {
-//			
-//			showOptionsMenu(options);
-//			
-//			int option = askOption(input);
-//			
-//			if(option==1) {
-//				selectAirplane(input, airplaneDb);
-//				break;
+	public static void selectFlight(Scanner input) {
+		
+		HashMap<Integer,String> options = new HashMap<>();
+		options.put(1, "Select airplane");
+		options.put(2, "Select airport");
+		options.put(3, "Select flight");
+		options.put(4, "Show all data");
+		options.put(5, "Back");
+		
+		while(true) {
+			
+			showOptionsMenu(options);
+			
+			int option = askOption(input);
+			
+			if(option==1) {
+				selectAirplane(input);
 //			}else if(option==2) {
-//				selectOriginAirport(input, airportDb);
-//				break;
-//			}else if(option==3) {
-//				selectDestinationAirport(input, airportDb);
-//				break;
-//			}else if(option==4) {
-//				showFlights(input, flightDb);
-//				break;
-//			}else if(option==5) {
-//				break;
-//			}
-//		}
-//	}
+//				select(input, airportDb);
+			}else if(option==3) {
+				selectFlight(input);
+			}else if(option==4) {
+				showData(input);
+			}else if(option==5) {
+				break;
+			}
+		}
+	}
 	
 	public static void addAirport(Scanner input) {
 		
@@ -122,4 +116,15 @@ public class View {
 		
 		FlightController.addFlightToDb(input);
 	}
+	public static void showData(Scanner input) {
+		
+		DataController.showAllData();
+	}
+	public static void selectAirplane(Scanner input) {
+		
+		AirplaneController.selectAirplane(input);
+	}
+	
+	
+	
 }
