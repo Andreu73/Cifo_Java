@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class AirCompany {
 	
-	public String aircompanyCode;
+	public int airCompanyCodeNumber;
+	public String airCompanyCode;
 	public static ArrayList<Airplane> airplanes;
 	
-	public AirCompany(String aircompanyCode) {
+	public AirCompany(String airCompanyCode) {
 		super();
-		this.aircompanyCode = aircompanyCode;
+		this.airCompanyCodeNumber = hashCode();
+		this.airCompanyCode = airCompanyCode;
 		airplanes = new ArrayList<Airplane>();
 	}
 

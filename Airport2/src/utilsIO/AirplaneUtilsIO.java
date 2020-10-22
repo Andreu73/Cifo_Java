@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class AirplaneUtilsIO {
 	
-	public static void askForKindOfPlane(Scanner input) {
+	public static int askForKindOfPlane(Scanner input) {
 		
 		int option = 0;
 		while(option!=1 || option!=2) {
 		try {
-			System.out.println("Passenger Airplane(1) or Cargo Plane(2):");
+			System.out.println("---------------------");
+			System.out.println("1. Passenger airplane");
+			System.out.println("2. Cargo airplnae");
+			System.out.println("---------------------");
+			System.out.println("Select an option:");
 			option = Integer.parseInt(input.next());
 		}catch(Exception e) {
 			System.out.println("Type 1 or 2, please!");
 		}
-		if(option==1) {
-//			askForAirCompany(input);
-			askForNumberOfPassengers(input);}
-		else
-//			askForAirCompany(input);
-			askForAirplaneLoad(input);
 		}
+		return option;
+
 	}
 //
 //	public static String askForAirCompany(Scanner input) {
@@ -30,17 +30,32 @@ public class AirplaneUtilsIO {
 //		return airCompany;
 //	}
 	
-	public static String askForNumberOfPassengers(Scanner input) {
+	public static int askForNumberOfPassengers(Scanner input) {
 		
-		System.out.println("Number of passengers:");
-		String numberOfPassengers = input.next();
-		return numberOfPassengers;
+		int numberOfPassengers =0;
+		while(true) {
+			try {
+			System.out.println("Number of passengers:");
+			numberOfPassengers = Integer.parseInt(input.next());
+			return numberOfPassengers;
+			}catch(Exception e) {
+				System.out.println("Type a number, please!");
+			}
+		}
+
 	}
 	
-	public static String askForAirplaneLoad(Scanner input) {
+	public static double askForAirplaneLoad(Scanner input) {
 		
-		System.out.println("Load of the airplane:");
-		String loadOfTheAirplane = input.next();
-		return loadOfTheAirplane;
+		double loadOfTheAirplane =0;
+		while(true) {
+			try {
+			System.out.println("Load of the airplane:");
+			loadOfTheAirplane = Double.parseDouble(input.next());
+			return loadOfTheAirplane;
+			}catch(Exception e) {
+				System.out.println("Type a number, please!");
+			}
+		}
 	}
 }
