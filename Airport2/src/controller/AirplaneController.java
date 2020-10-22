@@ -23,7 +23,7 @@ public class AirplaneController {
 		System.out.println("Select a number:");
 		int optionSelected = input.nextInt();
 		
-		String companySelected = AirCompanyDb.aircompanies.get(optionSelected).getAirCompanyName();
+		String companySelected = AirCompanyDb.aircompanies.get(optionSelected-1).getAirCompanyName();
 		AirCompany airCompany = AirCompanyDb.selectAirCompany(companySelected);
 
 		if(AirplaneUtilsIO.askForKindOfPlane(input)==1) {

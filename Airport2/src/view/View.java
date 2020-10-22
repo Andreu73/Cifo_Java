@@ -22,7 +22,7 @@ public class View {
 		options.put(2, "Add air company");
 		options.put(3, "Add airport");
 		options.put(4, "Add flight");		
-		options.put(5, "Show data");
+		options.put(5, "Print data");
 		options.put(6, "Quit");
 		
 		while(true) {
@@ -76,7 +76,7 @@ public class View {
 		options.put(1, "Select airplane");
 		options.put(2, "Select airport");
 		options.put(3, "Select flight");
-		options.put(4, "Show all data");
+		options.put(4, "Print all data");
 		options.put(5, "Back");
 		
 		while(true) {
