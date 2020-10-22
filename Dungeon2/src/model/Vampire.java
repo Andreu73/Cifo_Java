@@ -2,11 +2,13 @@ package model;
 
 public class Vampire {
 	
+	public int id;
 	public String symbol;
 	public int x;
 	public int y;
 
 	public Vampire(String symbol) {
+		this.id = hashCode();
 		this.symbol = symbol;
 		this.x = placeObjectX();
 		this.y = placeObjectY();
