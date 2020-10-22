@@ -30,11 +30,13 @@ public class AirplaneController {
 			numberOfPassengers = AirplaneUtilsIO.askForNumberOfPassengers(input);
 			Airplane newAirplanePassengers = new AirplanePassengers(airCompany, numberOfPassengers);
 			AirplaneDb.addAirplaneToDb(newAirplanePassengers);
+			System.out.println("Passengers airplane added!");
 		}
 		else {
 			airplaneLoad = AirplaneUtilsIO.askForAirplaneLoad(input);
 			Airplane newAirplaneTransport = new AirplaneTransport(airCompany, airplaneLoad);
 			AirplaneDb.addAirplaneToDb(newAirplaneTransport);
+			System.out.println("Cargo airplane added!");
 		}
 
 

@@ -40,6 +40,8 @@ public class FlightController {
 		Flight newFlight = new Flight(airplane, airportOrigin, airportDestination);
 		FlightDb.addFlightToDb(newFlight);
 		
+		System.out.println("Flight added!");
+		
 	}
 
 }

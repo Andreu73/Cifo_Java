@@ -34,23 +34,18 @@ public class View {
 			
 			if(option==1) {
 				addAirplane(input);
-				break;
 			}else if(option==2) {
 				addAirCompany(input);
-				break;
 			}else if(option==3) {
 				addAirport(input);
-				break;
 			}else if(option==4) {
 				addFlight(input);
-				break;
 //			}else if(option==5) {
 //				showData(input, flightDb);
-//				break;
 //			}else if(option==6) {
 //				selectFlight(input, flightDb, airportDb);
-//				break;
 			}else if(option==7) {
+				System.out.println("Menu off!");
 				break;
 			}
 		}

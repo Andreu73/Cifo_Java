@@ -15,5 +15,7 @@ public class AirportController {
 		Airport newAirport = new Airport(airportCity, airportCode);
 		AirportDb.addAirportToDb(newAirport);
 		
+		System.out.println("Airport added!");
+		
 	}
 }

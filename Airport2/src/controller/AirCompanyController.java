@@ -13,7 +13,7 @@ public class AirCompanyController {
 		String airCompanyCode = AirCompanyUtilsIO.askForAirCompanyCode(input);
 		AirCompany newAirCompany = new AirCompany(airCompanyCode);
 		AirCompanyDb.addAirCompanyToDb(newAirCompany);
-		
+		System.out.println("Air company added!");
 	}
 
 }
