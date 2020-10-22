@@ -3,7 +3,8 @@ package app;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.ScreenObject;
+import model.Hunter;
+import model.Vampire;
 
 public class Main {
 
@@ -16,17 +17,15 @@ public class Main {
 	
 	Scanner input = new Scanner(System.in);
 	String[][] screen = new String[LENGTH][HEIGHT];
+	
 	ArrayList<Vampire> vampire = new ArrayList<>();
+	vampire.add(new Vampire("V"));
+	vampire.add(new Vampire("V"));
+	vampire.add(new Vampire("V"));
 	
-	ScreenObject vampire1 = new ScreenObject("V");
-	ScreenObject vampire2 = new ScreenObject("V");
-	ScreenObject hunter = new ScreenObject("@");
-	int x = vampire1.placeObjectX();
-	int y = vampire1.placeObjectY();
-	int z = vampire2.placeObjectX();
-	int zz = vampire2.placeObjectY();
+	Hunter hunter = new Hunter("@");
 	
-	updateScreen(screen, hunter,vampire1, x,y);
+	updateScreen(screen, hunter);
 
 
 	
@@ -35,29 +34,28 @@ public class Main {
 		String key = input.nextLine();
 		if(key.equals("a")) {
 			hunter.moveUp();
-			updateScreen(screen, hunter,vampire1,x, y);
+			updateScreen(screen, hunter);
 		}
 		else if(key.equals("s")) {
 			hunter.moveRight();
-			updateScreen(screen, hunter,vampire1,x,y);
+			updateScreen(screen, hunter);
 		}
 		else if(key.equals("d")) {
 			hunter.moveDown();		
-			updateScreen(screen, hunter,vampire1,x,y);
+			updateScreen(screen, hunter);
 		}
 		else if(key.equals("w")) {
 			hunter.moveLeft();
-			updateScreen(screen, hunter, vampire1,x, y);
+			updateScreen(screen, hunter);
 		}
 	}
 
 	
 	}
 	
-	public static void updateScreen(String[][] screen, ScreenObject hunter,ScreenObject vampire1, int x, int y){
+	public static void updateScreen(String[][] screen, Hunter hunter){
 		fillScreen(screen);
 		screen[hunter.getX()][hunter.getY()]=hunter.getSymbol();
-		screen[x][y]=vampire1.getSymbol();
 		
 		printScreen(screen);
 	}

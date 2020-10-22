@@ -1,12 +1,12 @@
 package model;
 
-public class ScreenObject {
+public class Hunter {
 	
 	public String symbol;
 	public int x;
 	public int y;
 
-	public ScreenObject(String symbol, int x, int y) {
+	public Hunter(String symbol) {
 		this.symbol = symbol;
 		this.x = 0;
 		this.y = 0;
