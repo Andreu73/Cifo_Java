@@ -23,8 +23,8 @@ public class Main {
 		FlightDb flightDb = new FlightDb("Flight Database");
 		
 		AirportPreFillingDb.preFillingAirportsToDb();
-		AirplanePreFillingDb.preFillingAirplanesToDb();
 		AirCompanyPreFillingDb.preFillingAirCompaniesToDb();
+		AirplanePreFillingDb.preFillingAirplanesToDb();
 		FlightPreFillingDb.preFillingFlightsToDb();
 		
 		View view = new View();

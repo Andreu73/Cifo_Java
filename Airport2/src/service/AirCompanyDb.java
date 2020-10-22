@@ -23,5 +23,25 @@ public class AirCompanyDb {
 		AirCompanyDb.aircompanies = aircompanies;
 	}
 	
+	public static void listOfAirCompanies() {
+		String list = "";
+		int count =1;
+		for(AirCompany airCompaniesList : aircompanies) {
+			
+			list = list + count +". "+ airCompaniesList;
+			count++;
+		}
+		System.out.println(list);
+	} 
+	
+	public static AirCompany selectAirCompany(String aircompany) {
+
+		for(AirCompany airCompaniesList : aircompanies) {
+			
+			if(airCompaniesList.getAirCompanyName().equals(aircompany))
+					return airCompaniesList;
+		}
+		return null;
+	} 
 
 }

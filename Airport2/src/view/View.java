@@ -1,6 +1,5 @@
 package view;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -34,23 +33,23 @@ public class View {
 			int option = askOption(input);
 			
 			if(option==1) {
-				addAirplane(input, airplaneDb);
+				addAirplane(input);
 				break;
 			}else if(option==2) {
-				addAirCompany(input, airCompanyDb);
+				addAirCompany(input);
 				break;
 			}else if(option==3) {
-				addAirport(input, airportDb);
+				addAirport(input);
 				break;
 			}else if(option==4) {
-				addFlight(input, flightDb, airportDb);
+				addFlight(input);
 				break;
-			}else if(option==5) {
-				showData(input, flightDb);
-				break;
-			}else if(option==6) {
-				selectFlight(input, flightDb, airportDb);
-				break;
+//			}else if(option==5) {
+//				showData(input, flightDb);
+//				break;
+//			}else if(option==6) {
+//				selectFlight(input, flightDb, airportDb);
+//				break;
 			}else if(option==7) {
 				break;
 			}
@@ -79,38 +78,38 @@ public class View {
 		System.out.println("---------------------");
 	}
 		
-	public static void selectFlight(Scanner input, FlightDb flightDb, AirportDb airportDb, AirplaneDb airplaneDb) {
-		
-		HashMap<Integer,String> options = new HashMap<>();
-		options.put(1, "Select airplane");
-		options.put(2, "Select origin airport");
-		options.put(3, "Select destination airport");
-		options.put(4, "Show flights");
-		options.put(5, "Back");
-		
-		while(true) {
-			
-			showOptionsMenu(options);
-			
-			int option = askOption(input);
-			
-			if(option==1) {
-				selectAirplane(input, airplaneDb);
-				break;
-			}else if(option==2) {
-				selectOriginAirport(input, airportDb);
-				break;
-			}else if(option==3) {
-				selectDestinationAirport(input, airportDb);
-				break;
-			}else if(option==4) {
-				showFlights(input, flightDb);
-				break;
-			}else if(option==5) {
-				break;
-			}
-		}
-	}
+//	public static void selectFlight(Scanner input, FlightDb flightDb, AirportDb airportDb, AirplaneDb airplaneDb) {
+//		
+//		HashMap<Integer,String> options = new HashMap<>();
+//		options.put(1, "Select airplane");
+//		options.put(2, "Select origin airport");
+//		options.put(3, "Select destination airport");
+//		options.put(4, "Show flights");
+//		options.put(5, "Back");
+//		
+//		while(true) {
+//			
+//			showOptionsMenu(options);
+//			
+//			int option = askOption(input);
+//			
+//			if(option==1) {
+//				selectAirplane(input, airplaneDb);
+//				break;
+//			}else if(option==2) {
+//				selectOriginAirport(input, airportDb);
+//				break;
+//			}else if(option==3) {
+//				selectDestinationAirport(input, airportDb);
+//				break;
+//			}else if(option==4) {
+//				showFlights(input, flightDb);
+//				break;
+//			}else if(option==5) {
+//				break;
+//			}
+//		}
+//	}
 	
 	public static void addAirport(Scanner input) {
 		
@@ -120,7 +119,6 @@ public class View {
 		
 		AirplaneController.addAirplaneToDb(input);
 	}
-	
 	public static void addAirCompany(Scanner input) {
 		
 		AirCompanyController.addAirCompanyToDb(input);

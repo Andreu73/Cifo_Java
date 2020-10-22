@@ -16,21 +16,22 @@ public class FlightController {
 	
 	public static void addFlightToDb(Scanner input) {
 		
-		int airplanePassengers = 0;
-		double airplaneLoad =0.00d;
-		if(AirplaneUtilsIO.askForKindOfPlane(input)==1) {
-			airplanePassengers = AirplaneUtilsIO.askForNumberOfPassengers(input);
-			Airplane newAirplane = new AirplanePassengers(airplanePassengers);
-		}
-		else {
-			airplaneLoad = AirplaneUtilsIO.askForAirplaneLoad(input);
-			Airplane newAirplane = new AirplaneTransport(airplanePasseLoad);
-		}			
-		String airportOrigin = FlightUtilsIO.askForAirportOrigin(input);
-		String airportDestination = FlightUtilsIO.askForAirportDestination(input);
-		
-		Flight newFlight = new Flight(newAirplane, airportOrigin, airportDestination);
-		FlightDb.addFlightToDb(newFlight);
+//		int airplanePassengers = 0;
+//		double airplaneLoad =0.00d;
+//		if(AirplaneUtilsIO.askForKindOfPlane(input)==1) {
+//			airplanePassengers = AirplaneUtilsIO.askForNumberOfPassengers(input);
+//			Airplane newAirplane = new AirplanePassengers(airplanePassengers);
+//		}
+//		else {
+//			airplaneLoad = AirplaneUtilsIO.askForAirplaneLoad(input);
+//			Airplane newAirplane = new AirplaneTransport(airplanePasseLoad);
+//		}
+//
+//		String airportOrigin = AirportUtilsIO
+//		String airportDestination = AirportUtilsIO
+//		
+//		Flight newFlight = new Flight(newAirplane, airportOrigin, airportDestination);
+//		FlightDb.addFlightToDb(newFlight);
 		
 	}
 

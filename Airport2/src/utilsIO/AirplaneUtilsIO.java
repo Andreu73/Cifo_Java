@@ -6,29 +6,23 @@ public class AirplaneUtilsIO {
 	
 	public static int askForKindOfPlane(Scanner input) {
 		
-		int option = 0;
-		while(option!=1 || option!=2) {
-		try {
-			System.out.println("---------------------");
-			System.out.println("1. Passenger airplane");
-			System.out.println("2. Cargo airplnae");
-			System.out.println("---------------------");
-			System.out.println("Select an option:");
-			option = Integer.parseInt(input.next());
-		}catch(Exception e) {
-			System.out.println("Type 1 or 2, please!");
-		}
+		int option =0;
+		while(option!=1 && option!=2) {
+			try {
+				System.out.println("---------------------");
+				System.out.println("1. Passenger airplane");
+				System.out.println("2. Cargo airplnae");
+				System.out.println("---------------------");
+				System.out.println("Select an option:");
+				option = Integer.parseInt(input.next());
+	
+			}catch(Exception e) {
+				System.out.println("Type 1 or 2, please!");
+			}
 		}
 		return option;
 
 	}
-//
-//	public static String askForAirCompany(Scanner input) {
-//		
-//		System.out.println("Company of the airplane:");
-//		String airCompany = input.next();
-//		return airCompany;
-//	}
 	
 	public static int askForNumberOfPassengers(Scanner input) {
 		
