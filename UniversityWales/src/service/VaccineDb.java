@@ -23,5 +23,15 @@ public class VaccineDb {
 		VaccineDb.vaccines = vaccines;
 	}
 	
+	public static void listTheVaccines() {
+		String list = "";
+		int count =1;
+		for(Vaccine vaccineList : vaccines) {
+			
+			list = list + count +". "+ vaccineList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 
 }
