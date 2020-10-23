@@ -45,6 +45,7 @@ public class View {
 			}else if(option==5) {
 				addVaccine(input, vaccineDb);
 			}else if(option==6) {
+				System.out.println("Menu !");
 				break;	
 			}
 		}
