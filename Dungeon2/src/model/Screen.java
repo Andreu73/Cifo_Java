@@ -7,6 +7,20 @@ public class Screen {
 	final static int LENGTH = 10;
 	final static int HEIGHT = 20;
 	public static String[][] screen = new String[LENGTH][HEIGHT];
+	
+	public static int randomNumberInLength() {
+		
+		int numberLength = (int)(Math.random()*(LENGTH - 1)) + 1;
+		return numberLength;
+		
+	}
+	
+	public static int randomNumberInHeight() {
+		
+		int numberHeight = (int)(Math.random()*(HEIGHT - 1)) + 1;
+		return numberHeight;
+		
+	}	
 
 	public static void updateScreen(String[][] screen, Hunter hunter, ArrayList<Vampire> vampireDb){
 		fillScreen(screen);

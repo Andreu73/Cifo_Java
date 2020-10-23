@@ -18,7 +18,7 @@ public class Main {
 
 	VampireDb vampireDb = new VampireDb("VampireDb");
 	VampireDb.addVampireToDb();
-	Hunter hunter = new Hunter("@");
+	Hunter hunter = new Hunter("Andreu","@");	
 	
 	Screen.updateScreen(Screen.screen, hunter, VampireDb.vampires);
 

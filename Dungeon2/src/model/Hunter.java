@@ -5,12 +5,13 @@ public class Hunter extends Object{
 	final int MOVES = 14;
 	
 	public static int pointsPlayer;
+	public static int x;
+	public static int y;
 	
-	public Hunter(String name, String symbol) {
-		super(name, symbol);
+	
 	
 		pointsPlayer = 0;
-	}
+	
 
 	@Override
 	public int placeObjectInitialX() {

@@ -20,7 +20,7 @@ public class VampireDb {
 
 		for(int i = 0; i< VAMPIRES; i++) {
 			
-			Vampire newVampire = new Vampire("V");
+			Vampire newVampire = new Vampire("Vampire1","V", 3);
 			vampires.add(newVampire);
 		}
 	}

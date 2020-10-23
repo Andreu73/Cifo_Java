@@ -15,19 +15,9 @@ public class Object implements IObject{
 		this.id = hashCode();
 		this.name = name;
 		this.symbol = symbol;
-		this.x = placeObjectInitialX();
-		this.y = placeObjectInitialY();
+		this.x = Screen.randomNumberInLength();
+		this.y = Screen.randomNumberInHeight();
 	}
 
-	public int placeObjectInitialX() {
-
-		int x = (int)(Math.random()*(10 - 1)) + 1;
-		return x;
-	}
-	
-	public int placeObjectInitialY() {
-		int y = (int)(Math.random()*(10 - 1)) + 1;
-		return y;
-	}
 	
 }
