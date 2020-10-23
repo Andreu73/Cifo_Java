@@ -10,14 +10,10 @@ import model.Hunter;
 import model.Screen;
 import service.VampireDb;
 
-public class Main implements KeyListener{
+public class Main {
 	
-
-
 	public static void main(String[] args) {
 
-	final int MOVES = 14;
-	
 	Scanner input = new Scanner(System.in);
 
 	VampireDb vampireDb = new VampireDb("VampireDb");

@@ -11,7 +11,6 @@ public class Screen {
 	public static void updateScreen(String[][] screen, Hunter hunter, ArrayList<Vampire> vampireDb){
 		fillScreen(screen);
 		screen[hunter.getX()][hunter.getY()]=hunter.getSymbol();
-		
 		for(Vampire vampireList : vampireDb) {
 			
 			screen[vampireList.getX()][vampireList.getY()]=vampireList.getSymbol();

@@ -1,46 +1,28 @@
 package model;
 
-public class Hunter {
+public class Hunter extends Object{
 	
-	public String symbol;
-	public int x;
-	public int y;
-
-	public Hunter(String symbol) {
-		this.symbol = symbol;
-		this.x = 0;
-		this.y = 0;
+	final int MOVES = 14;
+	
+	public static int pointsPlayer;
+	
+	public Hunter(String name, String symbol) {
+		super(name, symbol);
+	
+		pointsPlayer = 0;
 	}
-	
-	public int getX() {
+
+	@Override
+	public int placeObjectInitialX() {
+
+		int x = 0;
 		return x;
 	}
 
-
-	public int getY() {
+	@Override
+	public int placeObjectInitialY() {
+		int y = 0;
 		return y;
 	}
 
-
-	public String getSymbol() {
-		return symbol;
-	}
-	
-
-	public void moveRight() {
-		
-		this.x++;
-	}
-	public void moveLeft() {
-		
-		this.x--;
-	}
-	public void moveUp() {
-		
-		this.y--;
-	}
-	public void moveDown() {
-		
-		this.y++;
-	}
 }
