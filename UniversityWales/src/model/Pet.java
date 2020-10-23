@@ -17,4 +17,13 @@ public class Pet {
 		vaccines = new ArrayList<Vaccine>();
 	}
 
+	@Override
+	public String toString() {
+		return "Pet [petName=" + petName + ", kindOfAnimal=" + kindOfAnimal + ", age=" + age + "]\n";
+	}
+
+	
+	
+	
+	
 }

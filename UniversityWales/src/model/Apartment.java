@@ -16,4 +16,14 @@ public class Apartment {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Apartment [blockName=" + blockName + ", apartmentNumber=" + apartmentNumber + ", roomNumber="
+				+ roomNumber + ", roomPlaces=" + roomPlaces + "]\n";
+	}
+
+	
+	
+	
+	
 }

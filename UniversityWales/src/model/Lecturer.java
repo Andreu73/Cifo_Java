@@ -17,6 +17,14 @@ public class Lecturer extends Person{
 
 	public void setSubjects(ArrayList<Subject> subjects) {
 		this.subjects = subjects;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Lecturer [officeNumber=" + officeNumber + ", parkingLotNumber=" + parkingLotNumber + ", subjects="
+				+ subjects + "]\n";
 	} 
 
+	
+	
 }

@@ -22,5 +22,15 @@ public class Subject {
 	public void setStudentsMark(HashMap<Student, Double> studentsMark) {
 		this.studentsMark = studentsMark;
 	}
+
+	@Override
+	public String toString() {
+		return "Subject [name=" + name + ", courseOfStudy=" + courseOfStudy + ", numberOfStudents=" + numberOfStudents
+				+ ", lecturer=" + lecturer + ", studentsMark=" + studentsMark + "]\n";
+	}
+	
+	
+	
+	
 	
 }

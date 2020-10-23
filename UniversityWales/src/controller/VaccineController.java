@@ -19,4 +19,11 @@ public class VaccineController {
 		VaccineDb.addVaccineToDb(newVaccine);
 		
 	}
+	
+	
+	public static void listTheVaccines() { 
+	
+	VaccineDb.listTheVaccines();
+	
+	}
 }

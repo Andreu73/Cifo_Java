@@ -24,5 +24,11 @@ public class Student extends Person{
 		this.subjects.add(subject);
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "Student [courseYear=" + courseYear + ", apartment=" + apartment + ", pet=" + pet + ", subjects="
+				+ subjects + "]\n";
+	}
+
 	
 }

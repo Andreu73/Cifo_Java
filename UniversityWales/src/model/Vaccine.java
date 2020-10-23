@@ -13,4 +13,12 @@ public class Vaccine {
 		this.vaccineResult = vaccineResult;
 	}
 
+	@Override
+	public String toString() {
+		return "Vaccine [vaccineDay=" + vaccineDay + ", kindOfVaccine=" + kindOfVaccine + ", vaccineResult="
+				+ vaccineResult + "]\n";
+	}
+
+	
+	
 }

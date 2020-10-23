@@ -3,6 +3,7 @@ package service;
 import java.util.ArrayList;
 
 import model.Student;
+import model.Vaccine;
 
 public class StudentDb {
 	
@@ -23,6 +24,15 @@ public class StudentDb {
 		StudentDb.students = students;
 	}
 	
-
+	public static void listTheStudents() {
+		String list = "";
+		int count =1;
+		for(Student studentList : students) {
+			
+			list = list + count +". "+ studentList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 
 }

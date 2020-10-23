@@ -14,5 +14,10 @@ public class StudentController {
 		String birthday = UtilsIOPerson.askForPersonBirthday(input);
 		
 	}
+	
+	public static void listTheStudents() {
+		
+		StudentDb.listTheStudents();
+	}
 
 }

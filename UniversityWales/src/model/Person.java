@@ -29,4 +29,14 @@ public class Person implements IPersonAction{
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Person [numberId=" + numberId + ", name=" + name + ", countryOfOrigin=" + countryOfOrigin
+				+ ", birthday=" + birthday + ", age=" + age + "]\n";
+	}
+
+	
+	
+	
+	
 }

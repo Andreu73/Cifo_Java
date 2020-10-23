@@ -75,11 +75,11 @@ public class View {
 			if(option==1) {
 				showStudents(input, studentDb);
 			}else if(option==2) {
-				showLecturers(input, lecturerDb);
-			}else if(option==3) {
-				showApartments(input, apartmentDb);
-			}else if(option==4) {
-				showPets(input, petDb);
+//				showLecturers(input, lecturerDb);
+//			}else if(option==3) {
+//				showApartments(input, apartmentDb);
+//			}else if(option==4) {
+//				showPets(input, petDb);
 			}else if(option==5) {
 				showVaccines(input, vaccineDb);
 			}else if(option==7) {
@@ -143,7 +143,13 @@ public class View {
 	
 	public static void showVaccines(Scanner input, VaccineDb vaccineDb) {
 		
-//		VaccineDb.listTheVaccines();
+		VaccineController.listTheVaccines();
+		
+	}
+	
+	public static void showStudents(Scanner input, StudentDb studentDb) {
+		
+		StudentController.listTheStudents();
 		
 	}
 	
