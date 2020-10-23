@@ -10,6 +10,7 @@ import service.VampireDb;
 public class Main {
 	
 	final public static int VAMPIRES = 3;
+	final public static int HUNTERS = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
 	final public static int LENGTH = 3;
@@ -20,7 +21,7 @@ public class Main {
 	Scanner input = new Scanner(System.in);
 
 	VampireDb vampireDb = new VampireDb("VampireDb");
-//	VampireDb.addVampireToDb();
+	ScreenObject.addVampireToDb();
 	
 	HunterDb hunterDb = new HunterDb("HunterDb");
 	Hunter hunter1 = new Hunter("Andreu","@");
@@ -28,8 +29,6 @@ public class Main {
 	
 	System.out.println(VampireDb.listAllVampires());
 	System.out.println(HunterDb.listAllHunters());
-	
-	ScreenObject.getKey();
 	
 	
 //	Screen.updateScreen(Screen.screen, hunter, VampireDb.vampires);

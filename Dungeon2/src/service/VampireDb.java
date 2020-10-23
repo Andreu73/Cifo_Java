@@ -17,14 +17,10 @@ public class VampireDb {
 		vampires = new ArrayList<>();
 	}
 	
-//	public static void addVampireToDb() {
-//
-//		for(int i = 0; i < Main.VAMPIRES; i++) {
-//			
-//			Vampire newVampire = new Vampire("Vampire","V", 3);
-//			vampires.add(newVampire);
-//		}
-//	}
+	public static void addVampireToDb(Vampire vampire) {
+
+			vampires.add(vampire);
+	}
 	
 	public static String listAllVampires() {
 		

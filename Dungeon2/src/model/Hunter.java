@@ -2,8 +2,8 @@ package model;
 
 public class Hunter extends ScreenObject{
 	
-	public int x = 0;
-	public int y = 0;
+//	public int x = 0;
+//	public int y = 0;
 	public static int pointsHunter;
 	
 	public Hunter(String name, String symbol) {
