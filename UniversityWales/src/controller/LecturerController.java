@@ -14,4 +14,11 @@ public class LecturerController {
 		
 	}
 	
+	
+	public static void listOfTheLecturers() {
+		
+		LecturerDb.listTheLecturers();
+		
+	}
+	
 }

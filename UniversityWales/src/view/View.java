@@ -64,7 +64,7 @@ public class View {
 		options.put(3, "Show apartments");
 		options.put(4, "Show pets");
 		options.put(5, "Show vaccines");
-				options.put(7, "Quit");
+		options.put(6, "Quit");
 		
 		while(true) {
 			
@@ -73,16 +73,17 @@ public class View {
 			int option = askOption(input);
 			
 			if(option==1) {
-				showStudents(input, studentDb);
+				showStudents();
 			}else if(option==2) {
-//				showLecturers(input, lecturerDb);
-//			}else if(option==3) {
-//				showApartments(input, apartmentDb);
-//			}else if(option==4) {
-//				showPets(input, petDb);
+				showLecturers();
+			}else if(option==3) {
+				showApartments();
+			}else if(option==4) {
+				showPets();
 			}else if(option==5) {
-				showVaccines(input, vaccineDb);
-			}else if(option==7) {
+				showVaccines();
+			}else if(option==6) {
+				start();
 				break;	
 			}
 		}
@@ -141,16 +142,33 @@ public class View {
 		
 	}
 	
-	public static void showVaccines(Scanner input, VaccineDb vaccineDb) {
+	public static void showVaccines() {
 		
 		VaccineController.listTheVaccines();
 		
 	}
 	
-	public static void showStudents(Scanner input, StudentDb studentDb) {
+	public static void showStudents() {
 		
 		StudentController.listTheStudents();
 		
 	}
+
+	public static void showLecturers() {
+		
+		LecturerController.listOfTheLecturers();
+		
+	}
 	
+	public static void showApartments() {
+		
+		ApartmentController.listTheApartments();
+		
+	}
+	
+	public static void showPets() {
+		
+		PetController.listThePets();
+		
+	}
 }

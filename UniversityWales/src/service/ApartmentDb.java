@@ -3,6 +3,7 @@ package service;
 import java.util.ArrayList;
 
 import model.Apartment;
+import model.Vaccine;
 
 public class ApartmentDb {
 	
@@ -19,5 +20,14 @@ public class ApartmentDb {
 	}
 	
 	
-
+	public static void listTheApartments() {
+		String list = "";
+		int count =1;
+		for(Apartment apartmentList : apartments) {
+			
+			list = list + count +". "+ apartmentList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 }

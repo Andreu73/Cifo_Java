@@ -14,5 +14,11 @@ public class PetController {
 		int petAge = UtilsIOPet.askForPetAge(input);
 		
 	}
+	
+	public static void listThePets() { 
+		
+	PetDb.listThePets();
+	
+	}
 
 }

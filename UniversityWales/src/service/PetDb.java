@@ -24,5 +24,16 @@ public class PetDb {
 		PetDb.pets = pets;
 	}
 	
+	
+	public static void listThePets() {
+		String list = "";
+		int count =1;
+		for(Pet petList : pets) {
+			
+			list = list + count +". "+ petList;
+			count++;
+		}
+		System.out.println(list);
+	} 
 
 }

@@ -3,6 +3,7 @@ package controller;
 import java.util.Scanner;
 
 import service.ApartmentDb;
+import service.VaccineDb;
 import utils.UtilsIOApartment;
 
 public class ApartmentController {
@@ -15,5 +16,12 @@ public class ApartmentController {
 	int roomPlaces = UtilsIOApartment.askForRoomPlaces(input);
 	
 	}
+	
+	public static void listTheApartments() { 
+		
+	ApartmentDb.listTheApartments();
+	
+	}
+	
 	
 }

@@ -31,4 +31,12 @@ public class Date {
 				"-" + this.date.substring(4, 8);
 		return formattedDate;
 	}
+
+	@Override
+	public String toString() {
+		return "Date [date=" + date + "]";
+	}
+	
+	
+	
 }
