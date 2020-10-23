@@ -19,5 +19,6 @@ public class Object implements IObject{
 		this.y = Screen.randomNumberInHeight();
 	}
 
+
 	
 }

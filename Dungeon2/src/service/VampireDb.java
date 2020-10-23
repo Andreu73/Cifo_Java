@@ -25,4 +25,16 @@ public class VampireDb {
 		}
 	}
 	
+	public static String listAllVampires() {
+		
+		String listOfVampires = "";
+		int count=0;
+		for(Vampire vamps : vampires) {
+			
+			listOfVampires = count + ". " +listOfVampires + vamps +"\n";
+			count++;
+		}
+		return listOfVampires;
+	}
+	
 }
