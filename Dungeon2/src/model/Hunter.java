@@ -1,11 +1,9 @@
 package model;
 
-public class Hunter extends Object{
+public class Hunter extends ScreenObject{
 	
-	final int MOVES = 14;
-	
-	public int x = placeObjectInitialX();
-	public int y = placeObjectInitialY();
+	public int x = 0;
+	public int y = 0;
 	public static int pointsHunter;
 	
 	public Hunter(String name, String symbol) {
@@ -13,15 +11,16 @@ public class Hunter extends Object{
 		pointsHunter = 0;
 	}
 
-	public int placeObjectInitialX() {
-
-		int x = 0;
-		return x;
-	}
-
-	public int placeObjectInitialY() {
-		int y = 0;
-		return y;
-	}
+//	@Override
+//	public int placeObjectInitialX() {
+//
+//		int x = 0;
+//		return x;
+//	}
+//
+//	public int placeObjectInitialY() {
+//		int y = 0;
+//		return y;
+//	}
 
 }

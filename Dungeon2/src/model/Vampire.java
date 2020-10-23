@@ -1,6 +1,6 @@
 package model;
 
-public class Vampire extends Object{
+public class Vampire extends ScreenObject{
 	
 	public int pointsObject;
 	public static int x;
@@ -10,7 +10,10 @@ public class Vampire extends Object{
 		super(name, symbol);
 		this.pointsObject = pointsObject;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Vampire [pointsObject=" + pointsObject + "]";
+	}
 	
-
-
 }

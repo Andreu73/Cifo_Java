@@ -1,12 +1,13 @@
 package service;
 
 import java.util.ArrayList;
+
+import app.Main;
 import model.Vampire;
 
 public class VampireDb {
 
-	final static int VAMPIRES = 3;
-	final static boolean VAMPIRES_MOVE = true;
+
 	public String name;
 	public static ArrayList<Vampire> vampires ;
 	
@@ -16,22 +17,22 @@ public class VampireDb {
 		vampires = new ArrayList<>();
 	}
 	
-	public static void addVampireToDb() {
-
-		for(int i = 0; i< VAMPIRES; i++) {
-			
-			Vampire newVampire = new Vampire("Vampire1","V", 3);
-			vampires.add(newVampire);
-		}
-	}
+//	public static void addVampireToDb() {
+//
+//		for(int i = 0; i < Main.VAMPIRES; i++) {
+//			
+//			Vampire newVampire = new Vampire("Vampire","V", 3);
+//			vampires.add(newVampire);
+//		}
+//	}
 	
 	public static String listAllVampires() {
 		
 		String listOfVampires = "";
-		int count=0;
+		int count=1;
 		for(Vampire vamps : vampires) {
 			
-			listOfVampires = count + ". " +listOfVampires + vamps +"\n";
+			listOfVampires = listOfVampires + count + ". "  +vamps +"\n";
 			count++;
 		}
 		return listOfVampires;
