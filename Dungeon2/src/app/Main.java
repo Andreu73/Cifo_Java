@@ -1,6 +1,7 @@
 package app;
 
 import java.util.Scanner;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -9,6 +10,8 @@ import model.Screen;
 import service.VampireDb;
 
 public class Main implements KeyListener{
+	
+
 
 	public static void main(String[] args) {
 		
@@ -21,7 +24,7 @@ public class Main implements KeyListener{
 	Hunter hunter = new Hunter("@");
 	
 	Screen.updateScreen(Screen.screen, hunter, VampireDb.vampires);
-//	keyPressed(e, hunter);
+	keyPressed(e, hunter);
 
 	}
 	
@@ -70,5 +73,7 @@ public class Main implements KeyListener{
 	    }
 
 	}
+	
+
 
 }
