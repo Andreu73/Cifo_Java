@@ -7,12 +7,12 @@ public class Screen {
 
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGTH];
 
-	public static void updateScreen(String[][] screen, Hunter hunter, VampireDb vampireDb){
+	public static void updateScreen(String[][] screen, VampireDb vampireDb){
 		fillScreen(screen);
-		screen[hunter.getX()][hunter.getY()]=hunter.getSymbol();
-		for(Vampire vampireList : vampireDb) {
+
+		for(Vampire vampireList : VampireDb.vampires) {
 			
-			screen[vampireList.getX()][vampireList.getY()]=vampireList.getSymbol();
+			screen[vampireList.positionxy.getX()][vampireList.positionxy.getY()]=vampireList.getSymbol();
 		}
 		printScreen(screen);
 	}

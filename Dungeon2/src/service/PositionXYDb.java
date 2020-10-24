@@ -12,19 +12,20 @@ public class PositionXYDb {
 	public PositionXYDb(String name) {
 		super();
 		this.name = name;
+		positionsXY = new ArrayList<>();
 	}
 
-	public static Boolean checkPositionXYToDb(String[][] positionXY) {
-
-		for(PositionXY position : positionsXY) {
-			
-			if(position.getPosition().equals(positionXY)) {
-				
-				return true;
-			}
-		}
-		return false;
-	}
+//	public static Boolean checkPositionXYToDb(String[][] positionXY) {
+//
+//		for(PositionXY position : positionsXY) {
+//			
+//			if(position.getPosition().equals(positionXY)) {
+//				
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
 	public static void addPositionXYToDb(PositionXY positionXY) {
 				

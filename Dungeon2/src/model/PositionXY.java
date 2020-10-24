@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import app.Main;
@@ -9,19 +10,16 @@ public class PositionXY {
 	public int x;
 	public int y;
 	public String[][] position ;
-//	public static ArrayList<String[][]> arrayPositions ;
+//	public static ArrayList<String[][]> arrayPositions = new ArrayList<>(); ;
 
-	public PositionXY() {
+	public PositionXY(String[][] position, int x, int y) {
 		super();
-		this.position = initialPosition();
-//		arrayPositions = new ArrayList<>();
+		this.position = position;
+		this.x = x;
+		this.y = y;
+	}
+	
 
-	}
-	
-	public String[][] getPosition() {
-		return position;
-	}
-	
 	public int getX() {
 		return x;
 	}
@@ -35,47 +33,7 @@ public class PositionXY {
 		this.y = y;
 	}
 	
-	public String[][] initialPosition() {
-//		ArrayList<String[][]> arrayPositions = new ArrayList<>();
-		
-		int x = 0;
-		int y = 0;
-		
-//		while(true) {
-			x = randomNumberInLength();
-			y = randomNumberInHeight();
 
-			position = new String[x][y];
-			
-//			if(!arrayPositions.contains(position)) {
-
-//			PositionXYDb.checkPositionXYToDb(position);
-				this.x = x;
-				this.y = y;
-//			}
-				
-//		}
-		return position;
-	}
-		
-	public static int randomNumberInLength() {
-		//Math.random() * (max - min + 1) + min 
-		int numberLength = (int)(Math.random()*(Main.LENGTH + 1));
-		return numberLength;
-		
-	}
-	
-	public static int randomNumberInHeight() {
-		//Math.random() * (max - min + 1) + min 
-		int numberHeight = (int)(Math.random()*(Main.HEIGTH + 1));
-		return numberHeight;
-		
-	}
-
-	@Override
-	public String toString() {
-		return "PositionXY [x=" + x + ", y=" + y + ", position=" + Arrays.toString(position) + "]";
-	}
 
 	public void moveUp() {
 		

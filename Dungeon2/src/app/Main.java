@@ -3,6 +3,7 @@ package app;
 import java.util.Scanner;
 
 import model.Hunter;
+import model.Screen;
 import model.Vampire;
 import service.HunterDb;
 import service.PositionXYDb;
@@ -42,7 +43,7 @@ public class Main {
 	System.out.println(HunterDb.listAllHunters());
 	
 	
-//	Screen.updateScreen(Screen.screen, hunter, VampireDb.vampires);
+	Screen.updateScreen(Screen.screen, vampireDb);
 
 //	while(true) {
 //		
