@@ -3,7 +3,6 @@ package app;
 import java.util.Scanner;
 
 import model.Hunter;
-import model.ScreenObject;
 import service.HunterDb;
 import service.VampireDb;
 
@@ -20,8 +19,8 @@ public class Main {
 
 	Scanner input = new Scanner(System.in);
 
-	VampireDb vampireDb = new VampireDb("VampireDb");
-	ScreenObject.addVampireToDb();
+//	VampireDb vampireDb = new VampireDb("VampireDb");
+//	ScreenObject.addVampireToDb();
 	
 	HunterDb hunterDb = new HunterDb("HunterDb");
 	Hunter hunter1 = new Hunter("Andreu","@");

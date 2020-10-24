@@ -9,16 +9,16 @@ public class Screen {
 
 	
 	
-
-	public static void updateScreen(String[][] screen, Hunter hunter, VampireDb vampireDb){
-		fillScreen(screen);
-		screen[hunter.getX()][hunter.getY()]=hunter.getSymbol();
-		for(Vampire vampireList : vampireDb) {
-			
-			screen[vampireList.getX()][vampireList.getY()]=vampireList.getSymbol();
-		}
-		printScreen(screen);
-	}
+//
+//	public static void updateScreen(String[][] screen, Hunter hunter, VampireDb vampireDb){
+//		fillScreen(screen);
+//		screen[hunter.getX()][hunter.getY()]=hunter.getSymbol();
+//		for(Vampire vampireList : vampireDb) {
+//			
+//			screen[vampireList.getX()][vampireList.getY()]=vampireList.getSymbol();
+//		}
+//		printScreen(screen);
+//	}
 	
 	public static void printScreen(String[][] screen) {
 		for (int i = 0; i < Main.LENGTH; i++) {
