@@ -10,14 +10,15 @@ public class Screen {
 	public static void updateScreen(String[][] screen, VampireDb vampireDb){
 		fillScreen(screen);
 
-		for(Vampire vampireList : VampireDb.vampires) {
+		for(Vampire vamps : VampireDb.vampires) {
 			
-			screen[vampireList.positionxy.getX()][vampireList.positionxy.getY()]=vampireList.getSymbol();
+			screen[vamps.getX()][vamps.getY()]=vamps.getSymbol();
 		}
-		printScreen(screen);
+		
+		printScreen(screen, vampireDb);
 	}
 	
-	public static void printScreen(String[][] screen) {
+	public static void printScreen(String[][] screen, VampireDb vampire) {
 		for (int i = 0; i < Main.LENGTH; i++) {
 	
 			for (int j = 0; j < Main.HEIGTH; j++) {

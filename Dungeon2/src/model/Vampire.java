@@ -11,7 +11,6 @@ public class Vampire extends ScreenObject{
 
 
 
-
 	
 
 
