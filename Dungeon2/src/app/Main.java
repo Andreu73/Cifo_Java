@@ -11,7 +11,7 @@ import service.VampireDb;
 
 public class Main {
 	
-	final public static int VAMPIRES = 3;
+	final public static int VAMPIRES = 1;
 	final public static int HUNTERS = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
@@ -25,13 +25,14 @@ public class Main {
 	PositionXYDb positionXYDb = new PositionXYDb("PositionXYDb");
 	
 	VampireDb vampireDb = new VampireDb("VampireDb");
-	Vampire vamp1 = new Vampire("Vamp1", "V", 3);
-	Vampire vamp2 = new Vampire("Vamp2", "V", 3);
-	Vampire vamp3 = new Vampire("Vamp3", "V", 3);
-	
-	VampireDb.addVampireToDb(vamp1);
-	VampireDb.addVampireToDb(vamp2);
-	VampireDb.addVampireToDb(vamp3);
+	VampireDb.createVampire();
+//	Vampire vamp1 = new Vampire("Vamp1", "V", 3);
+//	Vampire vamp2 = new Vampire("Vamp2", "V", 3);
+//	Vampire vamp3 = new Vampire("Vamp3", "V", 3);
+//	
+//	VampireDb.addVampireToDb(vamp1);
+//	VampireDb.addVampireToDb(vamp2);
+//	VampireDb.addVampireToDb(vamp3);
 	
 
 	

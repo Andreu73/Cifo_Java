@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import app.Main;
 import interfaces.IScreenObject;
+import service.PositionXYDb;
 
 public class ScreenObject implements IScreenObject{
 	
@@ -12,37 +13,44 @@ public class ScreenObject implements IScreenObject{
 	public String name;
 	public String symbol;
 	public PositionXY positionxy;
-	public static ArrayList<String[][]> arrayPositions = new ArrayList<>();
+//	public static ArrayList<int[][]> arrayPositions = new ArrayList<>();
 	
 	public ScreenObject(String name, String symbol) {
 		super();
 		this.id = hashCode();
 		this.name = name;
 		this.symbol = symbol;
-		this.positionxy = new PositionXY(initialPosition(), x, y);
+		this.positionxy = initialPosition();
 		
 	}
 
-	public String[][] initialPosition() {
+
+	public PositionXY initialPosition() {
 //		ArrayList<String[][]> arrayPositions = new ArrayList<>();
 		
 		int x = 0;
 		int y = 0;
-		String[][]position = null;
+
+//		int[][]position = null;
+		PositionXY newPosition = null;
 		
-		while(!arrayPositions.contains(position)) {
+		while(true) {
 			x = randomNumberInLength();
 			y = randomNumberInHeight();
-
-			position = new String[x][y];
 			
-			if(!arrayPositions.contains(position))
-				arrayPositions.add(position);
-				break;
-//				PositionXYDb.checkPositionXYToDb(position);
-		
+//			position = new int[x][y];
+			System.out.println(x);
+			System.out.println(y);
+			if(x!=0 && y!=0)
+//			if(PositionXYDb.checkPositionXYToDb(x, y)) {
+//				arrayPositions.add(position);
+//				newPosition = new PositionXY(x, y);
+//				PositionXYDb.addPositionXYToDb(newPosition);
+//				break;}
+			break;
 		}
-		return position;
+
+		return newPosition;
 
 	}
 		

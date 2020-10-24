@@ -8,8 +8,7 @@ public class Hunter extends ScreenObject{
 		super(name, symbol);
 		
 		pointsHunter = 0;
-		placeHunterInitialX();
-		placeHunterInitialY();
+		
 		}
 
 //	public int x = 0;
@@ -17,16 +16,14 @@ public class Hunter extends ScreenObject{
 
 
 	
-	
-	public int placeHunterInitialX() {
+	@Override
+	public PositionXY initialPosition() {
 
 		int x = 0;
-		return x;
+		int y = 0;
+		PositionXY newPosition = new PositionXY(x, y);
+		return newPosition;
 	}
 
-	public int placeHunterInitialY() {
-		int y = 0;
-		return y;
-	}
 
 }

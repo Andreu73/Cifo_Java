@@ -1,24 +1,28 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import app.Main;
-
 public class PositionXY {
 	
 	public int x;
 	public int y;
-	public String[][] position ;
+//	public int[][] position ;
 //	public static ArrayList<String[][]> arrayPositions = new ArrayList<>(); ;
 
-	public PositionXY(String[][] position, int x, int y) {
+	public PositionXY(int x, int y) {
 		super();
-		this.position = position;
+//		this.position = position;
 		this.x = x;
 		this.y = y;
 	}
+
 	
+	
+	
+//	public int[][] getPosition() {
+//		return position;
+//	}
+
+
+
 
 	public int getX() {
 		return x;

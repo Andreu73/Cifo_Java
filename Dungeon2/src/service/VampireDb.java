@@ -34,12 +34,13 @@ public class VampireDb {
 		return listOfVampires;
 	}
 	
-//	public static void createVampire
-//	for (int i = 0; i < arrayPositions.size(); i++) {
-//	
-//	Vampire newVampire = new Vampire("Vampire","V", arrayPositions.get(i),3);
-//	VampireDb.addVampireToDb(newVampire);
-//	}
+	public static void createVampire() {
+		for (int i = 0; i < Main.VAMPIRES; i++) {
+		
+		Vampire newVampire = new Vampire("Vampire","V",3);
+		VampireDb.addVampireToDb(newVampire);
+		}
+	}
 
 	
 }

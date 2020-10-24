@@ -15,17 +15,16 @@ public class PositionXYDb {
 		positionsXY = new ArrayList<>();
 	}
 
-//	public static Boolean checkPositionXYToDb(String[][] positionXY) {
-//
-//		for(PositionXY position : positionsXY) {
-//			
-//			if(position.getPosition().equals(positionXY)) {
-//				
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
+	public static Boolean checkPositionXYToDb(int x, int y) {
+
+		for(PositionXY position : positionsXY) {
+
+			if(x==0 && y==0)
+				
+				return false;
+		}
+		return true;
+	}
 
 	public static void addPositionXYToDb(PositionXY positionXY) {
 				
