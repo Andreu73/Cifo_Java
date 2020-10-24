@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import app.Main;
@@ -9,22 +8,19 @@ public class PositionXY {
 	
 	public int x;
 	public int y;
-	public String[][] position;
-	public ArrayList<String[][]> arrayPositions;
+	public String[][] position ;
+//	public static ArrayList<String[][]> arrayPositions ;
 
 	public PositionXY() {
 		super();
-//		this.x = x;
-//		this.y = y;
-		this.position = this.differentPositionXY();
-		this.arrayPositions = new ArrayList<>();
+		this.position = initialPosition();
+//		arrayPositions = new ArrayList<>();
+
 	}
 	
-//	public PositionXY(int x, int y) {
-//		super();
-//		this.x = x;
-//		this.y = y;
-//	}
+	public String[][] getPosition() {
+		return position;
+	}
 	
 	public int getX() {
 		return x;
@@ -39,25 +35,29 @@ public class PositionXY {
 		this.y = y;
 	}
 	
-	public String[][] differentPositionXY() {
+	public String[][] initialPosition() {
+//		ArrayList<String[][]> arrayPositions = new ArrayList<>();
 		
-		int x = randomNumberInLength();
-		int y = randomNumberInHeight();
-		this.position = new String[x][y];
+		int x = 0;
+		int y = 0;
 		
-		if(!this.arrayPositions.contains(this.position))
-			this.arrayPositions.add(this.position);
-		
-		return this.position;
+//		while(true) {
+			x = randomNumberInLength();
+			y = randomNumberInHeight();
+
+			position = new String[x][y];
+			
+//			if(!arrayPositions.contains(position)) {
+
+//			PositionXYDb.checkPositionXYToDb(position);
+				this.x = x;
+				this.y = y;
+//			}
+				
+//		}
+		return position;
 	}
 		
-//		for (int i = 0; i < arrayPositions.size(); i++) {
-//			
-//			Vampire newVampire = new Vampire("Vampire","V", arrayPositions.get(i),3);
-//			VampireDb.addVampireToDb(newVampire);
-//		}
-
-	
 	public static int randomNumberInLength() {
 		//Math.random() * (max - min + 1) + min 
 		int numberLength = (int)(Math.random()*(Main.LENGTH + 1));
@@ -72,32 +72,35 @@ public class PositionXY {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "PositionXY [x=" + x + ", y=" + y + ", position=" + Arrays.toString(position) + "]";
+	}
+
 	public void moveUp() {
 		
 		this.setX(x-1);
-//		this.x--;
+		this.x--;
 	}
 	public void moveDown() {
 		
 		this.setX(x+1);
-//		this.x++;
+		this.x++;
 	}
 	public void moveRight() {
 		
 		this.setX(y-1);
-//		this.y--;
+		this.y--;
 	}
 	public void moveLeft() {
 		
 		this.setX(y+1);
-//		this.y++;
+		this.y++;
 	}
 
-	@Override
-	public String toString() {
-		return "PositionXY [x=" + x + ", y=" + y + ", position=" + Arrays.toString(position) + ", arrayPositions="
-				+ arrayPositions + "]";
-	}
+
+
+
 	
 	
 

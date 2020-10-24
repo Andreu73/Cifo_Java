@@ -4,10 +4,14 @@ public class Vampire extends ScreenObject{
 	
 	public int pointsObject;
 
-	public Vampire(String name, String symbol, String[][] stringArray, int pointsObject) {
-		super(name, symbol, stringArray);
+	public Vampire(String name, String symbol, int pointsObject) {
+		super(name, symbol);
 		this.pointsObject = pointsObject;
 	}
+
+
+
+
 	
 
 

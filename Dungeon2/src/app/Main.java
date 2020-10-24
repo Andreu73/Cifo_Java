@@ -3,7 +3,9 @@ package app;
 import java.util.Scanner;
 
 import model.Hunter;
+import model.Vampire;
 import service.HunterDb;
+import service.PositionXYDb;
 import service.VampireDb;
 
 public class Main {
@@ -18,9 +20,19 @@ public class Main {
 	public static void main(String[] args) {
 
 	Scanner input = new Scanner(System.in);
+	
+	PositionXYDb positionXYDb = new PositionXYDb("PositionXYDb");
+	
+	VampireDb vampireDb = new VampireDb("VampireDb");
+	Vampire vamp1 = new Vampire("Vamp1", "V", 3);
+	Vampire vamp2 = new Vampire("Vamp2", "V", 3);
+	Vampire vamp3 = new Vampire("Vamp3", "V", 3);
+	
+	VampireDb.addVampireToDb(vamp1);
+	VampireDb.addVampireToDb(vamp2);
+	VampireDb.addVampireToDb(vamp3);
+	
 
-//	VampireDb vampireDb = new VampireDb("VampireDb");
-//	ScreenObject.addVampireToDb();
 	
 	HunterDb hunterDb = new HunterDb("HunterDb");
 	Hunter hunter1 = new Hunter("Andreu","@");

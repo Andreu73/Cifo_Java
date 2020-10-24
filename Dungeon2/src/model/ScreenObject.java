@@ -1,6 +1,8 @@
 package model;
 
+
 import interfaces.IScreenObject;
+import service.PositionXYDb;
 
 public class ScreenObject implements IScreenObject{
 	
@@ -17,7 +19,7 @@ public class ScreenObject implements IScreenObject{
 		this.positionxy = new PositionXY();
 	}
 
-	
+
 	
 	
 	@Override

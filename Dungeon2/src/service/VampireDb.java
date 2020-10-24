@@ -34,4 +34,12 @@ public class VampireDb {
 		return listOfVampires;
 	}
 	
+//	public static void createVampire
+//	for (int i = 0; i < arrayPositions.size(); i++) {
+//	
+//	Vampire newVampire = new Vampire("Vampire","V", arrayPositions.get(i),3);
+//	VampireDb.addVampireToDb(newVampire);
+//	}
+
+	
 }
