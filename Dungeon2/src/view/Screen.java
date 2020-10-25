@@ -1,5 +1,6 @@
 package view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import app.Main;
@@ -68,10 +69,25 @@ public class Screen {
 		printScreen(screen);
 
 		Hunter.moveHunter(input, hunterDb);
-		
-//		System.out.println(Hunter.pointsHunter);
-
 	}
+	
+	public static void printInitialScreen(Scanner input) {
+			
+		System.out.print("\n   VAMPIRE CHASE\npress enter to start\n\n"
+				+ "a -> move left\n"
+				+ "d -> move right\n"
+				+ "w -> move up\n"
+				+ "s -> move down\n\n"
+				+ "V -> 5 points\n"
+				+ "W -> 3 poimts\n");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+				
+	}
+
 	
 	public static void printScreen(String[][] screen) {
 		for (int i = 0; i < Main.LENGTH; i++) {

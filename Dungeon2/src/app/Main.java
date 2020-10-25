@@ -22,15 +22,12 @@ public class Main {
 	final public static int HUNTER_Y = 0;
 	final public static String FILL_SCREEN_SYMBOL = ".";
 	public static boolean isFinished = false;
-	final public static int TIME_PER_GAME = 25;
-	
-	public static final String ANSI_PURPLE = "\u001B[35m";
+	final public static int TIME_PER_GAME = 20;
 	
 	public static void main(String[] args) {
-		
-//		Main main = new Main();
-//		Thread thread = new Thread();
-//		thread.start();
+	
+	Scanner input = new Scanner(System.in);
+	Screen.printInitialScreen(input);
 		
 	new Thread() {	
 		public void run(){
@@ -39,8 +36,6 @@ public class Main {
 			System.out.println(Hunter.pointsHunter + " points!");
 			}
 	}.start();
-
-	Scanner input = new Scanner(System.in);
 	
 	VampireDb vampireDb = new VampireDb("VampireDb");
 	VampireDb.createInitialVampires();
