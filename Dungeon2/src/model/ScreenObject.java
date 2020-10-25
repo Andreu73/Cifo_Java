@@ -4,6 +4,7 @@ import java.util.Random;
 
 import app.Main;
 import interfaces.IScreenObject;
+import service.HunterDb;
 
 public class ScreenObject implements IScreenObject{
 	
@@ -20,20 +21,19 @@ public class ScreenObject implements IScreenObject{
 		this.id = hashCode();
 		this.name = name;
 		this.symbol = symbol;
-//		this.x = 
-//		this.y = 
-//		position = check();
+		initialNumberInLength();
+		initialNumberInHeight();
 		
 	}	
 	
 	public void initialNumberInLength() {
-		
-		this.setX(0);
+		int numberLength = random.nextInt(Main.LENGTH);
+		this.x=numberLength;
 	}
 	
 	public void initialNumberInHeight() {
-		
-		this.setY(0);
+		int numberHeight = random.nextInt(Main.HEIGHT);
+		this.y=numberHeight;
 	}
 	
 	public String getSymbol() {
@@ -55,8 +55,6 @@ public class ScreenObject implements IScreenObject{
 	public void setY(int y) {
 		this.y = y;
 	}
-
-
 	
 	
 }

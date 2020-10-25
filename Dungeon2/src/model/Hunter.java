@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import service.HunterDb;
 import service.VampireDb;
+import view.Screen;
 
 public class Hunter extends ScreenObject{
 
@@ -13,17 +14,17 @@ public class Hunter extends ScreenObject{
 		super(name, symbol);
 	}
 
-	@Override
-	public void initialNumberInLenght() {
-		
-		this.setX(0);
-	}
-	
-	@Override
-	public void initialNumberInHeight() {
-		
-		this.setY(0);
-	}
+//	@Override
+//	public void initialNumberInLength() {
+//		
+//		this.setX(0);
+//	}
+//	
+//	@Override
+//	public void initialNumberInHeight() {
+//		
+//		this.setY(0);
+//	}
 	
 	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		

@@ -1,16 +1,20 @@
-package model;
+package view;
 
 import java.util.Scanner;
 
 import app.Main;
+import model.Hunter;
+import model.Vampire;
 import service.HunterDb;
 import service.VampireDb;
 
 public class Screen {
 
-	public static String[][] screen = new String[Main.LENGTH][Main.HEIGTH];
+	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 
 	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
+		
+
 		fillScreen(screen);
 
 		for(Vampire vamps : VampireDb.vampires) {
@@ -22,7 +26,7 @@ public class Screen {
 			
 			screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
 		}
-		
+
 		
 		printScreen(screen);
 		
@@ -32,7 +36,7 @@ public class Screen {
 	public static void printScreen(String[][] screen) {
 		for (int i = 0; i < Main.LENGTH; i++) {
 	
-			for (int j = 0; j < Main.HEIGTH; j++) {
+			for (int j = 0; j < Main.HEIGHT; j++) {
 				
 				System.out.print(screen[i][j]);
 			}
@@ -45,7 +49,7 @@ public class Screen {
 	
 		for (int i = 0; i < Main.LENGTH; i++) {
 	
-			for (int j = 0; j < Main.HEIGTH; j++) {
+			for (int j = 0; j < Main.HEIGHT; j++) {
 				
 				screen[i][j]=".";
 			}

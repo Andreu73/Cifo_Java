@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 import model.Hunter;
-import model.Screen;
 import model.Vampire;
 import service.HunterDb;
 import service.VampireDb;
+import view.Screen;
 
 public class Main {
 	
@@ -16,7 +16,7 @@ public class Main {
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
 	final public static int LENGTH = 10;
-	final public static int HEIGTH = 10;
+	final public static int HEIGHT = 10;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
 	
@@ -30,6 +30,7 @@ public class Main {
 	Vampire vamp1 = new Vampire("Vamp1", "V", 3);
 	Vampire vamp2 = new Vampire("Vamp2", "V", 3);
 	Vampire vamp3 = new Vampire("Vamp3", "V", 3);
+	vamp3.initialNumberInLength();
 	
 	VampireDb.addVampireToDb(vamp1);
 	VampireDb.addVampireToDb(vamp2);
@@ -40,9 +41,11 @@ public class Main {
 	HunterDb hunterDb = new HunterDb("HunterDb");
 	Hunter hunter = new Hunter("Andreu","@");
 	HunterDb.addHunterToDb(hunter);
+//	hunter.initialNumberInHeight();
+//	hunter.initialNumberInLength();
 
 	
-	System.out.println(VampireDb.listAllVampires());
+//	System.out.println(VampireDb.listAllVampires());
 //	System.out.println(HunterDb.listAllHunters());
 	
 	
