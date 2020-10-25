@@ -13,19 +13,21 @@ public class Screen {
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 	
     public static void countdownClock(){
-        int i = 5;
-         while (i>0){
+       int i = Main.TIME_PER_GAME;
+         while (i > 0){
            try {
         	   
         	 for (int j = 0; j < 5; j++) {
-	            i--;
+        		i--;
 	            Thread.sleep(1000L);    // 1000L = 1000ms = 1 second
 	            }
-	            System.out.println("Remaining: "+i+" seconds");
+	            System.out.println("Remaining: "+ i +" seconds");
            }
-           catch (InterruptedException e) {}
+           catch (InterruptedException e) 
+           {
+        	   System.out.println(e);
+           }
          }
-         Main.isFinished = true;
 
     }
 
@@ -44,6 +46,7 @@ public class Screen {
 				if(vamps.getX()==hunters.getX() && vamps.getY()==hunters.getY()) {
 					
 					vamps.setSymbol(Main.FILL_SCREEN_SYMBOL);
+					VampireDb.createVampire();
 				}
 			}
 		}
@@ -53,6 +56,8 @@ public class Screen {
 		printScreen(screen);
 
 		Hunter.moveHunter(input, hunterDb, vampireDb);
+		
+//		System.out.println(Hunter.pointsHunter);
 
 	}
 	

@@ -29,7 +29,7 @@ public class Hunter extends ScreenObject{
 	
 	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
-	while(true) {
+	while(Main.isFinished == false) {
 		
 		Hunter hunter = HunterDb.hunters.get(0);
 		

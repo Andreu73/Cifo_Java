@@ -34,13 +34,18 @@ public class VampireDb {
 		return listOfVampires;
 	}
 	
-//	public static void createVampire() {
-//		for (int i = 0; i < Main.VAMPIRES; i++) {
-//		
+	public static void createInitialVampires() {
+		for (int i = 0; i < Main.VAMPIRES; i++) {
+		
+		vampires.add(new Vampire("Vampire","V",3));
 //		Vampire newVampire = new Vampire("Vampire","V",3);
 //		VampireDb.addVampireToDb(newVampire);
-//		}
-//	}
+		}
+	}
 
-	
+	public static void createVampire() {
+
+		Vampire newVampire = new Vampire("Vampire","V",3);
+		VampireDb.addVampireToDb(newVampire);
+	}
 }
