@@ -3,8 +3,10 @@ package app;
 import java.util.Random;
 import java.util.Scanner;
 
+import model.Hunter;
 import model.Screen;
 import model.Vampire;
+import service.HunterDb;
 import service.VampireDb;
 
 public class Main {
@@ -13,8 +15,8 @@ public class Main {
 	final public static int HUNTERS = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
-	final public static int LENGTH = 3;
-	final public static int HEIGTH = 3;
+	final public static int LENGTH = 10;
+	final public static int HEIGTH = 10;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
 	
@@ -35,44 +37,18 @@ public class Main {
 	
 
 	
-//	HunterDb hunterDb = new HunterDb("HunterDb");
-//	Hunter hunter1 = new Hunter("Andreu","@");
-//	HunterDb.addHunterToDb(hunter1);
+	HunterDb hunterDb = new HunterDb("HunterDb");
+	Hunter hunter = new Hunter("Andreu","@");
+	HunterDb.addHunterToDb(hunter);
+
 	
 	System.out.println(VampireDb.listAllVampires());
 //	System.out.println(HunterDb.listAllHunters());
 	
 	
-	Screen.updateScreen(Screen.screen, vampireDb);
+	Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
 
-//	while(true) {
-//		
-//		String key = input.next();
-//		if(key.equals("a")) {
-//			hunter.moveUp();
-//			Screen.updateScreen(Screen.screen, hunter,VampireDb.vampires);
-//		}
-//		else if(key.equals("s")) {
-//			hunter.moveRight();
-//			Screen.updateScreen(Screen.screen, hunter, VampireDb.vampires);
-//		}
-//		else if(key.equals("d")) {
-//			hunter.moveDown();		
-//			Screen.updateScreen(Screen.screen, hunter,VampireDb.vampires);
-//		}
-//		else if(key.equals("w")) {
-//			hunter.moveLeft();
-//			Screen.updateScreen(Screen.screen, hunter,VampireDb.vampires);
-//		}
-//	}
-
-	
 	}
-	
-
-	
-	
-	
 	
 
 }

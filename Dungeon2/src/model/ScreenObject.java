@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import app.Main;
@@ -14,55 +13,27 @@ public class ScreenObject implements IScreenObject{
 	public int x;
 	public int y;
 //	public static String[][]position = new String[Main.LENGTH][Main.HEIGTH];
-	Random r = new Random();
-	ArrayList<Integer> pairs = new ArrayList<>();
+	Random random = new Random();
 	
 	public ScreenObject(String name, String symbol) {
 		super();
 		this.id = hashCode();
 		this.name = name;
 		this.symbol = symbol;
+//		this.x = 
+//		this.y = 
 //		position = check();
-		check();
 		
+	}	
+	
+	public void initialNumberInLength() {
+		
+		this.setX(0);
 	}
 	
-	public void check() {
-		int x = 0;
-		int y = 0;
-
-		while(true) {
-//		position [randomNumberInLength()][randomNumberInHeight()]= "V";
-			x=randomNumberInLength(r);
-			y=randomNumberInHeight(r);
-			System.out.println(x);
-			System.out.println(y);
-			pairs.add(x);
-			pairs.add(y);
-			
-			
-			
-			this.x = x;
-			this.y = y;
-			if(this.x!=0 || this.y!=0) {
-			break;
-			}
-		}
-	}
-	
-	
-	public static int randomNumberInLength(Random r) {
-		//Math.random() * (max - min + 1) + min 
-		int numberLength = r.nextInt(Main.LENGTH);
-		return numberLength;
+	public void initialNumberInHeight() {
 		
-	}
-	
-	public static int randomNumberInHeight(Random r) {
-		//Math.random() * (max - min + 1) + min 
-		int numberHeight = r.nextInt(Main.LENGTH);
-		return numberHeight;
-		
+		this.setY(0);
 	}
 	
 	public String getSymbol() {
