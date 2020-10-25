@@ -11,6 +11,23 @@ import service.VampireDb;
 public class Screen {
 
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
+	
+    public static void countdownClock(){
+        int i = 20;
+         while (i>0){
+           try {
+        	   
+        	 for (int j = 0; j < 5; j++) {
+	            i--;
+	            Thread.sleep(1000L);    // 1000L = 1000ms = 1 second
+	            }
+	            System.out.println("Remaining: "+i+" seconds");
+           }
+           catch (InterruptedException e) {}
+         }
+
+
+    }
 
 	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
 		
@@ -27,10 +44,12 @@ public class Screen {
 			screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
 		}
 
-		
+
 		printScreen(screen);
-		
+
 		Hunter.moveHunter(input, hunterDb, vampireDb);
+
+		
 	}
 	
 	public static void printScreen(String[][] screen) {

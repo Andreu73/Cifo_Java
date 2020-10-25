@@ -9,7 +9,11 @@ import service.HunterDb;
 import service.VampireDb;
 import view.Screen;
 
-public class Main {
+public class Main implements Runnable{
+	
+	public void run(){  
+		Screen.countdownClock();
+		}
 	
 	final public static int VAMPIRES = 2;
 	final public static int HUNTERS = 1;
@@ -48,10 +52,15 @@ public class Main {
 //	System.out.println(VampireDb.listAllVampires());
 //	System.out.println(HunterDb.listAllHunters());
 	
+	Main main = new Main();
+	Thread thread = new Thread(main);
+	thread.start();
+
 	
 	Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
 
 	}
-	
+
+
 
 }
