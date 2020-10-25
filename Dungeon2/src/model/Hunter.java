@@ -15,17 +15,17 @@ public class Hunter extends ScreenObject{
 		super(name, symbol);
 	}
 
-//	@Override
-//	public void initialNumberInLength() {
-//		
-//		this.setX(0);
-//	}
-//	
-//	@Override
-//	public void initialNumberInHeight() {
-//		
-//		this.setY(0);
-//	}
+	@Override
+	public void initialNumberInLength() {
+		
+		this.setX(0);
+	}
+	
+	@Override
+	public void initialNumberInHeight() {
+		
+		this.setY(0);
+	}
 	
 	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
@@ -51,7 +51,7 @@ public class Hunter extends ScreenObject{
 		ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
 		}
 		else if(key.equals("d") && hunter.getY()==Main.HEIGHT-1) {
-			hunter.setY(hunter.getY()+1);
+			hunter.setY(hunter.getY());
 			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
 		}
 		else if (key.equals("d")) {

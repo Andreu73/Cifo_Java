@@ -20,6 +20,7 @@ public class Main {
 	final public static int HEIGHT = 20;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
+	final public static String FILL_SCREEN_SYMBOL = ".";
 	public static volatile boolean isFinished = false;
 	
 	public static void main(String[] args) {

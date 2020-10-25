@@ -55,6 +55,11 @@ public class ScreenObject implements IScreenObject{
 	public void setY(int y) {
 		this.y = y;
 	}
+
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
+	
 	
 	
 }

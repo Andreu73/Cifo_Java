@@ -37,12 +37,17 @@ public class Screen {
 		for(Vampire vamps : VampireDb.vampires) {
 			
 			screen[vamps.getX()][vamps.getY()]=vamps.getSymbol();
+			
+			for(Hunter hunters : HunterDb.hunters) {
+				
+				screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
+				if(vamps.getX()==hunters.getX() && vamps.getY()==hunters.getY()) {
+					
+					vamps.setSymbol(Main.FILL_SCREEN_SYMBOL);
+				}
+			}
 		}
 		
-		for(Hunter hunters : HunterDb.hunters) {
-			
-			screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
-		}
 
 
 		printScreen(screen);
@@ -69,7 +74,7 @@ public class Screen {
 	
 			for (int j = 0; j < Main.HEIGHT; j++) {
 				
-				screen[i][j]=".";
+				screen[i][j]=Main.FILL_SCREEN_SYMBOL;
 			}
 		}
 	}
