@@ -13,11 +13,11 @@ public class Screen {
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 	
     public static void countdownClock(){
-       int i = Main.TIME_PER_GAME;
-         while (i > 0){
-           try {
+    	int i = Main.TIME_PER_GAME;
+    	while (i > 0){
+    		try {
         	   
-        	 for (int j = 0; j < 5; j++) {
+    			for (int j = 0; j < 5; j++) {
         		i--;
 	            Thread.sleep(1000L);    // 1000L = 1000ms = 1 second
 	            }
@@ -30,32 +30,42 @@ public class Screen {
          }
 
     }
+    
+    public static void updateScreenObjects() {
+    	
+    	boolean isCreated = false;
+		Vampire vampire = null;
 
-	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
+		for(Vampire vamp : VampireDb.vampires) {
+    	
+			screen[vamp.getX()][vamp.getY()]=vamp.getSymbol();
 		
-
-		fillScreen(screen);
-
-		for(Vampire vamps : VampireDb.vampires) {
-			
-			screen[vamps.getX()][vamps.getY()]=vamps.getSymbol();
-			
 			for(Hunter hunters : HunterDb.hunters) {
 				
 				screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
-				if(vamps.getX()==hunters.getX() && vamps.getY()==hunters.getY()) {
-					
-					vamps.setSymbol(Main.FILL_SCREEN_SYMBOL);
-					VampireDb.createVampire();
+				if(vamp.getX()==hunters.getX() && vamp.getY()==hunters.getY()) {
+					vampire = vamp;
+					isCreated = true;
 				}
 			}
 		}
+	
+		VampireDb.removeVampire(vampire);
 		
+		if(isCreated==true) {
+			VampireDb.createNewVampire();
+		}
+    }
 
-
+	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb){
+		
+		fillScreen(screen);
+		
+		updateScreenObjects();
+	
 		printScreen(screen);
 
-		Hunter.moveHunter(input, hunterDb, vampireDb);
+		Hunter.moveHunter(input, hunterDb);
 		
 //		System.out.println(Hunter.pointsHunter);
 

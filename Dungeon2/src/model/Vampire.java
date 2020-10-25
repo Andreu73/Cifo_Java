@@ -2,6 +2,8 @@ package model;
 
 import java.util.Random;
 
+import service.VampireDb;
+
 
 public class Vampire extends ScreenObject{
 	
@@ -12,7 +14,6 @@ public class Vampire extends ScreenObject{
 		super(name, symbol);
 		this.pointsObject = pointsObject;
 	}
-	
-	
+
 
 }

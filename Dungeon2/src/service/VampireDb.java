@@ -19,7 +19,7 @@ public class VampireDb {
 	
 	public static void addVampireToDb(Vampire vampire) {
 
-			vampires.add(vampire);
+		vampires.add(vampire);
 	}
 	
 	public static String listAllVampires() {
@@ -43,9 +43,14 @@ public class VampireDb {
 		}
 	}
 
-	public static void createVampire() {
+	public static void createNewVampire() {
 
-		Vampire newVampire = new Vampire("Vampire","V",3);
-		VampireDb.addVampireToDb(newVampire);
+		vampires.add(new Vampire("sf","V",3));
+	}
+	
+	public static void removeVampire(Vampire vampire) {
+
+		vampires.remove(vampire);
+
 	}
 }

@@ -8,15 +8,15 @@ import view.Screen;
 
 public class ScreenObjectController {
 	
-	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
+	public static void moveHunter(Scanner input, HunterDb hunterDb) {
 		
-		Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+		Screen.updateScreen(Screen.screen, input, hunterDb);
 
 	}
 	
-	public static void updateScreen(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
+	public static void updateScreen(Scanner input, HunterDb hunterDb) {
 		
-		Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+		Screen.updateScreen(Screen.screen, input, hunterDb);
 	}
 
 }
