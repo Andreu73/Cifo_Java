@@ -37,13 +37,13 @@ public class VampireDb {
 	public static void createInitialVampires() {
 		for (int i = 0; i < Main.VAMPIRES; i++) {
 		
-		vampires.add(new Vampire("Vampire","V",3));
+		vampires.add(new Vampire("Vampire","V",5));
 		}
 	}
 
 	public static void createNewVampire() {
 
-		vampires.add(new Vampire("sf","W",5));
+		vampires.add(new Vampire("sf","W",3));
 	}
 	
 	public static void removeVampire(Vampire vampire) {
