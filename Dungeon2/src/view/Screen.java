@@ -45,12 +45,14 @@ public class Screen {
 				screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
 				if(vamp.getX()==hunters.getX() && vamp.getY()==hunters.getY()) {
 					vampire = vamp;
+					Hunter.pointsHunter+=vamp.pointsObject;
 					isCreated = true;
 				}
 			}
 		}
 	
 		VampireDb.removeVampire(vampire);
+
 		
 		if(isCreated==true) {
 			VampireDb.createNewVampire();

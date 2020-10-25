@@ -38,14 +38,12 @@ public class VampireDb {
 		for (int i = 0; i < Main.VAMPIRES; i++) {
 		
 		vampires.add(new Vampire("Vampire","V",3));
-//		Vampire newVampire = new Vampire("Vampire","V",3);
-//		VampireDb.addVampireToDb(newVampire);
 		}
 	}
 
 	public static void createNewVampire() {
 
-		vampires.add(new Vampire("sf","V",3));
+		vampires.add(new Vampire("sf","W",5));
 	}
 	
 	public static void removeVampire(Vampire vampire) {

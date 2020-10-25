@@ -24,6 +24,8 @@ public class Main {
 	public static boolean isFinished = false;
 	final public static int TIME_PER_GAME = 25;
 	
+	public static final String ANSI_PURPLE = "\u001B[35m";
+	
 	public static void main(String[] args) {
 		
 //		Main main = new Main();
@@ -34,6 +36,7 @@ public class Main {
 		public void run(){
 			Screen.countdownClock();
 			Main.isFinished = true;
+			System.out.println(Hunter.pointsHunter + " points!");
 			}
 	}.start();
 
