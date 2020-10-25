@@ -2,10 +2,10 @@ package model;
 
 import java.util.Scanner;
 
+import app.Main;
 import controller.ScreenObjectController;
 import service.HunterDb;
 import service.VampireDb;
-import view.Screen;
 
 public class Hunter extends ScreenObject{
 
@@ -31,23 +31,41 @@ public class Hunter extends ScreenObject{
 		
 	while(true) {
 		
+		Hunter hunter = HunterDb.hunters.get(0);
+		
 		String key = input.next();
-		if(key.equals("a")) {
-			HunterDb.hunters.get(0).setY(HunterDb.hunters.get(0).getY()-1);
+		if(key.equals("a") && hunter.getY()==0) {
+			hunter.setY(hunter.getY());
+			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
+		}
+		else if(key.equals("a")) {
+			hunter.setY(HunterDb.hunters.get(0).getY()-1);
+			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
+		}
+		else if(key.equals("s") && hunter.getX()==Main.LENGTH-1) {
+			hunter.setX(hunter.getX());
 			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
 		}
 		else if(key.equals("s")) {
-			HunterDb.hunters.get(0).setX(HunterDb.hunters.get(0).getX()+1);
+			hunter.setX(hunter.getX()+1);
+		ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
+		}
+		else if(key.equals("d") && hunter.getY()==Main.HEIGHT-1) {
+			hunter.setY(hunter.getY()+1);
 			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
 		}
-		else if(key.equals("d")) {
-			HunterDb.hunters.get(0).setY(HunterDb.hunters.get(0).getY()+1);
+		else if (key.equals("d")) {
+			hunter.setY(hunter.getY()+1);
 			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
 		}
+		else if(key.equals("w") && hunter.getX()==0) {
+			hunter.setX(hunter.getX());
+			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);}
 		else if(key.equals("w")) {
-			HunterDb.hunters.get(0).setX(HunterDb.hunters.get(0).getX()-1);
+			hunter.setX(hunter.getX()-1);
 			ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
+		}
 		}
 	}
-}
+
 }

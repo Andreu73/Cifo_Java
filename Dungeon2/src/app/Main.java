@@ -3,29 +3,38 @@ package app;
 import java.util.Random;
 import java.util.Scanner;
 
+import controller.ScreenObjectController;
 import model.Hunter;
 import model.Vampire;
 import service.HunterDb;
 import service.VampireDb;
 import view.Screen;
 
-public class Main implements Runnable{
-	
-	public void run(){  
-		Screen.countdownClock();
-		}
+public class Main {
 	
 	final public static int VAMPIRES = 2;
 	final public static int HUNTERS = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
 	final public static int LENGTH = 10;
-	final public static int HEIGHT = 10;
+	final public static int HEIGHT = 20;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
-	
+	public static volatile boolean isFinished = false;
 	
 	public static void main(String[] args) {
+		
+		Main main = new Main();
+		Thread thread = new Thread();
+		thread.start();
+		
+	new Thread() {	
+		public void run(){
+			Screen.countdownClock();
+			Main.isFinished = true;
+			}
+	}.start();
+		isFinished=true;
 
 	Scanner input = new Scanner(System.in);
 	
@@ -51,16 +60,9 @@ public class Main implements Runnable{
 	
 //	System.out.println(VampireDb.listAllVampires());
 //	System.out.println(HunterDb.listAllHunters());
-	
-	Main main = new Main();
-	Thread thread = new Thread(main);
-	thread.start();
 
-	
-	Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+		ScreenObjectController.updateScreen(input, hunterDb, vampireDb);
 
 	}
-
-
 
 }

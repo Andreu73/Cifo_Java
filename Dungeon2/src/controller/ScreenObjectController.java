@@ -13,5 +13,10 @@ public class ScreenObjectController {
 		Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
 
 	}
+	
+	public static void updateScreen(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
+		
+		Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+	}
 
 }

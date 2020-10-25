@@ -13,7 +13,7 @@ public class Screen {
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 	
     public static void countdownClock(){
-        int i = 20;
+        int i = 5;
          while (i>0){
            try {
         	   
@@ -25,7 +25,7 @@ public class Screen {
            }
            catch (InterruptedException e) {}
          }
-
+         Main.isFinished = true;
 
     }
 
@@ -49,7 +49,6 @@ public class Screen {
 
 		Hunter.moveHunter(input, hunterDb, vampireDb);
 
-		
 	}
 	
 	public static void printScreen(String[][] screen) {
