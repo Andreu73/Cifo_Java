@@ -43,7 +43,7 @@ public class VampireDb {
 
 	public static void createNewVampire() {
 
-		vampires.add(new Vampire("sf","W",3));
+		vampires.add(new Vampire("Vampire","W",3));
 	}
 	
 	public static void removeVampire(Vampire vampire) {

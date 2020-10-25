@@ -16,8 +16,8 @@ public class Main {
 	final public static int HUNTERS = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
-	final public static int LENGTH = 10;
-	final public static int HEIGHT = 20;
+	final public static int LENGTH = 7;
+	final public static int HEIGHT = 14;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
 	final public static String FILL_SCREEN_SYMBOL = ".";
