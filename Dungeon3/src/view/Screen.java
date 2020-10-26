@@ -58,6 +58,8 @@ public class Screen {
 		updateScreenObjects();
 		printScreen(screen);
 		Hunter.moveHunter(input, hunterDb);
+
+		
 	}
 	
 	public static void printInitialScreen(Scanner input) {

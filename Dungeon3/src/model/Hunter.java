@@ -6,6 +6,7 @@ import app.Main;
 import controller.ScreenObjectController;
 import interfaces.IScreenObject;
 import service.HunterDb;
+import service.VampireDb;
 
 public class Hunter extends ScreenObject implements IScreenObject{
 
@@ -28,7 +29,7 @@ public class Hunter extends ScreenObject implements IScreenObject{
 		position.setY(0);
 	}
 	
-	public static void moveHunter(Scanner input, HunterDb hunterDb) {
+	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
 	while(Main.isFinished == false) {
 		

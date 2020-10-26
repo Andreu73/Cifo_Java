@@ -18,7 +18,7 @@ public class Vampire extends ScreenObject{
 		this.pointsObject = pointsObject;
 	}
 	
-	public static void comparePositionsHunterVsVampire() {
+	public static void moveVampire(VampireDb vampireDb) {
 		
 		int hunterX = HunterDb.hunters.get(0).position.getX();
 		int vampireX = VampireDb.vampires.get(0).position.getX();
@@ -33,23 +33,26 @@ public class Vampire extends ScreenObject{
 		int sumHunter = hunterX + hunterY;
 		
 		//w
-		if(sumVampire < sumHunter && compareX > compareY)
+		if(sumVampire < sumHunter && compareX > compareY) {
 			moveVampire_w();
+			}
 		//d
-		else if (sumVampire < sumHunter && compareX < compareY)
+		else if (sumVampire < sumHunter && compareX < compareY) {
 			moveVampire_d();
+		}
 		//s
-		else if (sumVampire > sumHunter && compareX < compareY)
+		else if (sumVampire > sumHunter && compareX < compareY) {
 			moveVampire_s();
+		}
 		//a
-		else if (sumVampire > sumHunter && compareX > compareY)
+		else if (sumVampire > sumHunter && compareX > compareY) {
 			moveVampire_a();
+		}
 	}
 	
 	public static void moveVampire_a() {
 		//a
 		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()-1);
-
 	}
 		
 	public static void moveVampire_s() {
