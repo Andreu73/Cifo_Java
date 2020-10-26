@@ -49,7 +49,7 @@ public class Hunter extends ScreenObject implements IScreenObject{
 		}
 		else if(key.equals("s")) {
 			hunter.position.setX(hunter.position.getX()+1);
-		ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(input, hunterDb);
 		}
 		else if(key.equals("d") && hunter.position.getY()==Main.HEIGHT-1) {
 			hunter.position.setY(hunter.position.getY());

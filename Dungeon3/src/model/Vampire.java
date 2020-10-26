@@ -17,29 +17,57 @@ public class Vampire extends ScreenObject{
 		super(name, symbol);
 		this.pointsObject = pointsObject;
 	}
-
-	public static void moveVampire_a(VampireDb vampireDb) {
+	
+	public static void comparePositionsHunterVsVampire() {
+		
+		int hunterX = HunterDb.hunters.get(0).position.getX();
+		int vampireX = VampireDb.vampires.get(0).position.getX();
+		
+		int hunterY = HunterDb.hunters.get(0).position.getY();
+		int vampireY = VampireDb.vampires.get(0).position.getY();
+		
+		int compareX = vampireX - hunterX;
+		int compareY = vampireY - hunterY;
+		
+		int sumVampire = vampireX + vampireY;
+		int sumHunter = hunterX + hunterY;
+		
+		//w
+		if(sumVampire < sumHunter && compareX > compareY)
+			moveVampire_w();
+		//d
+		else if (sumVampire < sumHunter && compareX < compareY)
+			moveVampire_d();
+		//s
+		else if (sumVampire > sumHunter && compareX < compareY)
+			moveVampire_s();
+		//a
+		else if (sumVampire > sumHunter && compareX > compareY)
+			moveVampire_a();
+	}
+	
+	public static void moveVampire_a() {
 		//a
 		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()-1);
-		ScreenObjectController.moveVampire(vampireDb);
+
 	}
 		
 	public static void moveVampire_s(VampireDb vampireDb) {
 		//s
 		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()+1);
-		ScreenObjectController.moveVampire(vampireDb);
+
 	}
 	
 	public static void moveVampire_d(VampireDb vampireDb) {
 		//d
 		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()+1);
-		ScreenObjectController.moveVampire(vampireDb);
+
 	}
 				
 	public static void moveVampire_w(VampireDb vampireDb) {
 		//w
 		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()-1);
-		ScreenObjectController.moveVampire(vampireDb);
+
 		}
 
 }
