@@ -30,13 +30,17 @@ public class ScreenObjectController {
 		int compareX = vampireX - hunterX;
 		int compareY = vampireY - hunterY;
 		
-		int sumVampire = vampireX - vampireY;
+		int sumVampire = vampireX + vampireY;
 		int sumHunter = hunterX + hunterY;
 		
-		if(sumVampire > sumHunter && compareX < compareY)
-			moveVampireW();
+		if(sumVampire < sumHunter && compareX > compareY)
+			moveVampire_w();
+		else if (sumVampire < sumHunter && compareX < compareY)
+			moveVampire_d();
 		else if (sumVampire > sumHunter && compareX < compareY)
-		
+			moveVampire_s();
+		else if (sumVampire > sumHunter && compareX > compareY)
+			moveVampire_a();
 	}
 	
 	
