@@ -20,27 +20,26 @@ public class Vampire extends ScreenObject{
 
 	public static void moveVampire_a(VampireDb vampireDb) {
 		//a
-		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()+1);
+		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()-1);
 		ScreenObjectController.moveVampire(vampireDb);
 	}
 		
 	public static void moveVampire_s(VampireDb vampireDb) {
 		//s
-		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()-1);
+		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()+1);
 		ScreenObjectController.moveVampire(vampireDb);
 	}
 	
 	public static void moveVampire_d(VampireDb vampireDb) {
 		//d
-		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()-1);
+		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()+1);
 		ScreenObjectController.moveVampire(vampireDb);
 	}
 				
 	public static void moveVampire_w(VampireDb vampireDb) {
 		//w
-		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()+1);
+		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()-1);
 		ScreenObjectController.moveVampire(vampireDb);
 		}
-	}
 
 }
