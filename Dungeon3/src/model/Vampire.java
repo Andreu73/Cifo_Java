@@ -18,7 +18,7 @@ public class Vampire extends ScreenObject{
 		this.pointsObject = pointsObject;
 	}
 	
-	public static void moveVampire(VampireDb vampireDb) {
+	public static void moveVampireToHunter(VampireDb vampireDb) {
 		
 		int hunterX = HunterDb.hunters.get(0).position.getX();
 		int vampireX = VampireDb.vampires.get(0).position.getX();

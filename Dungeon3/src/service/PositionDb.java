@@ -22,13 +22,14 @@ public class PositionDb {
 		positions.add(position);
 	}
 	
-//	public static String listAllPositions() {
+//	public static Boolean isNotRepeatedPosition(int x, int y) {
 //
-//		for(Position position : positions) {
+//		for(Position posits : positions) {
 //			
-//			position;
+//			if(posits.getX()==x && posits.getY()==y);
+//			return true;
 //		}
-//		return position;
+//		return false;
 //	}
 	
 

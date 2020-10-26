@@ -3,6 +3,7 @@ package model;
 import java.util.Random;
 
 import service.HunterDb;
+import service.PositionDb;
 import service.VampireDb;
 
 public class ScreenObject {
