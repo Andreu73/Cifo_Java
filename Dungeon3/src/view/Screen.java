@@ -35,10 +35,10 @@ public class Screen {
 		Vampire vampire = null;
 
 		for(Vampire vamp : VampireDb.vampires) {
-			screen[vamp.getX()][vamp.getY()]=vamp.getSymbol();
+			screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
 			for(Hunter hunters : HunterDb.hunters) {
-				screen[hunters.getX()][hunters.getY()]=hunters.getSymbol();
-				if(vamp.getX()==hunters.getX() && vamp.getY()==hunters.getY()) {
+				screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
+				if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
 					vampire = vamp;
 					Hunter.pointsHunter+=vamp.pointsObject;
 					isCreated = true;
