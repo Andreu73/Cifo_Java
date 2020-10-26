@@ -12,7 +12,7 @@ public class ScreenObjectController {
 	public static void moveHunter(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
 		Vampire.moveVampire(vampireDb);
-		Screen.updateScreen(screen, input, hunterDb);
+		Screen.updateScreen(screen, input, hunterDb, vampireDb);
 
 	}
 	
@@ -22,9 +22,9 @@ public class ScreenObjectController {
 //
 //	}
 	
-	public static void updateScreen(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
+	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
-		Screen.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+		Screen.updateScreen(screen, input, hunterDb, vampireDb);
 	}
 	
 

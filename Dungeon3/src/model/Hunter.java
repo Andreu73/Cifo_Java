@@ -7,6 +7,7 @@ import controller.ScreenObjectController;
 import interfaces.IScreenObject;
 import service.HunterDb;
 import service.VampireDb;
+import view.Screen;
 
 public class Hunter extends ScreenObject implements IScreenObject{
 
@@ -38,34 +39,34 @@ public class Hunter extends ScreenObject implements IScreenObject{
 		String key = input.next();
 		if(key.equals("a") && hunter.position.getY()==0) {
 			hunter.position.setY(hunter.position.getY());
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if(key.equals("a")) {
 			hunter.position.setY(hunter.position.getY()-1);
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if(key.equals("s") && hunter.position.getX()==Main.LENGTH-1) {
 			hunter.position.setX(hunter.position.getX());
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if(key.equals("s")) {
 			hunter.position.setX(hunter.position.getX()+1);
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if(key.equals("d") && hunter.position.getY()==Main.HEIGHT-1) {
 			hunter.position.setY(hunter.position.getY());
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if (key.equals("d")) {
 			hunter.position.setY(hunter.position.getY()+1);
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		else if(key.equals("w") && hunter.position.getX()==0) {
 			hunter.position.setX(hunter.position.getX());
-			ScreenObjectController.moveHunter(input, hunterDb);}
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);}
 		else if(key.equals("w")) {
 			hunter.position.setX(hunter.position.getX()-1);
-			ScreenObjectController.moveHunter(input, hunterDb);
+			ScreenObjectController.moveHunter(Screen.screen, input, hunterDb, vampireDb);
 		}
 		}
 	}

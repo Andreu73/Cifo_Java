@@ -52,12 +52,12 @@ public class Screen {
 		}
     }
 
-	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb){
+	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
 		
 		fillScreen(screen);
 		updateScreenObjects();
 		printScreen(screen);
-		Hunter.moveHunter(input, hunterDb);
+		Hunter.moveHunter(input, hunterDb, vampireDb);
 
 		
 	}

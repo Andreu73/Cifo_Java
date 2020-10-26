@@ -42,7 +42,7 @@ public class Main {
 	Hunter hunter = new Hunter("Andreu","@");
 	HunterDb.addHunterToDb(hunter);
 
-	ScreenObjectController.updateScreen(input, hunterDb, vampireDb);
+	ScreenObjectController.updateScreen(Screen.screen, input, hunterDb, vampireDb);
 
 	}
 
