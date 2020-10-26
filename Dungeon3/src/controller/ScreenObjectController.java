@@ -11,7 +11,8 @@ public class ScreenObjectController {
 	
 	public static void moveHunter(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
-		Vampire.moveVampireToHunter(vampireDb);
+		Vampire.moveVampireToHunter(vampireDb);  
+//		VampireDb.moveVampireToHunter(vampireDb);
 		Screen.updateScreen(screen, input, hunterDb, vampireDb);
 
 	}

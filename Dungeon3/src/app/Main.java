@@ -5,12 +5,13 @@ import java.util.Scanner;
 import controller.ScreenObjectController;
 import model.Hunter;
 import service.HunterDb;
+import service.StakeDb;
 import service.VampireDb;
 import view.Screen;
 
 public class Main {
 	
-	final public static int VAMPIRES = 1;
+	final public static int VAMPIRES = 3;
 	final public static int HUNTERS = 1;
 	final public static int STAKES = 1;
 	final public static boolean VAMPIRES_MOVE = true;
@@ -38,6 +39,9 @@ public class Main {
 	
 	VampireDb vampireDb = new VampireDb("VampireDb");
 	VampireDb.createInitialVampires();
+	StakeDb stakeDb = new StakeDb("StakeDb");
+	StakeDb.createInitialStakes();
+	
 	
 	HunterDb hunterDb = new HunterDb("HunterDb");
 	Hunter hunter = new Hunter("Andreu","@");

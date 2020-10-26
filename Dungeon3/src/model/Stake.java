@@ -2,7 +2,9 @@ package model;
 
 import java.util.Random;
 
-public class Stake extends ScreenObject{
+import interfaces.IScreenObject;
+
+public class Stake extends ScreenObject {
 
 	public int pointsObject;
 	Random random = new Random();

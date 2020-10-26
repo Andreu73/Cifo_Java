@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 import app.Main;
 import model.Hunter;
+import model.Stake;
 import model.Vampire;
 import service.HunterDb;
+import service.StakeDb;
 import service.VampireDb;
 
 public class Screen {
@@ -31,24 +33,51 @@ public class Screen {
     
     public static void updateScreenObjects() {
     	
-    	boolean isCreated = false;
+    	boolean isVampireCreated = false;
 		Vampire vampire = null;
+		boolean isStakeCreated = false;
+		Stake stake1 = null;
 
 		for(Vampire vamp : VampireDb.vampires) {
 			screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
-			for(Hunter hunters : HunterDb.hunters) {
-				screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
-				if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
-					vampire = vamp;
-					Hunter.pointsHunter+=vamp.pointsObject;
-					isCreated = true;
+			for(Stake stakes : StakeDb.stakes) {
+				screen[stakes.position.getX()][stakes.position.getY()]=stakes.getSymbol();
+				for(Hunter hunters : HunterDb.hunters) {
+					screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
+					
+					//Vampire hunts Hunter
+					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
+						Main.isFinished = true;
+						System.out.println("GAME OVER");
+					}
+
+					
+					//Hunter gets Stake
+					if(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY()) {
+						stake1 = stakes;
+						isStakeCreated = true;
+					}
+					
+//					Hunter hunts Vampire
+//					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
+//						vampire = vamp;
+//						Hunter.pointsHunter+=vamp.pointsObject;
+//						isVampireCreated = true;
+//					}				
+					
+					
+					
 				}
 			}
 		}
 	
 		VampireDb.removeVampire(vampire);
-		if(isCreated==true) {
+		if(isVampireCreated==true) {
 			VampireDb.createNewVampire();
+		}
+		StakeDb.removeStake(stake1);
+		if(isStakeCreated==true) {
+			StakeDb.createNewStake();
 		}
     }
 
@@ -58,7 +87,6 @@ public class Screen {
 		updateScreenObjects();
 		printScreen(screen);
 		Hunter.moveHunter(input, hunterDb, vampireDb);
-
 		
 	}
 	

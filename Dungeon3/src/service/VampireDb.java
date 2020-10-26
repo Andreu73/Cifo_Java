@@ -22,16 +22,12 @@ public class VampireDb {
 		vampires.add(vampire);
 	}
 	
-//	public static String listAllVampires() {
-//		
-//		String listOfVampires = "";
-//		int count=1;
+//	public static void listAllVampires() {
+//
 //		for(Vampire vamps : vampires) {
 //			
-//			listOfVampires = listOfVampires + count + ". "  +vamps +"\n";
-//			count++;
+//			vamps
 //		}
-//		return listOfVampires;
 //	}
 	
 	public static void createInitialVampires() {
