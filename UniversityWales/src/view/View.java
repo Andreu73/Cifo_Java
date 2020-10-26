@@ -83,7 +83,6 @@ public class View {
 			}else if(option==5) {
 				showVaccines();
 			}else if(option==6) {
-				start();
 				break;	
 			}
 		}

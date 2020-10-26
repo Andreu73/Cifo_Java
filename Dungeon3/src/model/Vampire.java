@@ -91,8 +91,8 @@ public class Vampire extends ScreenObject {
 		int sumHunter = hunterX + hunterY;
 		
 		//w-->s
-		if((sumVampire < sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT)) {
-			VampireDb.vampires.get(i).position.setY(Main.HEIGHT);
+		if((sumVampire < sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT+1)) {
+			VampireDb.vampires.get(i).position.setY(Main.HEIGHT+1);
 		}	
 		else if(sumVampire < sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
@@ -112,6 +112,9 @@ public class Vampire extends ScreenObject {
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
 		//a-->d
+		else if ((sumVampire > sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1)){
+			VampireDb.vampires.get(i).position.setX(Main.LENGTH-1);
+		}
 		else if (sumVampire > sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
