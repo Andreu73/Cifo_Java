@@ -22,17 +22,17 @@ public class VampireDb {
 		vampires.add(vampire);
 	}
 	
-	public static String listAllVampires() {
-		
-		String listOfVampires = "";
-		int count=1;
-		for(Vampire vamps : vampires) {
-			
-			listOfVampires = listOfVampires + count + ". "  +vamps +"\n";
-			count++;
-		}
-		return listOfVampires;
-	}
+//	public static String listAllVampires() {
+//		
+//		String listOfVampires = "";
+//		int count=1;
+//		for(Vampire vamps : vampires) {
+//			
+//			listOfVampires = listOfVampires + count + ". "  +vamps +"\n";
+//			count++;
+//		}
+//		return listOfVampires;
+//	}
 	
 	public static void createInitialVampires() {
 		for (int i = 0; i < Main.VAMPIRES; i++) {

@@ -21,17 +21,17 @@ public class HunterDb {
 		hunters.add(hunter);
 	}
 	
-	public static String listAllHunters() {
-		
-		String listOfHunters = "";
-		int count=1;
-		for(Hunter hunters : hunters) {
-			
-			listOfHunters = listOfHunters + count + ". "  +hunters +"\n";
-			count++;
-		}
-		return listOfHunters;
-	}
+//	public static String listAllHunters() {
+//		
+//		String listOfHunters = "";
+//		int count=1;
+//		for(Hunter hunters : hunters) {
+//			
+//			listOfHunters = listOfHunters + count + ". "  +hunters +"\n";
+//			count++;
+//		}
+//		return listOfHunters;
+//	}
 	
 //	public static void createHunter() {
 //		for (int i = 0; i < 1; i++) {
