@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import app.Main;
+import controller.ScreenObjectController;
 import model.Hunter;
 import model.Stake;
 import model.Vampire;
@@ -14,28 +15,13 @@ import service.VampireDb;
 public class Screen {
 
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
-	
-    public static void countdownClock(){
-    	int i = Main.TIME_PER_GAME;
-    	while (i > 0){
-    		try {
-    			for (int j = 0; j < 5; j++) {
-        		i--;
-	            Thread.sleep(1000L);    // 1000L = 1000ms = 1 second
-	            }
-	            System.out.println("Remaining: "+ i +" seconds");
-           }
-           catch (InterruptedException e) 
-           { }
-         }
 
-    }
     
     public static void updateScreenObjects() {
     	
-    	boolean isVampireCreated = false;
-		Vampire vampire = null;
+     	boolean isVampireCreated = false;
 		boolean isStakeCreated = false;
+		Vampire vampire = null;
 		Stake stake1 = null;
 
 		for(Vampire vamp : VampireDb.vampires) {
@@ -45,28 +31,27 @@ public class Screen {
 				for(Hunter hunters : HunterDb.hunters) {
 					screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 					
+					//Hunter gets Stake
+					if((stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY())){
+						Main.isHunterTurn = true;
+						stake1 = stakes;
+					   	
+					}
+
 					//Vampire hunts Hunter
-					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
+					if((vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
 						Main.isFinished = true;
 						System.out.println("GAME OVER");
 					}
 
-					
-					//Hunter gets Stake
-					if(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY()) {
-						stake1 = stakes;
-						isStakeCreated = true;
-					}
-					
-//					Hunter hunts Vampire
-//					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
-//						vampire = vamp;
-//						Hunter.pointsHunter+=vamp.pointsObject;
-//						isVampireCreated = true;
-//					}				
-					
-					
-					
+					//Hunter hunts Vampire
+					if((vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+						vampire = vamp;
+						Hunter.pointsHunter+=vamp.pointsObject;
+						isVampireCreated = true;
+						Main.isHunterTurn=false;
+						
+					}				
 				}
 			}
 		}
@@ -87,7 +72,6 @@ public class Screen {
 		updateScreenObjects();
 		printScreen(screen);
 		Hunter.moveHunter(input, hunterDb, vampireDb);
-		
 	}
 	
 	public static void printInitialScreen(Scanner input) {
