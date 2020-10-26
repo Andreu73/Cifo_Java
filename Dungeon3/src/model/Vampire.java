@@ -52,19 +52,19 @@ public class Vampire extends ScreenObject{
 
 	}
 		
-	public static void moveVampire_s(VampireDb vampireDb) {
+	public static void moveVampire_s() {
 		//s
 		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()+1);
 
 	}
 	
-	public static void moveVampire_d(VampireDb vampireDb) {
+	public static void moveVampire_d() {
 		//d
 		VampireDb.vampires.get(0).position.setY(VampireDb.vampires.get(0).position.getY()+1);
 
 	}
 				
-	public static void moveVampire_w(VampireDb vampireDb) {
+	public static void moveVampire_w() {
 		//w
 		VampireDb.vampires.get(0).position.setX(VampireDb.vampires.get(0).position.getX()-1);
 

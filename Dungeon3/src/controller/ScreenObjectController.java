@@ -14,18 +14,11 @@ public class ScreenObjectController {
 
 	}
 	
-	public static void updateScreen(Scanner input, HunterDb hunterDb) {
+	public static void updateScreen(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
 		
 		Screen.updateScreen(Screen.screen, input, hunterDb);
 	}
 	
-	public static void moveVampire(Scanner input, VampireDb vampireDb) {
-		
-		Screen.updateScreen(Screen.screen, input, vampireDb);
 
-	}
-
-
-	
 	
 }
