@@ -28,7 +28,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 	Scanner input = new Scanner(System.in);
-	Screen.printInitialScreen(input);
+//	Screen.printInitialScreen(input);
 	
 	VampireDb vampireDb = new VampireDb("VampireDb");
 	VampireDb.createInitialVampires();
