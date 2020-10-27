@@ -16,7 +16,14 @@ public class Screen {
 
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 
-    
+	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
+		
+		fillScreen(screen);
+		updateScreenObjects();
+		printScreen(screen);
+		Hunter.moveHunter(input, hunterDb, vampireDb);
+	}
+	
     public static void updateScreenObjects() {
     	
      	boolean isVampireCreated = false;
@@ -31,25 +38,23 @@ public class Screen {
 				for(Hunter hunters : HunterDb.hunters) {
 					screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 					
+					
 					//Hunter gets Stake
-					if((Main.isHunterTurn==false) &&
-							(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY())){
+					if(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY()){
 						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
-						Main.isHunterTurn = true;
 						stake1 = stakes;
+						Main.isHunterTurn = true;
 					}
 
 					//Vampire hunts Hunter
-					if((Main.isHunterTurn=false) &&
-							(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
 						screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
 						Main.isFinished = true;
 						System.out.println("GAME OVER");
 					}
 
 					//Hunter hunts Vampire
-					if((Main.isHunterTurn==true) &&
-							(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
 						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 						vampire = vamp;
 						Hunter.pointsHunter+=vamp.pointsObject;
@@ -71,13 +76,7 @@ public class Screen {
 		}
     }
 
-	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
-		
-		fillScreen(screen);
-		updateScreenObjects();
-		printScreen(screen);
-		Hunter.moveHunter(input, hunterDb, vampireDb);
-	}
+
 	
 	public static void printInitialScreen(Scanner input) {
 			

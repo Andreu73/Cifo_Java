@@ -25,7 +25,7 @@ public class Main {
 	final public static String FILL_SCREEN_SYMBOL = ".";
 	final public static int TIME_PER_GAME = 100;
 	public static boolean isFinished = false;
-   	public static boolean isHunterTurn = false;
+   	public static boolean isHunterTurn = true;
 	
 	public static void main(String[] args) {
 	
