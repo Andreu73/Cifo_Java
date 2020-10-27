@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import app.Main;
@@ -10,29 +11,62 @@ public class Position {
 	
 	public int x;
 	public int y;
-//	public String[][] position = new String [Main.LENGTH][Main.HEIGHT];
-//	public String[][] position;
+  	int[] position = {x, y};
+  	ArrayList<int[]> positionsArray = new ArrayList<>();
+	Random random = new Random();
 	
 	public Position() {
 		super();
 
 //		this.x = x;
 //		this.y = y;		
-		initialNumberInLength();
-		initialNumberInHeight();
+		checkRepeatedPosition();
 //		this.position = new String[x][y];
 	}
-	Random random = new Random();
 
-	public void initialNumberInLength() {
+	public void checkRepeatedPosition() {
+		
+		int x = initialNumberInLength();
+	   	int y = initialNumberInHeight();
+	   	
+	   	int[] position = {x, y};
+	   	
+	   	boolean isNew=false;
+	   	
+		   	while(isNew==false) {
+			
+		  	for(int k =0; k<this.positionsArray.size(); k++) {
+	
+		  		for(int i =0; i<position.length; i++) {
+		   		 
+		  			if(position[i]!=positionsArray.get(k)[i]) {
+			   			 
+		  				positionsArray.add(position);
+		  				System.out.println("Not repeated");
+		  				this.x = x;
+		  				this.y = y;
+		  				isNew=true;
+			   		 }
+		   		 }
+		   	 }
+	  	
+	   	}
+	}
+
+	
+	 	 
+
+	public int initialNumberInLength() {
 		int numberLength = random.nextInt(Main.LENGTH);
-		this.x=numberLength;
+//		this.x=numberLength;
+		return numberLength;
 
 	}
 	
-	public void initialNumberInHeight() {
+	public int initialNumberInHeight() {
 		int numberHeight = random.nextInt(Main.HEIGHT);
-		this.y=numberHeight;
+//		this.y=numberHeight;
+		return numberHeight;
 		
 	}
 	
@@ -54,3 +88,57 @@ public class Position {
 	
 
 }
+
+
+/*
+
+class Main {
+    
+    public static int randomNumberInLength(Random random) {
+   	 //Math.random() * (max - min + 1) + min
+   	 int numberLength = random.nextInt(5);
+   	 return numberLength;
+   	 
+    }
+    
+    public static int randomNumberInHeight(Random random) {
+   	 //Math.random() * (max - min + 1) + min
+   	 int numberHeight = random.nextInt(5);
+   	 return numberHeight;
+   	 
+    }
+
+	public static void main(String args[]) {
+   	 Random random = new Random();
+   	 
+   	 ArrayList<int[]> positionsArray = new ArrayList<>();
+   	 
+   	 int x = 2;
+   	 int y =3;
+   	 int c = 4;
+   	 int[] position = {x, y};
+   	 int[] position2 = {x, y};
+   	 
+   	 positionsArray.add(position);
+	 
+   	 System.out.println("dagfearsgv");
+
+//   	 boolean isNew=false;
+   	 for(int k =0; k<positionsArray.size(); k++) {
+
+   		 for(int i =0; i<position2.length; i++) {
+   		 
+   		 if(position2[i]!=positionsArray.get(k)[i]) {
+   			 
+   			 positionsArray.add(position2);
+   			 System.out.println("Not repeated");
+   		 }
+   	 }
+
+   	 }
+
+   	 for(int[] posis2 : positionsArray) {
+   		 
+   		 System.out.println(posis2);
+   	 }*/
+
