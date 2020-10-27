@@ -1,68 +1,23 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import app.Main;
-import interfaces.IScreenObject;
-import service.PositionDb;
 
 public class Position {
 	
 	public int x;
 	public int y;
 //  	public int[] position = {x,y};
-  	public ArrayList<int[]> positionsArray ;
-  	public ArrayList<Integer> auxPositionsArray;
+//  	public static ArrayList<int[]> positionsArray = new ArrayList<>();
+  	
 	Random random = new Random();
 	
 	public Position() {
-		super();
-
-	   	this.positionsArray = new ArrayList<>();
-		this.auxPositionsArray = new ArrayList<>();
-	   	this.checkRepeatedPosition();
-		this.x = auxPositionsArray.get(0);
-	   	this.y = auxPositionsArray.get(1);
+		this.x = initialNumberInLength();
+		this.y = initialNumberInHeight();
 	}
 
-	public void checkRepeatedPosition() {
-		
-		Integer x = initialNumberInLength();
-		Integer y = initialNumberInHeight();
-		
-	   	System.out.println(x);
-	   	
-	   	int[] position = {x, y};
-	   	
-	   	auxPositionsArray.add(x);
-	   	auxPositionsArray.add(y);
-	   	
-	   	boolean isNew=false;
-	   	
-		   	while(isNew==false) {
-		   		System.out.println("agsdgas");
-			  	for(int k =0; k<this.positionsArray.size(); k++) {
-		System.out.println(auxPositionsArray.get(k));
-			  		for(int i =0; i<auxPositionsArray.size(); i++) {
-			   		 System.out.println(auxPositionsArray.get(k));
-			   		 System.out.println(positionsArray.get(k)[i]);
-			  			if(auxPositionsArray.get(k)!=positionsArray.get(k)[i]) {
-				   			 
-			  				positionsArray.add(position);
-			  				System.out.println("Not repeated");
-			  				isNew=true;
-
-			  				
-				   		 }
-			   		 }
-			   	 }
-
-		   	}
-		System.out.println("Ok");
-		
-
-	}
 
 	public int initialNumberInLength() {
 		int numberLength = random.nextInt(Main.LENGTH);

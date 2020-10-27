@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 import controller.ScreenObjectController;
 import model.Hunter;
+import model.Position;
 import service.HunterDb;
+import service.PositionDb;
 import service.StakeDb;
 import service.VampireDb;
 import view.Screen;
@@ -13,11 +15,11 @@ public class Main {
 	
 	final public static int VAMPIRES = 1;
 	final public static int HUNTERS = 1;
-	final public static int STAKES = 6;
+	final public static int STAKES = 1;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
-	final public static int LENGTH = 21;
-	final public static int HEIGHT = 42;
+	final public static int LENGTH = 5;
+	final public static int HEIGHT = 5;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;
 	final public static String FILL_SCREEN_SYMBOL = ".";
