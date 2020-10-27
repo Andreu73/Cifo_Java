@@ -17,17 +17,16 @@ public class Position {
 	
 	public Position() {
 		super();
+		
+		this.x = initialNumberInLength();
+	   	this.y = initialNumberInHeight();
+	   	checkRepeatedPosition(x, y);
 
-//		this.x = x;
-//		this.y = y;		
-		checkRepeatedPosition();
-//		this.position = new String[x][y];
 	}
 
-	public void checkRepeatedPosition() {
+	public Boolean checkRepeatedPosition(int x, int y) {
 		
-		int x = initialNumberInLength();
-	   	int y = initialNumberInHeight();
+	   	System.out.println(x);
 	   	
 	   	int[] position = {x, y};
 	   	
@@ -35,26 +34,24 @@ public class Position {
 	   	
 		   	while(isNew==false) {
 			
-		  	for(int k =0; k<this.positionsArray.size(); k++) {
-	
-		  		for(int i =0; i<position.length; i++) {
-		   		 
-		  			if(position[i]!=positionsArray.get(k)[i]) {
-			   			 
-		  				positionsArray.add(position);
-		  				System.out.println("Not repeated");
-		  				this.x = x;
-		  				this.y = y;
-		  				isNew=true;
+			  	for(int k =0; k<this.positionsArray.size(); k++) {
+		
+			  		for(int i =0; i<position.length; i++) {
+			   		 
+			  			if(position[i]!=positionsArray.get(k)[i]) {
+				   			 
+			  				positionsArray.add(position);
+			  				System.out.println("Not repeated");
+			  				isNew=true;
+			  				return true;
+				   		 }
 			   		 }
-		   		 }
-		   	 }
-	  	
-	   	}
-	}
+			   	 }
+		   	}
+		return false;
+		
 
-	
-	 	 
+	}
 
 	public int initialNumberInLength() {
 		int numberLength = random.nextInt(Main.LENGTH);
