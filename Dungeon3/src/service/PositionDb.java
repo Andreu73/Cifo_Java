@@ -22,15 +22,15 @@ public class PositionDb {
 		positions.add(position);
 	}
 	
-//	public static Boolean isNotRepeatedPosition(int x, int y) {
-//
-//		for(Position posits : positions) {
-//			
-//			if(posits.getX()==x && posits.getY()==y);
-//			return true;
-//		}
-//		return false;
-//	}
+	public static Boolean isNotRepeatedPosition(int x, int y) {
+
+		for(Position posits : positions) {
+			
+			if(posits.getX()==x && posits.getY()==y);
+			return true;
+		}
+		return false;
+	}
 	
 
 }

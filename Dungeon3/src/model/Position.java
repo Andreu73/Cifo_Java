@@ -11,41 +11,59 @@ public class Position {
 	
 	public int x;
 	public int y;
-//	public String[][] position = new String [Main.LENGTH][Main.HEIGHT];
-	public int[] position = {x, y};
-	ArrayList<int[]> positionsArray = new ArrayList<>();
+//  	public int[] position = {x,y};
+  	public ArrayList<int[]> positionsArray ;
+  	public ArrayList<Integer> auxPositionsArray;
+	Random random = new Random();
 	
 	public Position() {
 		super();
-//		this.x = x;
-//		this.y = y;
-		this.position = checkPositionInArray();
+
+	   	this.positionsArray = new ArrayList<>();
+		this.auxPositionsArray = new ArrayList<>();
+	   	this.checkRepeatedPosition();
+		this.x = auxPositionsArray.get(0);
+	   	this.y = auxPositionsArray.get(1);
+	}
+
+	public void checkRepeatedPosition() {
+		
+		Integer x = initialNumberInLength();
+		Integer y = initialNumberInHeight();
+		
+	   	System.out.println(x);
+	   	
+	   	int[] position = {x, y};
+	   	
+	   	auxPositionsArray.add(x);
+	   	auxPositionsArray.add(y);
+	   	
+	   	boolean isNew=false;
+	   	
+		   	while(isNew==false) {
+		   		System.out.println("agsdgas");
+			  	for(int k =0; k<this.positionsArray.size(); k++) {
+		System.out.println(auxPositionsArray.get(k));
+			  		for(int i =0; i<auxPositionsArray.size(); i++) {
+			   		 System.out.println(auxPositionsArray.get(k));
+			   		 System.out.println(positionsArray.get(k)[i]);
+			  			if(auxPositionsArray.get(k)!=positionsArray.get(k)[i]) {
+				   			 
+			  				positionsArray.add(position);
+			  				System.out.println("Not repeated");
+			  				isNew=true;
+
+			  				
+				   		 }
+			   		 }
+			   	 }
+
+		   	}
+		System.out.println("Ok");
+		
 
 	}
-	Random random = new Random();
 
-	public int[] checkPositionInArray() {
-		
-		int x = initialNumberInLength();
-		int y = initialNumberInHeight();
-		
-		int[]position2 = {x, y};
-		
-		for(int[] posisInt : positionsArray) {
-			
-		
-	    	for (int i = 0; i < position2.length; i++) {
-
-	            if (position2[i] != posisInt[i]) {
-	            	positionsArray.add(position2);
-	            	System.out.println("Ok");
-	            }
-	    	}
-		}
-    	return position2;
-		
-	}
-	
 	public int initialNumberInLength() {
 		int numberLength = random.nextInt(Main.LENGTH);
 //		this.x=numberLength;
@@ -78,3 +96,50 @@ public class Position {
 	
 
 }
+
+
+/*
+class Main {
+    
+    public static int randomNumberInLength(Random random) {
+   	 //Math.random() * (max - min + 1) + min
+   	 int numberLength = random.nextInt(5);
+   	 return numberLength;
+   	 
+    }
+    
+    public static int randomNumberInHeight(Random random) {
+   	 //Math.random() * (max - min + 1) + min
+   	 int numberHeight = random.nextInt(5);
+   	 return numberHeight;
+   	 
+    }
+	public static void main(String args[]) {
+   	 Random random = new Random();
+   	 
+   	 ArrayList<int[]> positionsArray = new ArrayList<>();
+   	 
+   	 int x = 2;
+   	 int y =3;
+   	 int c = 4;
+   	 int[] position = {x, y};
+   	 int[] position2 = {x, y};
+   	 
+   	 positionsArray.add(position);
+	 
+   	 System.out.println("dagfearsgv");
+//   	 boolean isNew=false;
+   	 for(int k =0; k<positionsArray.size(); k++) {
+   		 for(int i =0; i<position2.length; i++) {
+   		 
+   		 if(position2[i]!=positionsArray.get(k)[i]) {
+   			 
+   			 positionsArray.add(position2);
+   			 System.out.println("Not repeated");
+   		 }
+   	 }
+   	 }
+   	 for(int[] posis2 : positionsArray) {
+   		 
+   		 System.out.println(posis2);
+   	 }*/
