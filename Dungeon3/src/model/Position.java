@@ -11,20 +11,25 @@ public class Position {
 	
 	public int x;
 	public int y;
-  	int[] position = {x, y};
-  	ArrayList<int[]> positionsArray = new ArrayList<>();
+  	int[] position = {x,y};
+  	public ArrayList<int[]> positionsArray ;
+  	public ArrayList<Integer> auxPositionsArray;
 	Random random = new Random();
 	
 	public Position() {
 		super();
-		
-		this.x = initialNumberInLength();
-	   	this.y = initialNumberInHeight();
-	   	checkRepeatedPosition(x, y);
+	   	this.checkRepeatedPosition();
+		auxPositionsArray = new ArrayList<>();
+		this.x = auxPositionsArray.get(0);
+	   	this.y = auxPositionsArray.get(1);
+
 
 	}
 
-	public Boolean checkRepeatedPosition(int x, int y) {
+	public void checkRepeatedPosition() {
+		
+		int x = initialNumberInLength();
+		int y = initialNumberInHeight();
 		
 	   	System.out.println(x);
 	   	
@@ -43,12 +48,14 @@ public class Position {
 			  				positionsArray.add(position);
 			  				System.out.println("Not repeated");
 			  				isNew=true;
-			  				return true;
+			  				this.setX(x);
+			  				this.setY(y);
+			  				
 				   		 }
 			   		 }
 			   	 }
 		   	}
-		return false;
+		System.out.println("Ok");
 		
 
 	}
