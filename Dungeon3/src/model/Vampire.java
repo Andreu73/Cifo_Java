@@ -40,6 +40,7 @@ public class Vampire extends ScreenObject {
 		//w
 		if((sumVampire < sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getY()==0))
 			VampireDb.vampires.get(i).position.setY(0);
+		
 		else if(sumVampire < sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
@@ -90,34 +91,40 @@ public class Vampire extends ScreenObject {
 		int sumVampire = vampireX + vampireY;
 		int sumHunter = hunterX + hunterY;
 		
-		//w-->s
-		if((sumVampire < sumHunter && compareX > compareY) && (VampireDb.vampires.get(i).position.getY()==7)) {
-			VampireDb.vampires.get(i).position.setY(7);
-		}	
-		else if(sumVampire < sumHunter && compareX > compareY) {
+		//w-->S
+		if ((sumVampire > sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT)) {
+			VampireDb.vampires.get(i).position.setY(Main.HEIGHT);
+		}
+		else if (sumVampire > sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
-		//d-->a
-		else if ((sumVampire < sumHunter && compareX < compareY) && (VampireDb.vampires.get(i).position.getX()==0)) {
+			
+		//d-->A
+		else if (((sumVampire < sumHunter) && (compareX < compareY)) && (VampireDb.vampires.get(i).position.getX()==0)) {
 			VampireDb.vampires.get(i).position.setX(0);
 		}
 		else if (sumVampire < sumHunter && compareX < compareY) {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
-		//s-->w OK
-		else if ((sumVampire > sumHunter && compareX < compareY) && (VampireDb.vampires.get(i).position.getY()==0)) {
-			VampireDb.vampires.get(i).position.setY(0);
-		}//OK
-		else if (sumVampire > sumHunter && compareX < compareY) {
-			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
-		}
-		//a-->d
-		else if ((sumVampire > sumHunter && compareX > compareY) && (VampireDb.vampires.get(i).position.getX()==0)){
+		
+		//s-->W	
+		
+		else if ((sumVampire > sumHunter) && (compareX < compareY) && (VampireDb.vampires.get(i).position.getX()==0)) {
 			VampireDb.vampires.get(i).position.setX(0);
+		}
+		else if (sumVampire > sumHunter && compareX < compareY) {
+			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
+		}
+
+		//a-->D
+		else if ((sumVampire > sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getX()==Main.LENGTH)) {
+			VampireDb.vampires.get(i).position.setX(Main.LENGTH);
 		}
 		else if (sumVampire > sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
+				
+		
 	}
 		
 		

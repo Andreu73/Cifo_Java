@@ -32,20 +32,25 @@ public class Screen {
 					screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 					
 					//Hunter gets Stake
-					if((stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY())){
+					if((Main.isHunterTurn==false) &&
+							(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY())){
+						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 						Main.isHunterTurn = true;
 						stake1 = stakes;
-					   	
 					}
 
 					//Vampire hunts Hunter
-					if((vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+					if((Main.isHunterTurn=false) &&
+							(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+						screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
 						Main.isFinished = true;
 						System.out.println("GAME OVER");
 					}
 
 					//Hunter hunts Vampire
-					if((vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+					if((Main.isHunterTurn==true) &&
+							(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY())) {
+						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
 						vampire = vamp;
 						Hunter.pointsHunter+=vamp.pointsObject;
 						isVampireCreated = true;
