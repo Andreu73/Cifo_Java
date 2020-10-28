@@ -16,10 +16,10 @@ public class Main {
 	
 	final public static int VAMPIRES = 1;
 	final public static int HUNTERS = 1;
-	final public static int STAKES = 1;
+	final public static int STAKES = 5;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
-	final public static int LENGTH = 35;
+	final public static int LENGTH = 25;
 	final public static int HEIGHT = 15;
 	final public static int HUNTER_X = 0;
 	final public static int HUNTER_Y = 0;

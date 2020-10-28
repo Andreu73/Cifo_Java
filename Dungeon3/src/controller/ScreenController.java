@@ -18,7 +18,7 @@ public class ScreenController {
 		Screen.fillScreen(screen);
 		ScreenObjectController.updateScreenObjects(screen);
 		Screen.printScreen(screen);
-		ScreenObjectController.moveHunter(input, hunterDb, vampireDb);
+		HunterController.moveHunter(input, hunterDb, vampireDb);
 //		ScreenObjectController.moveVampire(screen, input, hunterDb, vampireDb);
 	}
 
