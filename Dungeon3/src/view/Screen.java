@@ -15,7 +15,7 @@ import service.VampireDb;
 
 public class Screen {
 
-	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
+	public static String[][] screen = new String[Main.HEIGHT][Main.LENGTH];
 
 	public static void printInitialScreen(Scanner input) {
 			
@@ -36,8 +36,8 @@ public class Screen {
 
 	
 	public static void printScreen(String[][] screen) {
-		for (int i = 0; i < Main.LENGTH; i++) {
-			for (int j = 0; j < Main.HEIGHT; j++) {
+		for (int i = 0; i < Main.HEIGHT; i++) {
+			for (int j = 0; j < Main.LENGTH; j++) {
 				System.out.print(screen[i][j]);
 			}
 			System.out.println();
@@ -45,8 +45,8 @@ public class Screen {
 	}
 	
 	public static void fillScreen(String[][] screen) {
-		for (int i = 0; i < Main.LENGTH; i++) {
-			for (int j = 0; j < Main.HEIGHT; j++) {
+		for (int i = 0; i < Main.HEIGHT; i++) {
+			for (int j = 0; j < Main.LENGTH; j++) {
 				screen[i][j]=Main.FILL_SCREEN_SYMBOL;
 			}
 		}

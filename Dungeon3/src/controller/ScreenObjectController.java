@@ -13,24 +13,7 @@ import view.Screen;
 
 public class ScreenObjectController {
 	
-	public static void moveVampire(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
-		
-		if(Main.isHunterTurn==false) {
-			Vampire.moveVampireToHunter(vampireDb);
-//			ScreenController.updateScreen(screen, input, hunterDb, vampireDb);
-		}
-		else
-			Vampire.moveVampireAwayFromHunter(vampireDb);{
-//			ScreenController.updateScreen(screen, input, hunterDb, vampireDb);
-			}
-	}
-	
-	public static void moveHunter(Scanner input, HunterDb hunterDb, VampireDb vampireDb) {
-		moveVampire(Screen.screen, input, hunterDb, vampireDb);	
-		Hunter.moveHunter(input, hunterDb, vampireDb);
 
-//		ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb);
-	}
 	
 	   public static void updateScreenObjects(String[][] screen) {
 	    	
@@ -40,11 +23,11 @@ public class ScreenObjectController {
 			Stake stake1 = null;
 
 			for(Vampire vamp : VampireDb.vampires) {
-				screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
+				screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
 				for(Stake stakes : StakeDb.stakes) {
-					screen[stakes.position.getX()][stakes.position.getY()]=stakes.getSymbol();
+					screen[stakes.position.getY()][stakes.position.getX()]=stakes.getSymbol();
 					for(Hunter hunters : HunterDb.hunters) {
-						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
+						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						
 						
 						//Hunter gets Stake

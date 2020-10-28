@@ -8,14 +8,15 @@ public class Position {
 	
 	public int x;
 	public int y;
-//  	public int[] position = {x,y};
-//  	public static ArrayList<int[]> positionsArray = new ArrayList<>();
+//  	public int[][] positionxy;
+//  public static ArrayList<int[]> positionsArray = new ArrayList<>();
   	
 	Random random = new Random();
 	
 	public Position() {
 		this.x = initialNumberInLength();
 		this.y = initialNumberInHeight();
+//		this.positionxy = new int[this.y][this.x];
 	}
 
 
