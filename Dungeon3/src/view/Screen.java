@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import app.Main;
+import controller.ScreenController;
 import controller.ScreenObjectController;
 import model.Hunter;
 import model.Stake;
@@ -16,68 +17,6 @@ public class Screen {
 
 	public static String[][] screen = new String[Main.LENGTH][Main.HEIGHT];
 
-	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
-		
-		fillScreen(screen);
-		updateScreenObjects();
-		printScreen(screen);
-		Hunter.moveHunter(input, hunterDb, vampireDb);
-	}
-	
-    public static void updateScreenObjects() {
-    	
-     	boolean isVampireCreated = false;
-		boolean isStakeCreated = false;
-		Vampire vampire = null;
-		Stake stake1 = null;
-
-		for(Vampire vamp : VampireDb.vampires) {
-			screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
-			for(Stake stakes : StakeDb.stakes) {
-				screen[stakes.position.getX()][stakes.position.getY()]=stakes.getSymbol();
-				for(Hunter hunters : HunterDb.hunters) {
-					screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
-					
-					
-					//Hunter gets Stake
-					if(stakes.position.getX()==hunters.position.getX() && stakes.position.getY()==hunters.position.getY()){
-						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
-						stake1 = stakes;
-						Main.isHunterTurn = true;
-					}
-
-					//Vampire hunts Hunter
-					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
-						screen[vamp.position.getX()][vamp.position.getY()]=vamp.getSymbol();
-						Main.isFinished = true;
-						System.out.println("GAME OVER");
-					}
-
-					//Hunter hunts Vampire
-					if(vamp.position.getX()==hunters.position.getX() && vamp.position.getY()==hunters.position.getY()) {
-						screen[hunters.position.getX()][hunters.position.getY()]=hunters.getSymbol();
-						vampire = vamp;
-						Hunter.pointsHunter+=vamp.pointsObject;
-						isVampireCreated = true;
-						Main.isHunterTurn=false;
-						
-					}				
-				}
-			}
-		}
-	
-		VampireDb.removeVampire(vampire);
-		if(isVampireCreated==true) {
-			VampireDb.createNewVampire();
-		}
-		StakeDb.removeStake(stake1);
-		if(isStakeCreated==true) {
-			StakeDb.createNewStake();
-		}
-    }
-
-
-	
 	public static void printInitialScreen(Scanner input) {
 			
 		System.out.print("\n   VAMPIRE CHASE\npress enter to start\n\n"

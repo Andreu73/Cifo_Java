@@ -77,8 +77,6 @@ public class Vampire extends ScreenObject {
 		
 		for (int i = 0; i < Main.VAMPIRES; i++) {
 	
-	
-	
 		int hunterX = HunterDb.hunters.get(0).position.getX();
 		int vampireX = VampireDb.vampires.get(0).position.getX();
 		
@@ -98,7 +96,6 @@ public class Vampire extends ScreenObject {
 		else if (sumVampire > sumHunter && compareX > compareY) {
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
-			
 		//d-->A
 		else if (((sumVampire < sumHunter) && (compareX < compareY)) && (VampireDb.vampires.get(i).position.getX()==0)) {
 			VampireDb.vampires.get(i).position.setX(0);
@@ -106,16 +103,13 @@ public class Vampire extends ScreenObject {
 		else if (sumVampire < sumHunter && compareX < compareY) {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
-		
 		//s-->W	
-		
 		else if ((sumVampire > sumHunter) && (compareX < compareY) && (VampireDb.vampires.get(i).position.getX()==0)) {
 			VampireDb.vampires.get(i).position.setX(0);
 		}
 		else if (sumVampire > sumHunter && compareX < compareY) {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
-
 		//a-->D
 		else if ((sumVampire > sumHunter) && (compareX > compareY) && (VampireDb.vampires.get(i).position.getX()==Main.LENGTH)) {
 			VampireDb.vampires.get(i).position.setX(Main.LENGTH);
