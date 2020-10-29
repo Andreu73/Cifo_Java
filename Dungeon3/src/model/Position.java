@@ -8,7 +8,7 @@ public class Position {
 	
 	public int x;
 	public int y;
-//  	public int[][] positionxy;
+//  public int[][] positionxy;
 //  public static ArrayList<int[]> positionsArray = new ArrayList<>();
   	
 	Random random = new Random();

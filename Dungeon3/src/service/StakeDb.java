@@ -36,7 +36,7 @@ public class StakeDb {
 	public static void createInitialStakes() {
 		for (int i = 0; i < Main.STAKES; i++) {
 		
-		stakes.add(new Stake("Stake","/",0));
+		stakes.add(new Stake("Stake","Î",0));
 		}
 	}
 

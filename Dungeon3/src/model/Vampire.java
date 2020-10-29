@@ -43,7 +43,7 @@ public class Vampire extends ScreenObject {
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
 		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed=="s" || keyPressed=="d")){
-			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
+			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
 
 		//
@@ -82,7 +82,7 @@ public class Vampire extends ScreenObject {
 		
 	}
 	
-	//és v cap h!!!	
+	//
 	public static void moveVampireAwayFromHunter(VampireDb vampireDb, String keyPressed) {
 		
 		for (int i = 0; i < Main.VAMPIRES; i++) {
@@ -100,8 +100,8 @@ public class Vampire extends ScreenObject {
 		if(VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1)
 			VampireDb.vampires.get(i).position.setX(Main.LENGTH-1);
 		
-		else if (VampireDb.vampires.get(i).position.getY()==0) {
-			VampireDb.vampires.get(i).position.setY(0);
+		else if (VampireDb.vampires.get(i).position.getX()==0) {
+			VampireDb.vampires.get(i).position.setX(0);
 		}
 		else if (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT-1) {
 			VampireDb.vampires.get(i).position.setY(Main.HEIGHT-1);

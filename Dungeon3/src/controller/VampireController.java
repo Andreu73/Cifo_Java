@@ -10,11 +10,9 @@ public class VampireController {
 		
 		if(Main.isHunterTurn==false) {
 			Vampire.moveVampireToHunter(vampireDb, keyPressed);
-//			ScreenController.updateScreen(screen, input, hunterDb, vampireDb);
 		}
 		else
 			Vampire.moveVampireAwayFromHunter(vampireDb, keyPressed);{
-//			ScreenController.updateScreen(screen, input, hunterDb, vampireDb);
 			}
 	}
 }
