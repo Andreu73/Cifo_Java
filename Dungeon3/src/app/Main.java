@@ -14,7 +14,7 @@ import view.Screen;
 
 public class Main {
 	
-	final public static int VAMPIRES = 5;
+	final public static int VAMPIRES = 4;
 	final public static int HUNTERS = 1;
 	final public static int STAKES = 10;
 	final public static boolean VAMPIRES_MOVE = true;
@@ -26,7 +26,7 @@ public class Main {
 	final public static String FILL_SCREEN_SYMBOL = ".";
 	final public static int TIME_PER_GAME = 100;
 	public static boolean isFinished = false;
-   	public static boolean isHunterTurn = false;
+   	public static boolean isHunterTurn = true;
 	
 	public static void main(String[] args) {
 	
@@ -43,7 +43,7 @@ public class Main {
 	Hunter hunter = new Hunter("Andreu","@");
 	HunterDb.addHunterToDb(hunter);
 
-	ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb);
+	ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 
 	}
 

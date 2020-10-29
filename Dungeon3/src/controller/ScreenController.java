@@ -13,12 +13,14 @@ import view.Screen;
 
 public class ScreenController {
 	
-	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb){
-		
+	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb, StakeDb stakeDb){
+
+		while(true) {
 		Screen.fillScreen(screen);
 		ScreenObjectController.updateScreenObjects(screen);
 		Screen.printScreen(screen);
-		HunterController.moveHunter(input, hunterDb, vampireDb);;
+		Hunter.moveHunter(input, hunterDb, vampireDb, stakeDb);
+		}
 	}
 
  

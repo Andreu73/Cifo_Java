@@ -8,11 +8,9 @@ public class VampireController {
 	
 	public static void moveVampire(VampireDb vampireDb, String keyPressed) {
 		
-		if(Main.isHunterTurn==false) {
+		if(Main.isHunterTurn==false)
 			Vampire.moveVampireToHunter(vampireDb, keyPressed);
-		}
 		else
-			Vampire.moveVampireAwayFromHunter(vampireDb, keyPressed);{
-			}
+			Vampire.moveVampireAwayFromHunter(vampireDb, keyPressed);
 	}
 }

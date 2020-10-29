@@ -23,27 +23,30 @@ public class ScreenObjectController {
 				screen[stakes.position.getY()][stakes.position.getX()]=stakes.getSymbol();
 				for(Hunter hunters : HunterDb.hunters) {
 					screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-										
+			
 					//Hunter gets Stake
-					if((Main.isHunterTurn = false) && (stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
-						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-						Main.isHunterTurn = true;
-						stake1 = stakes;
+//					if((stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
+//						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
+//
+//						Main.isHunterTurn = true;
+//						stake1 = stakes;
+//						isStakeCreated=true;
+//
+//					}
 
-					}
 
 					//Vampire hunts Hunter
-					else if((Main.isHunterTurn = false) && (vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
-						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
-						Main.isFinished = true;
-						System.out.println("GAME OVER");
-					}
+//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
+//						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
+//						Main.isFinished = true;
+//						System.out.println("GAME OVER");
+//					}
 
 					//Hunter hunts Vampire
-//					else if((Main.isHunterTurn = true) && (vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
+//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
 //						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-//						vampire = vamp;
 //						Main.isHunterTurn=false;
+//						vampire = vamp;
 //						Hunter.pointsHunter+=vamp.pointsObject;
 //						isVampireCreated = true;
 //						
