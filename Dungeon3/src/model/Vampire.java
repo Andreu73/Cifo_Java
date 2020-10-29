@@ -93,8 +93,8 @@ public class Vampire extends ScreenObject {
 		int hunterY = HunterDb.hunters.get(0).position.getY();
 		int vampireY = VampireDb.vampires.get(0).position.getY();
 		
-		int sumVampire = vampireX + vampireY;
-		int sumHunter = hunterX + hunterY;
+//		int sumVampire = vampireX + vampireY;
+//		int sumHunter = hunterX + hunterY;
 		
 		//
 		if(VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1)
