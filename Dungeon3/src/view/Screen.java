@@ -51,7 +51,6 @@ public class Screen {
 			}
 		}
 		System.out.println("Total points: " + Hunter.pointsHunter);
-		if(Main.isFinished == true)
-			System.out.println("GAME OVER");
+
 	}
 }

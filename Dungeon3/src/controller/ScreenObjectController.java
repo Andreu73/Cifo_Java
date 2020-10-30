@@ -16,6 +16,7 @@ public class ScreenObjectController {
 		boolean isStakeCreated = false;
 		Vampire vampire = null;
 		Stake stake1 = null;
+		int pointsVampire = 0;
 
 		for(Vampire vamp : VampireDb.vampires) {
 			screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
@@ -48,9 +49,8 @@ public class ScreenObjectController {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						
 						vampire = vamp;
-						
-							Hunter.pointsHunter=Hunter.pointsHunter+vampire.getPointsObject();
-						}
+						pointsVampire = VampireDb.pointsVampire(vamp);						
+
 						isVampireCreated = true;
 						}
 
@@ -59,7 +59,9 @@ public class ScreenObjectController {
 			}
 		}
 
-
+		Hunter.pointsHunter=Hunter.pointsHunter+pointsVampire;
+		if(Main.isFinished == true)
+			System.out.println("GAME OVER");
 		VampireDb.removeVampire(vampire);
 		if(isVampireCreated==true) {
 			VampireDb.createNewVampire();
