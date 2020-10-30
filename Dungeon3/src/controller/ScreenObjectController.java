@@ -29,8 +29,8 @@ public class ScreenObjectController {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						Main.isHunterTurn = true;
 						stake1 = stakes;
-						StakeDb.removeStake(stake1);
-						StakeDb.createNewStake();
+//						StakeDb.removeStake(stake1);
+//						StakeDb.createNewStake();
 //						isStakeCreated=true;
 
 					}
@@ -49,9 +49,9 @@ public class ScreenObjectController {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						Main.isHunterTurn=false;
 						vampire = vamp;
-						VampireDb.removeVampire(vampire);
+//						VampireDb.removeVampire(vampire);
 						Hunter.pointsHunter+=vamp.pointsObject;
-						VampireDb.createNewVampire();
+//						VampireDb.createNewVampire();
 //						isVampireCreated = true;
 						}
 					}				
@@ -59,14 +59,14 @@ public class ScreenObjectController {
 			}
 		}
 	
-//		VampireDb.removeVampire(vampire);
-//		if(isVampireCreated==true) {
-//			VampireDb.createNewVampire();
-//		}
-//		StakeDb.removeStake(stake1);
-//		if(isStakeCreated==true) {
-//			StakeDb.createNewStake();
-//		}
+		VampireDb.removeVampire(vampire);
+		if(isVampireCreated==true) {
+			VampireDb.createNewVampire();
+		}
+		StakeDb.removeStake(stake1);
+		if(isStakeCreated==true) {
+			StakeDb.createNewStake();
+		}
     }
 		
 
