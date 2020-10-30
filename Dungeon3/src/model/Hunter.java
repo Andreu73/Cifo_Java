@@ -43,31 +43,27 @@ public class Hunter extends ScreenObject implements IScreenObject{
 		String key = input.next();
 		
 		if(key.equals("a") && hunter.position.getX()==0) {
-			String keyPressed = "a";
 			hunter.position.setX(0);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		else if(key.equals("a")) {
-			String keyPressed = "a";
 			hunter.position.setX(hunter.position.getX()-1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		else if(key.equals("s") && hunter.position.getY()==Main.HEIGHT-1) {
 			hunter.position.setY(Main.HEIGHT-1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "s";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		else if(key.equals("s")) {
 			hunter.position.setY(hunter.position.getY()+1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "s";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
@@ -75,30 +71,26 @@ public class Hunter extends ScreenObject implements IScreenObject{
 			hunter.position.setX(Main.LENGTH-1);
 			hunter.position.setY(hunter.position.getY()+1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "d";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		else if (key.equals("d")) {
 			hunter.position.setX(hunter.position.getX()+1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "d";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		else if(key.equals("w") && hunter.position.getY()==0) {
 			hunter.position.setY(0);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "w";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			hunter.position.setY(0);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 			}
 		else if(key.equals("w")) {
 			hunter.position.setY(hunter.position.getY()-1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
-			String keyPressed = "w";
-			VampireController.moveVampire(vampireDb, keyPressed);
+			VampireController.moveVampire(vampireDb, key);
 			hunter.position.setY(hunter.position.getY()-1);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}

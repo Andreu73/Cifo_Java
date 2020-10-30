@@ -15,12 +15,11 @@ public class ScreenController {
 	
 	public static void updateScreen(String[][] screen, Scanner input, HunterDb hunterDb, VampireDb vampireDb, StakeDb stakeDb){
 
-		while(true) {
 		Screen.fillScreen(screen);
 		ScreenObjectController.updateScreenObjects(screen);
 		Screen.printScreen(screen);
 		Hunter.moveHunter(input, hunterDb, vampireDb, stakeDb);
-		}
+
 	}
 
  

@@ -25,44 +25,48 @@ public class ScreenObjectController {
 					screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 			
 					//Hunter gets Stake
-//					if((stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
-//						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-//
-//						Main.isHunterTurn = true;
-//						stake1 = stakes;
+					if((stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
+						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
+						Main.isHunterTurn = true;
+						stake1 = stakes;
+						StakeDb.removeStake(stake1);
+						StakeDb.createNewStake();
 //						isStakeCreated=true;
-//
-//					}
 
-
-					//Vampire hunts Hunter
-//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
-//						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
-//						Main.isFinished = true;
-//						System.out.println("GAME OVER");
-//					}
-
+					}
+					
 					//Hunter hunts Vampire
-//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
-//						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-//						Main.isHunterTurn=false;
-//						vampire = vamp;
-//						Hunter.pointsHunter+=vamp.pointsObject;
+					else {
+						
+						//Vampire hunts Hunter
+						if((Main.isHunterTurn==false) &&(vamp.position.getX()==hunters.position.getX()) 
+								&& (vamp.position.getY()==hunters.position.getY())) {
+							screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
+							Main.isFinished = true;
+							System.out.println("GAME OVER");
+						}
+						else {
+						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
+						Main.isHunterTurn=false;
+						vampire = vamp;
+						VampireDb.removeVampire(vampire);
+						Hunter.pointsHunter+=vamp.pointsObject;
+						VampireDb.createNewVampire();
 //						isVampireCreated = true;
-//						
-//					}				
+						}
+					}				
 				}
 			}
 		}
 	
-		VampireDb.removeVampire(vampire);
-		if(isVampireCreated==true) {
-			VampireDb.createNewVampire();
-		}
-		StakeDb.removeStake(stake1);
-		if(isStakeCreated==true) {
-			StakeDb.createNewStake();
-		}
+//		VampireDb.removeVampire(vampire);
+//		if(isVampireCreated==true) {
+//			VampireDb.createNewVampire();
+//		}
+//		StakeDb.removeStake(stake1);
+//		if(isStakeCreated==true) {
+//			StakeDb.createNewStake();
+//		}
     }
 		
 
