@@ -25,32 +25,32 @@ public class ScreenObjectController {
 					screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 			
 					//Hunter gets Stake
-//					if((stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
-//						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-//
-//						Main.isHunterTurn = true;
-//						stake1 = stakes;
-//						isStakeCreated=true;
-//
-//					}
+					if((Main.isHunterTurn==false) && (stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
+						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
+						Main.isHunterTurn = true;
+						stake1 = stakes;
+						isStakeCreated=true;
+
+					}
 
 
 					//Vampire hunts Hunter
-//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
-//						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
-//						Main.isFinished = true;
-//						System.out.println("GAME OVER");
-//					}
+					if((Main.isHunterTurn==false) && (vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
+						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
+						Main.isFinished = true;
+						System.out.println("GAME OVER");
+					}
 
 					//Hunter hunts Vampire
-//					if((vamp.position.getX()==hunters.position.getX()) && (vamp.position.getY()==hunters.position.getY())) {
-//						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-//						Main.isHunterTurn=false;
-//						vampire = vamp;
-//						Hunter.pointsHunter+=vamp.pointsObject;
-//						isVampireCreated = true;
-//						
-//					}				
+					if((Main.isHunterTurn==true) && (vamp.position.getX()==hunters.position.getX()) 
+							&& (vamp.position.getY()==hunters.position.getY())) {
+						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
+						Main.isHunterTurn=false;
+						vampire = vamp;
+						Hunter.pointsHunter+=vamp.pointsObject;
+						isVampireCreated = true;
+						
+					}				
 				}
 			}
 		}
