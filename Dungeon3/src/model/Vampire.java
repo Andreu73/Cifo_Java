@@ -139,7 +139,7 @@ public class Vampire extends ScreenObject {
 		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("a") || keyPressed.equals("w"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
-		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("d") || keyPressed.equals("s"))){
+		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("d") || keyPressed.equals("s") )){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
 		
