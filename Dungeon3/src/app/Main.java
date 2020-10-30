@@ -16,7 +16,7 @@ public class Main {
 	
 	final public static int VAMPIRES = 4;
 	final public static int HUNTERS = 1;
-	final public static int STAKES = 10;
+	final public static int STAKES = 15;
 	final public static boolean VAMPIRES_MOVE = true;
 	final public static int MOVES = 14;
 	final public static int LENGTH = 25;

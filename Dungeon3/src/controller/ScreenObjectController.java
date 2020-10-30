@@ -31,15 +31,14 @@ public class ScreenObjectController {
 						Main.isHunterTurn = true;
 						stake1 = stakes;
 						isStakeCreated=true;
-						Main.isHunterTurn=true;
-						
+
 						}
 					
 					//Vampire hunts Hunter
 					if((Main.isHunterTurn==false) &&(vamp.position.getX()==hunters.position.getX()) 
 								&& (vamp.position.getY()==hunters.position.getY())) 
 						{
-						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
+						screen[hunters.position.getY()][hunters.position.getX()]="+";
 						Main.isFinished = true;
 						}
 					
@@ -60,18 +59,25 @@ public class ScreenObjectController {
 		}
 
 		Hunter.pointsHunter=Hunter.pointsHunter+pointsVampire;
+		
+		if(Main.isHunterTurn==true)
+			System.out.println("Your turn");
+		else
+			System.out.println("Vampires'turn");
+			
 		if(Main.isFinished == true)
 			System.out.println("GAME OVER");
+		
 		VampireDb.removeVampire(vampire);
 		if(isVampireCreated==true) {
 			VampireDb.createNewVampire();
 			Main.isHunterTurn=false;
 		}
-
-		
+	
 		StakeDb.removeStake(stake1);
 		if(isStakeCreated==true) {
 			StakeDb.createNewStake();
+
 		}
 		
 	}
