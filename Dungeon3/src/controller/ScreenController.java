@@ -20,6 +20,7 @@ public class ScreenController {
 		Screen.printScreen(screen);
 		Hunter.moveHunter(input, hunterDb, vampireDb, stakeDb);
 
+
 	}
 
  

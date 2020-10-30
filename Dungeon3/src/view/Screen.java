@@ -50,5 +50,8 @@ public class Screen {
 				screen[i][j]=Main.FILL_SCREEN_SYMBOL;
 			}
 		}
+		System.out.println("Total points: " + Hunter.pointsHunter);
+		if(Main.isFinished == true)
+			System.out.println("GAME OVER");
 	}
 }

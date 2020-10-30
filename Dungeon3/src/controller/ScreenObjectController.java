@@ -11,7 +11,7 @@ import service.VampireDb;
 public class ScreenObjectController {
 	
    public static void updateScreenObjects(String[][] screen) {
-		System.out.println(Main.isHunterTurn);
+
      	boolean isVampireCreated = false;
 		boolean isStakeCreated = false;
 		Vampire vampire = null;
@@ -29,12 +29,9 @@ public class ScreenObjectController {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						Main.isHunterTurn = true;
 						stake1 = stakes;
-//						StakeDb.removeStake(stake1);
-//						StakeDb.createNewStake();
 						isStakeCreated=true;
 						Main.isHunterTurn=true;
 						
-						System.out.println(Main.isHunterTurn);
 						}
 					
 					//Vampire hunts Hunter
@@ -43,31 +40,25 @@ public class ScreenObjectController {
 						{
 						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
 						Main.isFinished = true;
-
-						System.out.println(Main.isHunterTurn);
-						System.out.println("GAME OVER");
-						System.out.println("Total points: " + Hunter.pointsHunter);
 						}
 					
 					//Hunter hunts Vampire
 					if((Main.isHunterTurn==true) &&(vamp.position.getX()==hunters.position.getX()) 
 							&& (vamp.position.getY()==hunters.position.getY())) {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-
+						
 						vampire = vamp;
-//						VampireDb.removeVampire(vampire);
-						System.out.println("Vampire points: "+vamp.pointsObject);
-						Hunter.pointsHunter+=vamp.pointsObject;
-						System.out.println("Total points: " +Hunter.pointsHunter);
-
-//						VampireDb.createNewVampire();
-						isVampireCreated = true;
-						System.out.println(Main.isHunterTurn);
+						
+							Hunter.pointsHunter=Hunter.pointsHunter+vampire.getPointsObject();
 						}
+						isVampireCreated = true;
+						}
+
 				}
 			
 			}
 		}
+
 
 		VampireDb.removeVampire(vampire);
 		if(isVampireCreated==true) {
@@ -80,7 +71,7 @@ public class ScreenObjectController {
 		if(isStakeCreated==true) {
 			StakeDb.createNewStake();
 		}
-
+		
 	}
 }
 

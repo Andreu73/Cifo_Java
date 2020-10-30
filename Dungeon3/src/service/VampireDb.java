@@ -47,4 +47,15 @@ public class VampireDb {
 		vampires.remove(vampire);
 
 	}
+	
+	public static int pointsVampire(Vampire vampire) {
+		
+		for(Vampire vamp : vampires) {
+			
+			if(vamp.equals(vampire)) {
+				return vamp.getPointsObject();
+			}
+		}
+		return 0;
+	}
 }

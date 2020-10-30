@@ -19,6 +19,10 @@ public class Vampire extends ScreenObject {
 		this.pointsObject = pointsObject;
 	}
 	
+	public int getPointsObject() {
+		return pointsObject;
+	}
+
 	public static void moveVampireToHunter(VampireDb vampireDb, String keyPressed) {
 		
 		for (int i = 0; i < Main.VAMPIRES; i++) {
