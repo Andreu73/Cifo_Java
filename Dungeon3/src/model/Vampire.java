@@ -31,34 +31,34 @@ public class Vampire extends ScreenObject {
 		
 		//
 		
-		if((vampireX < hunterX && vampireY < hunterY) && (keyPressed=="w" || keyPressed=="d")){
+		if((vampireX < hunterX && vampireY < hunterY) && (keyPressed.equals("w") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
-		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed=="a" || keyPressed=="s")){
+		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed.equals("a") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
 
 		//
-		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed=="w" || keyPressed=="a")){
+		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed.equals("w") || keyPressed.equals("a"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
-		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed=="s" || keyPressed=="d")){
+		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed.equals("s") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
 
 		//
-		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed=="w" || keyPressed=="d")){
+		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed.equals("w") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
-		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed=="a" || keyPressed=="s")){
+		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed.equals("a") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
 
 		//
-		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed=="a" || keyPressed=="w")){
+		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("a") || keyPressed.equals("w"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
-		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed=="d" || keyPressed=="s")){
+		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("d") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
 		
@@ -111,35 +111,35 @@ public class Vampire extends ScreenObject {
 		}
 		
 		
-		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed=="w" || keyPressed=="d")){
+		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed.equals("w") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
-		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed=="a" || keyPressed=="s")){
+		else if((vampireX < hunterX && vampireY < hunterY) && (keyPressed.equals("a") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
 
 		//
-		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed=="w" || keyPressed=="a")){
+		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed.equals("w") || keyPressed.equals("a"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
-		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed=="s" || keyPressed=="d")){
+		else if ((vampireX > hunterX && vampireY < hunterY) && (keyPressed.equals("s") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()-1);
 		}
 
 		//
-		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed=="w" || keyPressed=="d")){
+		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed.equals("w") || keyPressed.equals("d"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
-		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed=="a" || keyPressed=="s")){
+		else if ((vampireX > hunterX && vampireY > hunterY) && (keyPressed.equals("a") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+1);
 		}
 
 
 		//
-		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed=="a" || keyPressed=="w")){
+		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("a") || keyPressed.equals("w"))){
 			VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+1);
 		}
-		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed=="d" || keyPressed=="s")){
+		else if ((vampireX < hunterX && vampireY > hunterY) && (keyPressed.equals("d") || keyPressed.equals("s"))){
 			VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()-1);
 		}
 		
