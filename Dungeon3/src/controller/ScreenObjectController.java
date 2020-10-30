@@ -11,7 +11,7 @@ import service.VampireDb;
 public class ScreenObjectController {
 	
    public static void updateScreenObjects(String[][] screen) {
-    	
+		System.out.println(Main.isHunterTurn);
      	boolean isVampireCreated = false;
 		boolean isStakeCreated = false;
 		Vampire vampire = null;
@@ -25,50 +25,62 @@ public class ScreenObjectController {
 					screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 			
 					//Hunter gets Stake
-					if((stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY())){
+					if((Main.isHunterTurn==false) && (stakes.position.getX()==hunters.position.getX()) && (stakes.position.getY()==hunters.position.getY()))	{
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
 						Main.isHunterTurn = true;
 						stake1 = stakes;
 //						StakeDb.removeStake(stake1);
 //						StakeDb.createNewStake();
-//						isStakeCreated=true;
+						isStakeCreated=true;
+						Main.isHunterTurn=true;
+						
+						System.out.println(Main.isHunterTurn);
+						}
+					
+					//Vampire hunts Hunter
+					if((Main.isHunterTurn==false) &&(vamp.position.getX()==hunters.position.getX()) 
+								&& (vamp.position.getY()==hunters.position.getY())) 
+						{
+						screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
+						Main.isFinished = true;
 
-					}
+						System.out.println(Main.isHunterTurn);
+						System.out.println("GAME OVER");
+						System.out.println("Total points: " + Hunter.pointsHunter);
+						}
 					
 					//Hunter hunts Vampire
-					else {
-						
-						//Vampire hunts Hunter
-						if((Main.isHunterTurn==false) &&(vamp.position.getX()==hunters.position.getX()) 
-								&& (vamp.position.getY()==hunters.position.getY())) {
-							screen[vamp.position.getY()][vamp.position.getX()]=vamp.getSymbol();
-							Main.isFinished = true;
-							System.out.println("GAME OVER");
-						}
-						else {
+					if((Main.isHunterTurn==true) &&(vamp.position.getX()==hunters.position.getX()) 
+							&& (vamp.position.getY()==hunters.position.getY())) {
 						screen[hunters.position.getY()][hunters.position.getX()]=hunters.getSymbol();
-						Main.isHunterTurn=false;
+
 						vampire = vamp;
 //						VampireDb.removeVampire(vampire);
+						System.out.println("Vampire points: "+vamp.pointsObject);
 						Hunter.pointsHunter+=vamp.pointsObject;
+						System.out.println("Total points: " +Hunter.pointsHunter);
+
 //						VampireDb.createNewVampire();
-//						isVampireCreated = true;
+						isVampireCreated = true;
+						System.out.println(Main.isHunterTurn);
 						}
-					}				
 				}
+			
 			}
 		}
-	
+
 		VampireDb.removeVampire(vampire);
 		if(isVampireCreated==true) {
 			VampireDb.createNewVampire();
+			Main.isHunterTurn=false;
 		}
+
+		
 		StakeDb.removeStake(stake1);
 		if(isStakeCreated==true) {
 			StakeDb.createNewStake();
 		}
-    }
-		
 
-	
+	}
 }
+

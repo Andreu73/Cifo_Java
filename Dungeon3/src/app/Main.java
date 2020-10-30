@@ -21,10 +21,10 @@ public class Main {
 	final public static int MOVES = 14;
 	final public static int LENGTH = 25;
 	final public static int HEIGHT = 15;
-	final public static int HUNTER_X = 0;
-	final public static int HUNTER_Y = 0;
+//	final public static int HUNTER_X = 0;
+//	final public static int HUNTER_Y = 0;
 	final public static String FILL_SCREEN_SYMBOL = ".";
-	final public static int TIME_PER_GAME = 100;
+//	final public static int TIME_PER_GAME = 100;
 	public static boolean isFinished = false;
    	public static boolean isHunterTurn = false;
 	

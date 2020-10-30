@@ -91,7 +91,6 @@ public class Hunter extends ScreenObject implements IScreenObject{
 			hunter.position.setY(hunter.position.getY()-1);
 //			HunterController.moveHunter(input, hunterDb, vampireDb, stakeDb);
 			VampireController.moveVampire(vampireDb, key);
-			hunter.position.setY(hunter.position.getY()-1);
 			ScreenController.updateScreen(Screen.screen, input, hunterDb, vampireDb, stakeDb);
 		}
 		}
