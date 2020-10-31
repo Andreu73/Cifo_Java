@@ -116,17 +116,43 @@ public class Vampire extends ScreenObject {
 //			}
 
 			//
-			if(VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1) {
+			if((VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1) 
+					&& (VampireDb.vampires.get(i).position.getY()==0)){
 				VampireDb.vampires.get(i).position.setX(Main.LENGTH-1);
+				VampireDb.vampires.get(i).position.setY(0);
+			}
+			else if ((VampireDb.vampires.get(i).position.getX()==0) 
+				&& (VampireDb.vampires.get(i).position.getY()==0)){
+				VampireDb.vampires.get(i).position.setX(0);
+				VampireDb.vampires.get(i).position.setY(0);
+			}
+			else if ((VampireDb.vampires.get(i).position.getY()==Main.HEIGHT-1) 
+				&& (VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1)) {
+				VampireDb.vampires.get(i).position.setX(Main.LENGTH-1);
+				VampireDb.vampires.get(i).position.setY(Main.HEIGHT-1);
+			}
+			else if ((VampireDb.vampires.get(i).position.getX()==0) 
+				&& (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT-1)){
+				VampireDb.vampires.get(i).position.setX(0);
+				VampireDb.vampires.get(i).position.setY(Main.HEIGHT-1);
+			}
+			
+			//
+			else if(VampireDb.vampires.get(i).position.getX()==Main.LENGTH-1) {
+				VampireDb.vampires.get(i).position.setX(Main.LENGTH-1);
+				VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+randomOfTwoNumbers());
 			}
 			else if (VampireDb.vampires.get(i).position.getX()==0) {
 				VampireDb.vampires.get(i).position.setX(0);
+				VampireDb.vampires.get(i).position.setY(VampireDb.vampires.get(i).position.getY()+randomOfTwoNumbers());
 			}
 			else if (VampireDb.vampires.get(i).position.getY()==Main.HEIGHT-1) {
 				VampireDb.vampires.get(i).position.setY(Main.HEIGHT-1);
+				VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+randomOfTwoNumbers());
 			}
 			else if (VampireDb.vampires.get(i).position.getY()==0) {
 				VampireDb.vampires.get(i).position.setY(0);
+				VampireDb.vampires.get(i).position.setX(VampireDb.vampires.get(i).position.getX()+randomOfTwoNumbers());
 			}
 			
 			
