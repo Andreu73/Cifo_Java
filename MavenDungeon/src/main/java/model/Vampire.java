@@ -1,14 +1,9 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import app.Main2;
-import service.GameObjectDb;
-import service.HunterDb;
 
 @Entity
 @Table(name="VAMPIRE")
