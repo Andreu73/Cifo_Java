@@ -3,7 +3,6 @@ package service;
 import java.util.ArrayList;
 
 import model.Hunter;
-import model.Vampire;
 
 public class HunterDb {
 
