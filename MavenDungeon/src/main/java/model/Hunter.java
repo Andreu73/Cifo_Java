@@ -1,14 +1,26 @@
 package model;
 
-import javax.persistence.Entity;
+import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="HUNTER")
+//@NamedQueries({ @NamedQuery(name = "HUNTER.findAllGOsXY", query = "SELECT a.x, a.y FROM HUNTER a")})
 
-public class Hunter extends GameObject{
 
+public class Hunter extends GameObject {
+
+//	@Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public String name;
 	public int points;
 
@@ -17,6 +29,8 @@ public class Hunter extends GameObject{
 		this.points = 3;
 		this.name = name;
 	}
+	
+
 
 	public String getName() {
 		return name;

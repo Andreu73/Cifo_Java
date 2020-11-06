@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Random;
 
 import javax.persistence.CascadeType;
@@ -22,14 +23,12 @@ import app.Main2;
 
 //@Entity
 @MappedSuperclass
-//@Inheritance
+@Inheritance
 //(strategy=InheritanceType.SINGLE_TABLE)
-@Table(name="GAMEOBJECT")
+//@Table(name="GAMEOBJECT")
 
-@NamedQueries({ @NamedQuery(name = "GameObject.findByWidth", query = "SELECT a FROM GameObject a WHERE a.width = :width"),
-	@NamedQuery(name = "GameObject.findByHeight", query = "SELECT a FROM GameObject a WHERE a.height = :height")})
 
-public class GameObject {
+public class GameObject{
 	
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

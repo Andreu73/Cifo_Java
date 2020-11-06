@@ -1,10 +1,12 @@
 package repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
 import model.GameObject;
+import model.Hunter;
 
 public class GameObjectRepository {
 	
@@ -26,4 +28,17 @@ public class GameObjectRepository {
 			resultFind = Optional.empty();
 		return resultFind;
 	}
+
+//	public Optional<GameObject> findAllGOsXY(GameObjectRepository gameObjectRepository){
+//		
+//	List<GameObject> gos = gameObjectRepository.findAll();
+//	System.out.println("GOs:");
+//	for (GameObject goToPrint : gos) {
+//		System.out.println(goToPrint);
+//	}
+//	gos.forEach(System.out::println);
+//	}
+	
+
+	
 }

@@ -3,6 +3,9 @@ package model;
 import java.util.Random;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 
 public class Vampire extends GameObject{
 	
+//    @Id
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int points;
 	public String symbol;
 

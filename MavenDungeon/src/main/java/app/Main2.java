@@ -1,15 +1,19 @@
 package app;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import model.GameObject;
 import model.Hunter;
 import model.Screen;
+import model.Vampire;
 import repository.HunterRepository;
 import repository.ScreenRepository;
+import repository.VampireRepository;
 
 public class Main2 {
 	
@@ -28,32 +32,47 @@ public class Main2 {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("dungeon");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-		// Create our repositories ...
+		VampireRepository vampireRepository = new VampireRepository(entityManager);
 		HunterRepository hunterRepository = new HunterRepository(entityManager);
 		ScreenRepository screenRepository = new ScreenRepository(entityManager);
 
+		Vampire vampire1 = new Vampire("V", 5);	
+		Vampire vampire2 = new Vampire("V", 5);
+		Vampire vampire3 = new Vampire("V", 5);
+		
+		Optional<Vampire> savedVampire1 = vampireRepository.save(vampire1);
+		Optional<Vampire> savedVampire2 = vampireRepository.save(vampire2);
+		Optional<Vampire> savedVampire3 = vampireRepository.save(vampire3);
+		System.out.println("Saved vampire: " + savedVampire1.get());
+		System.out.println("Saved vampire: " + savedVampire2.get());
+		System.out.println("Saved vampire: " + savedVampire3.get());
+		
 		Hunter hunter1 = new Hunter("E", "Mary");
 		Optional<Hunter> savedHunter1 = hunterRepository.save(hunter1);
 		System.out.println("Saved hunter: " + savedHunter1.get());
+//		hunterRepository.findAllGOsXY();
 		
 		Screen screen = new Screen();
 		screen.initScreen();
 		screen.printScreen();
 
 		// Create a hunter
-		screen.addHunter(new Hunter("H", "Andreu"));
+		
+		screen.addHunter(hunter1);
 		screen.addHunter(new Hunter("A", "Anne"));
 		System.out.println(screen);
 		Optional<Screen> savedScreen1 = screenRepository.save(screen);
 
 		System.out.println("Saved screen: " + savedScreen1.get());
+		
+		
 //		List<Hunter> hunters = hunterRepository.findAll();
 //		System.out.println("Authors:");
 //		for (Hunter authorToPrint : hunters) {
 //			System.out.println(authorToPrint);
 //		}
-//
 //		hunters.forEach(System.out::println);
+		
 //
 //
 //		Optional<Hunter> hunterByName = hunterRepository.findByName("Andreu");

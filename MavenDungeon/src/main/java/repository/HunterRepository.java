@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
+import model.GameObject;
 import model.Hunter;
 
 public class HunterRepository {
@@ -29,6 +30,10 @@ public class HunterRepository {
 		return resultSave = Optional.empty();
 	}
 
+	public List<Hunter> findAllGOsXY() {
+	return entityManager.createQuery("from hunter").getResultList();
+	}
+	
 //	public Optional<Hunter> findById(Integer id) {
 //
 //		Hunter hunter = entityManager.find(Hunter.class, id);

@@ -84,9 +84,7 @@ public class Screen {
 //		this.limit = limit;
 //	}
 
-	public List<Hunter> getHunter() {
-		return hunters;
-	}
+
 
 	@Override
 	public String toString() {
@@ -148,6 +146,10 @@ public class Screen {
 //			
 //			}
 //		}
+
+	public List<Hunter> getHunters() {
+		return hunters;
+	}
 
 	public void initScreen() {
 	for (int i = 0; i < this.height; i++) {
