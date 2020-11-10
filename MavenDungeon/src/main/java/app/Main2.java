@@ -9,10 +9,8 @@ import javax.persistence.Persistence;
 
 import model.GameObject;
 import model.Hunter;
-import model.Screen;
 import model.Vampire;
 import repository.HunterRepository;
-import repository.ScreenRepository;
 import repository.VampireRepository;
 
 public class Main2 {
@@ -34,7 +32,6 @@ public class Main2 {
 
 		VampireRepository vampireRepository = new VampireRepository(entityManager);
 		HunterRepository hunterRepository = new HunterRepository(entityManager);
-		ScreenRepository screenRepository = new ScreenRepository(entityManager);
 
 		Vampire vampire1 = new Vampire("V", 5);	
 		Vampire vampire2 = new Vampire("V", 5);
@@ -51,20 +48,7 @@ public class Main2 {
 		Optional<Hunter> savedHunter1 = hunterRepository.save(hunter1);
 		System.out.println("Saved hunter: " + savedHunter1.get());
 //		hunterRepository.findAllGOsXY();
-		
-		Screen screen = new Screen();
-		screen.initScreen();
-		screen.printScreen();
-
-		// Create a hunter
-		
-		screen.addHunter(hunter1);
-		screen.addHunter(new Hunter("A", "Anne"));
-		System.out.println(screen);
-		Optional<Screen> savedScreen1 = screenRepository.save(screen);
-
-		System.out.println("Saved screen: " + savedScreen1.get());
-		
+	
 		
 //		List<Hunter> hunters = hunterRepository.findAll();
 //		System.out.println("Authors:");

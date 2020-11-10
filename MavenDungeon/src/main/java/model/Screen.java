@@ -20,87 +20,52 @@ import javax.persistence.Transient;
 import app.Main2;
 
 
-@Entity
-@Table(name="SCREEN")
-@NamedQueries({ @NamedQuery(name = "Screen.findByWidth", query = "SELECT a FROM Screen a WHERE a.width = :width"),
-				@NamedQuery(name = "Screen.findByHeight", query = "SELECT a FROM Screen a WHERE a.height = :height")})
-
-public class Screen {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int screenIdnumber;
-	public int width;
-	public int height;
-	@Transient
-	public String[][] limit;
-	
-	@OneToMany(mappedBy = "screen", cascade = CascadeType.ALL) 
-	private List<Hunter> hunters = new ArrayList<>();
-
-	public Screen() {
-		super();
-//		this.screenIdnumber = hashCode();
-		this.width = Main2.WIDTH;
-		this.height = Main2.HEIGHT;
-		limit = new String[Main2.HEIGHT][Main2.WIDTH];
-
-	}
-
-	public void addHunter(Hunter hunter) {
-		hunters.add(hunter);
-		hunter.setScreen(this);
-	}
-	
-	public int getScreenId() {
-		return screenIdnumber;
-	}
-
-	public void setScreenId(int screenId) {
-		this.screenIdnumber = screenId;
-	}
-
-	public int getWidth() {
-		return width;
-	}
-
-	public void setWidth(int width) {
-		this.width = width;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
-	}
+//@Entity
+//@Table(name="SCREEN")
+//@NamedQueries({ @NamedQuery(name = "Screen.findByWidth", query = "SELECT a FROM Screen a WHERE a.width = :width"),
+//				@NamedQuery(name = "Screen.findByHeight", query = "SELECT a FROM Screen a WHERE a.height = :height")})
 //
-//	public String[][] getLimit() {
-//		return limit;
+//public class Screen {
+//
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	public int screenIdnumber;
+//	public int width;
+//	public int height;
+//	@Transient
+//	public String[][] limit;
+//	
+//	@OneToMany(mappedBy = "screen", cascade = CascadeType.ALL) 
+//	private List<Hunter> hunters = new ArrayList<>();
+//
+//	public Screen() {
+//		super();
+//		this.width = Main2.WIDTH;
+//		this.height = Main2.HEIGHT;
+//		limit = new String[Main2.HEIGHT][Main2.WIDTH];
+//
 //	}
 //
-//	public void setLimit(String[][] limit) {
-//		this.limit = limit;
+//	public void addHunter(Hunter hunter) {
+//		hunters.add(hunter);
+//		hunter.setScreen(this);
 //	}
-
-
-
-	@Override
-	public String toString() {
-		return "Screen [screenIdnumber=" + screenIdnumber + ", width=" + width + ", height=" + height + ", gous=" + hunters
-				+ "]";
-	}
-
+//	
+//	public int getScreenId() {
+//		return screenIdnumber;
+//	}
+//
+//
+//
 //	public void setGous(List<GameObject> gous) {
 //		this.gous = gous;
 //	}
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
 //	public void updateScreen(ArrayList<GameObject> go, Scanner input, Screen screen) {
 //		
 //		initScreen();
@@ -147,28 +112,25 @@ public class Screen {
 //			}
 //		}
 
-	public List<Hunter> getHunters() {
-		return hunters;
-	}
 
-	public void initScreen() {
-	for (int i = 0; i < this.height; i++) {
-		for (int j = 0; j < this.width; j++) {
-			this.limit[i][j] = ".";
-		}
-	}
-}
-	
-
-	public void printScreen() {
-		for (int i = 0; i < this.height; i++) {
-			for (int j = 0; j < this.width; j++) {
-				System.out.print(this.limit[i][j]);
-			}
-			System.out.println();
-		}
-	}
-	
-
-	
-}
+//	public void initScreen() {
+//	for (int i = 0; i < this.height; i++) {
+//		for (int j = 0; j < this.width; j++) {
+//			this.limit[i][j] = ".";
+//		}
+//	}
+//}
+//	
+//
+//	public void printScreen() {
+//		for (int i = 0; i < this.height; i++) {
+//			for (int j = 0; j < this.width; j++) {
+//				System.out.print(this.limit[i][j]);
+//			}
+//			System.out.println();
+//		}
+//	}
+//	
+//
+//	
+//}
