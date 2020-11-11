@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+
+<table>
+<tr>
+<th>Title</th>
+<th>ISBN</th>
+<th>Pages</th>
+<th>Option</th>
+</tr>
+</table>
+<table>
+<tr th:each="book:${library}">
+<td th:text="${book.title}"></td>
+<td th:text="${book.ISBN}"></td>
+<td th:text="${book.pages}"></td>
+
+<td><a th:href="@{deleteBook(title=${book.title})}" class="btn btn-primary btn-sm"></a>DELETE</td>
+</tr>
+</table>
+
+<form action="newBook">
+<input type="submit" value="NEW" class="btn btn-primary btn-sm"/>
+</form>
+</html>
+
