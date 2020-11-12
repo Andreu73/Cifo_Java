@@ -19,12 +19,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import app.Main2;
-
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 //@Entity
 @MappedSuperclass
-@Inheritance
-//(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //@Table(name="GAMEOBJECT")
 
 
@@ -37,12 +37,6 @@ public class GameObject{
 	public int y;
 	public String symbol;
 	
-	@ManyToOne
-	@JoinColumn(name = "SCREEN_ID")
-
-	private Screen screen;
-	
-	@Transient
 	Random random = new Random();
 
 	public GameObject(String symbol) {
@@ -67,51 +61,12 @@ public class GameObject{
 
 	}
 
-	public int getObjectId() {
-		return objectIdnumber;
-	}
-
-	public void setObjectId(int objectId) {
-		this.objectIdnumber = objectId;
-	}
-
-	public int getX() {
-		return x;
-	}
-
 	public void setX(int x) {
 		this.x = x;
 	}
 
-	public int getY() {
-		return y;
-	}
-
 	public void setY(int y) {
 		this.y = y;
-	}
-
-	public Screen getScreen() {
-		return screen;
-	}
-
-	public void setScreen(Screen screen) {
-		this.screen = screen;
-	}
-
-	public String getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
-	}
-
-
-	@Override
-	public String toString() {
-		return "GameObject [objectId=, x=" + x + ", y=" + y + ", symbol="
-				+ symbol + "]";
 	}
 
 

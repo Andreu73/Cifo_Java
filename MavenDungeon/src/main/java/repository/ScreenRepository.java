@@ -4,31 +4,29 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
-import model.Hunter;
-import model.Screen;
 
-public class ScreenRepository {
-
-	private EntityManager entityManager;
-
-	public ScreenRepository(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
-
-	public Optional<Screen> save(Screen screen) {
-		Optional<Screen> resultSave;
-		try {
-			entityManager.getTransaction().begin();
-			entityManager.persist(screen);
-			entityManager.getTransaction().commit();
-			return resultSave = Optional.of(screen);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return resultSave = Optional.empty();
-	}
-
+//public class ScreenRepository {
+//
+//	private EntityManager entityManager;
+//
+//	public ScreenRepository(EntityManager entityManager) {
+//		this.entityManager = entityManager;
+//	}
+//
+//	public Optional<Screen> save(Screen screen) {
+//		Optional<Screen> resultSave;
+//		try {
+//			entityManager.getTransaction().begin();
+//			entityManager.persist(screen);
+//			entityManager.getTransaction().commit();
+//			return resultSave = Optional.of(screen);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return resultSave = Optional.empty();
+//	}
+//
 //	public Optional<Hunter> findById(Integer id) {
 //
 //		Hunter hunter = entityManager.find(Hunter.class, id);
@@ -76,8 +74,8 @@ public class ScreenRepository {
 //			resultDelete = Optional.empty();
 //		return resultDelete;
 //	}
-
-
-
-	}
+//
+//
+//
+//	}
 
