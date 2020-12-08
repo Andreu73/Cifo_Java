@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Cars</title>
+</head>
+
+
+<body>
+
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr class="w3-blue">
+<th>Cate</th>
+<th>Model</th>
+
+</tr>
+</thead>
+<tr th:each="ca:${cars}">
+<td th:text="${ca.id}"></td>
+<td th:text="${ca.model}"></td>
+
+<td><a th:href="@{deleteCar(id=${ca.id})}" >DELETE</a></td>
+
+</tr>
+</table>
+<form class="w3-container" action="addCar">
+<p>
+<button class="w3-btn w3-blue">Add Car</button>
+</p>
+
+
+</form>
+
+<a th:href="@{/cate/addCate}" class="item">Add Category</a>
+
+
+
+</body>
+</html>

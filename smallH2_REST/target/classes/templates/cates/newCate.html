@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Category</title>
+</head>
+<body>
+<h3>Create new Category</h3>
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<form action="#" th:action="@{addCate}" th:object="${cates}" method="post" th:required="required">
+<p>
+<label class="w3-text-blue"><b>Category</b></label>
+<input class="w3-input w3-border w3-light-grey" th:field="*{name}" type="text">
+</p>
+
+
+
+<!-- <p> -->
+<!-- <input type="number" class="w3-input w3-border w3-light-grey" th:field="*{id}"> -->
+<!-- </p> -->
+
+
+<!-- <select class="w3-input w3-border w3-light-grey" th:field="*{author.id}"> -->
+<!--                 <option value="1">1</option> -->
+<!--                 <option value="2">2</option> -->
+<!--                 <option value="3">3</option> -->
+<!--                 <option value="4">4</option> -->
+<!-- </select> -->
+
+<!-- title -->
+<!-- <label for="categorylist">Author</label> -->
+<!--  <select id="authorlist" th:field="*{authorid}" class="w3-input w3-border w3-light-grey"> -->
+<!--        			<option th:each="auth: ${auths}" th:value="${auth.authorid}" th:text="${auth.name}"></option> -->
+<!-- </select> -->
+
+
+
+<p>
+<!-- <input type="submit" value="insertBook"></input> -->
+<button class="w3-btn w3-blue">Add</button>
+</p>
+</form>
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr class="w3-blue">
+<th>Cate</th>
+<th>Name</th>
+</tr>
+</thead>
+<tr th:each="ca:${cats}">
+<td th:text="${ca.categoryid}"></td>
+<td th:text="${ca.name}"></td>
+
+<td><a th:href="@{deleteCate(id=${ca.categoryid})}" class="w3-btn w3-teal">DELETE</a></td>
+
+</tr>
+</table>
+
+
+</body>
+</html>
